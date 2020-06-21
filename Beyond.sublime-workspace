@@ -1,0 +1,442 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sta",
+				"statuses"
+			],
+			[
+				"cam",
+				"campus_id"
+			],
+			[
+				"cit",
+				"cities_id"
+			],
+			[
+				"depart",
+				"departments"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"bl",
+				"black"
+			],
+			[
+				"ani",
+				"animation-name\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"marg",
+				"margin-right\tproperty"
+			],
+			[
+				"magi",
+				"margin-left\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"d",
+				"div\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 839,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+			"settings":
+			{
+				"buffer_size": 798,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Install Package Control"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Install Package Control"
+			],
+			[
+				"pa",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"brog",
+				"Preferences: Browse Packages"
+			],
+			[
+				"the",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"m",
+				"Material Theme: Advanced configuration"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/laragon/www/Beyond",
+		"/C/laragon/www/Beyond/database",
+		"/C/laragon/www/Beyond/database/migrations"
+	],
+	"file_history":
+	[
+		"/C/laragon/www/SantaJuana/database/migrations/2020_06_15_064747_create_academic_years_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_06_15_004111_create_id_types_table.php",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/One Dark Color Scheme/One Dark.tmTheme",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/laragon/www/SantaJuana/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_04_09_225601_create_grades_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_04_09_225602_create_groups_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_06_10_030613_create_teachers_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_04_25_214701_create_students_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_05_04_040230_create_managers_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_05_04_040148_create_parents_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_04_24_172418_create_profiles_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_05_09_221423_create_cities_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_05_08_221936_create_departments_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2020_05_04_035810_create_addresses_table.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2021_05_12_221400_add_foreign_keys_table.php",
+		"/C/laragon/www/SantaJuana/resources/views/home.blade.php",
+		"/C/laragon/www/SantaJuana/database/migrations/2021_05_10_002007_add_foreign_key_table.php",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Merge/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/Color Scheme - Default.sublime-package/One Dark2.tmTheme",
+		"/C/laragon/www/SantaJuana/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Installed Packages/One Dark.tmTheme",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/Agila Theme/Agila Classic Oceanic Next.tmTheme",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Installed Packages/One Dark Color Scheme.sublime-package",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/One Dark.tmTheme",
+		"/C/Users/Nicolas Andres Muñoz/AppData/Roaming/Sublime Text 3/Packages/Theme - Brogrammer/brogrammer.tmTheme",
+		"/C/Users/Nicolas Andres Muñoz/Desktop/Gamemom/main.js",
+		"/C/Users/Nicolas Andres Muñoz/Desktop/Gamemom/index.html",
+		"/C/Users/Nicolas Andres Muñoz/Desktop/Gamemom/styles.css",
+		"/C/Users/Nicolas Andres Muñoz/Desktop/Gamemom/images/1.1.png"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\laragon\\www\\Beyond"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 18,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default.sublime-package/One Dark2.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": "",
+								"current_syntax": "Text/Plain text",
+								"enabled": false,
+								"last_updated": 1592708381.02
+							},
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 18,
+							"color_helper.color_scheme": "Packages/Color Scheme - Default.sublime-package/One Dark2.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hexa",
+									"webcolors",
+									"gray",
+									"hexa_compressed",
+									"hsl",
+									"hex",
+									"graya",
+									"rgba",
+									"hwba",
+									"hsla",
+									"rgb",
+									"hwb",
+									"hex_compressed"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".php",
+								"current_syntax": "PHP/PHP",
+								"enabled": true,
+								"last_updated": 1592708381.02,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 66.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 359.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
