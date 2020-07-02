@@ -15,6 +15,9 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('Code', 4);//Grado:6--Número:01--Jornada:M:::::::::::::601M
+            
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMaterialsTable extends Migration
+class CreateIdTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateMaterialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('materials', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->foreignId('themes')->constrained();
+        Schema::create('id_types', function (Blueprint $table) {
+            $table->id();            
+            $table->string('name');
+            $table->string('contraction',2);//'RC', 'TI', 'CC', 'CE', 'PA','SI'
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateMaterialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('id_types');
     }
 }
