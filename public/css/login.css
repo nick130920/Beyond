@@ -1,0 +1,115 @@
+*{	
+	font-family: 'Vollkorn', serif;
+}
+.body{
+	background-image: url(../images/img/fondoLogin.svg);
+	background-position: center;
+	background-size: 100% ;
+}
+.contenTodo{
+	width: 410px;
+	position: relative;
+	margin: auto;
+}
+.user-img img{
+	width: 100px;
+	margin-top: -50px;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 5px #B5C9FA;
+	border-radius: 50%;
+}
+.main-section{
+	margin-top: 30%;
+	padding: 0;
+}
+
+.model-content{
+	background-color: rgb(26, 95, 226, .6);
+	padding:0 20px 4px 20px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 3px #fff;
+}
+
+.form-group input{
+	height: 40px;
+	font-size: 20px;
+	border:0;
+	top: 10px;
+	position: relative;
+	border-radius: 5px;
+}
+button{
+	width: 50%;
+	padding: 0 25px;
+	position: relative;
+	top: 20px;
+	box-shadow: 0 0 2px #fff;
+}
+.sombra{
+	display: table;
+	width: 100%;
+	background-color: rgb(0,0,0,.3);
+	position: relative;
+	top: 5px;
+	box-shadow: 0 0 3px #fff;
+	border-radius: 5px;
+}
+.abajo{
+	margin-top: 10px; 
+	font-size: 15px;
+	color: white;
+	transition: all 500ms ease;
+	float: left;
+}
+
+.abajo a{
+	color: white;
+	transition: all 500ms ease;
+	position: relative;
+}
+.abajo a::after{
+	content: '';
+	position: relative;
+	width: 100%;
+	padding: 1px;
+	opacity: 0;
+}
+.abajo a::after{
+	position: absolute;
+	bottom: 0;
+	width: 0%;
+	background-color: white;
+	left: 50%;
+	transition: all 500ms ease;
+}
+.abajo a:hover:after{
+	width: 100%;
+	left: 0;
+	opacity: 1;
+}
+.abajo a:hover{
+	color: white;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.separador{
+	margin-top: 60px;
+	color:white;
+}
+.separador h1{
+	padding: 10px;
+}
+.separador::before{
+	content: "";
+	position: relative;
+	width: 100%;
+}
+.separador::before{
+	background-color: white;
+	position: absolute;
+	padding: 1px;
+	width: 90%;
+	margin:auto;
+	left: 20px;
+}
