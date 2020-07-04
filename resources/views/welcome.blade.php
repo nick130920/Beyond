@@ -20,7 +20,7 @@
       <h1>Beyond</h1>
       <nav>
         <ul>
-          <li><a href="#" >Recorrido</a></li>
+          <li><a href="#" >Registro</a></li>
           <li><a href="{{ route('login') }}" >Inicia Sesión</a></li>
         </ul>
       </nav>
