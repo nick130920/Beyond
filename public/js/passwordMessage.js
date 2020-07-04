@@ -1,4 +1,4 @@
-var correo =document.getElementById('correo');
+var correo =document.getElementById('email');
 var expresion ;
 expresion = /\w+@+\w+\.+\[a-z]/; 
 

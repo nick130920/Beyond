@@ -22,7 +22,6 @@
         <i class="fas fa-sign-in-alt"></i>
         Ingresar
     </button>
-
 </form>
 <div class="separador">
     <h1>Beyond</h1>
