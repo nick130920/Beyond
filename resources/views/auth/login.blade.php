@@ -3,22 +3,28 @@
 <form class="col-12" method="POST" action="{{ route('login') }}">
     @csrf
     <div class="form-group">
-        <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder=" Usuario"/>
+        <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder=" Usuario"/>
         @error('email')
-            <span class="invalid-feedback" role="alert">
-               <strong>{{ $message }}</strong>
-             </span>
+          <script>
+            window.onload = function alerta() {
+              alertify.set('notifier','position', 'top-right');
+              alertify.notify ("Usuario o contraseña incorrecta",'error', 2, function(){});
+            }
+          </script>
         @enderror
     </div>
     <div class="form-group">
-        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password" required placeholder="Contraseña"/>
+        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="Contraseña"/>
           @error('password')
-              <span class="invalid-feedback" role="alert" style="padding-top: 1.25rem;">
-                  <strong>{{ $message }}</strong>
-              </span>
+          <script type="text/javascript">
+            window.onload = function alerta() {
+              alertify.set('notifier','position', 'top-right');
+              alertify.notify ("La contraseña es obligatoria",'error', 2, function(){});
+            }
+          </script>
           @enderror
     </div>
-    <button type="submit" onclick="validarSesion();" class="btn btn-primary" >
+    <button type="submit" class="btn btn-primary" >
         <i class="fas fa-sign-in-alt"></i>
         Ingresar
     </button>
