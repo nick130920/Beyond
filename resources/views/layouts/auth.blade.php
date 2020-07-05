@@ -19,7 +19,6 @@
         <!-- Alertas -->
         <link rel="stylesheet" type="text/css" href="{{ asset('/alertify/css/alertify.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('/alertify/css/themes/semantic.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/password.css')}}">
 
         <!-- Bootstrap -->
         <link href="{{ asset('/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -27,7 +26,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
         
     </head>
-    <body class="body">
+    <body >
+        <div class="body">
         <div class="contenTodo text-center">
             <div class="col-ms-8 main-section">
                 <div class="model-content">
@@ -39,6 +39,7 @@
                 @yield('sombra')
             </div>
         </div>
+    </div>
         <script type="text/javascript" src="{{ asset('/js/validationSesion.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/alertify/alertify.min.js') }}"></script>
     </body>
