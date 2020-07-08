@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-        <script type="text/javascript" src="{{ asset('/js/validationSesion.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/js/validar.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/alertify/alertify.min.js') }}"></script>
     </body>
 </html>

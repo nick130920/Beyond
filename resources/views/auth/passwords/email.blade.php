@@ -2,9 +2,13 @@
 
 @section('content')
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                            <script type="text/javascript">
+                                window.onload = function alerta() {
+                                          alertify.set('notifier','position', 'top-right');
+                                          alertify.notify ("{{ session('status') }}",'success anchar', 3, function(){});
+                                        }
+                                
+                            </script>
                     @endif
                     <form class="col-12" method="POST" action="{{ route('password.email') }}">
                         @csrf

@@ -1285,7 +1285,6 @@
 }
 
 .nav-sm .nav.child_menu li.active,.nav-sm .nav.side-menu li.active-sm {
-    border-right: 5px solid #1ABB9C
 }
 
 .nav-sm ul.nav.child_menu ul,.nav-sm .nav.side-menu li.active-sm ul ul {
@@ -1324,7 +1323,7 @@
 }
 
 .nav-sm ul.nav.child_menu li a {
-    text-align: left !important
+    text-align: center !important
 }
 
 .nav-sm .profile {
@@ -1897,22 +1896,8 @@ a:hover,a:focus {
     padding-left: 36px
 }
 
-.nav-md ul.nav.child_menu li:before {
-    background: #425668;
-    bottom: auto;
-    content: "";
-    height: 8px;
-    left: 23px;
-    margin-top: 15px;
-    position: absolute;
-    right: auto;
-    width: 8px;
-    z-index: 1;
-    border-radius: 50%
-}
 
 .nav-md ul.nav.child_menu li:after {
-    border-left: 1px solid #425668;
     bottom: 0;
     content: "";
     left: 27px;
@@ -5941,3 +5926,98 @@ ul.notifications {
     font-weight: bold;
     transition: all 500ms ease; 
 }
+.fa-chevron-down{
+    float: right;
+    margin-top: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*     CSS mi Contenido     */
+.overlay{
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0,0,0, .5);
+    visibility: hidden;
+    z-index: 5000;
+}
+.overlay.active{
+    visibility: visible;
+}
+.popup{
+    background-image: url(../images/img/fondopopup1.svg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 65%;
+    padding: 10px 20px;
+
+    transition: all 500ms ease;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.separador1{
+    display: block;
+    padding: 8px 10px 0 10px;
+    background-color: rgb(26, 95, 226,.85);
+    color:white;
+    box-shadow: 0 0 2px 0 #1A5FE2;
+    border-radius: 10px;
+
+}
+.textoPopup{
+    background-color: rgb(26, 95, 226, .9);
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.formCheck{
+    background-color: red;
+    top: 1px;
+    position: relative;
+}
+.btn-next{
+    float: right;
+    color: white;
+}
+.btn-cerrar{
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    text-align: right;
+    color: #bbbbbb;
+    transition: all 500ms ease;
+}
+.btn-cerrar:hover{
+    color: rgb(50,50,50,.5);
+}
+.popup.active{
+    transform: scale(1);
+    opacity: 1;
+}
+.popup h1{
+    opacity: 0;
+}
+.popup.active h1{
+    animation: entradaTitulo .9s ease .5s forwards;
+}
+@keyframes entradaTitulo{
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*       Nueva Clase      */

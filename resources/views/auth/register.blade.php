@@ -11,7 +11,7 @@
                     
                     window.onload = function alerta() {
                       alertify.set('notifier','position', 'top-right');
-                      alertify.notify ("Chingas a tu madre",'error', 2, function(){});
+                      alertify.notify ("{{ $message}}",'error', 2, function(){});
                     }
 
                 </script>
@@ -21,24 +21,34 @@
             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Email">
 
             @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
+                <script type="text/javascript">
+                    
+                    window.onload = function alerta() {
+                      alertify.set('notifier','position', 'top-right');
+                      alertify.notify ("{{ $message}}",'error', 2, function(){});
+                    }
+
+                </script>
             @enderror
         </div>
         <div class="form-group">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="Contraseña">
                 @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                <script type="text/javascript">
+                    
+                    window.onload = function alerta() {
+                      alertify.set('notifier','position', 'top-right');
+                      alertify.notify ("{{ $message}}",'error', 2, function(){});
+                    }
+
+                </script>
                 @enderror
         </div>
 
         <div class="form-group">
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password" placeholder="Contraseña confirmación">
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" onclick="return validarAntes();" class="btn btn-primary">
             {{ __('Registrar') }}
         </button>
     </form>

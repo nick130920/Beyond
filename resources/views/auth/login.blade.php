@@ -8,7 +8,7 @@
           <script>
             window.onload = function alerta() {
               alertify.set('notifier','position', 'top-right');
-              alertify.notify ("Usuario o contraseña incorrecta",'error', 2, function(){});
+              alertify.notify ("{{ $message }} ",'error', 2, function(){});
             }
           </script>
         @enderror
@@ -19,12 +19,12 @@
           <script type="text/javascript">
             window.onload = function alerta() {
               alertify.set('notifier','position', 'top-right');
-              alertify.notify ("La contraseña es obligatoria",'error', 2, function(){});
+              alertify.notify ("{{ $message }}",'error', 2, function(){});
             }
           </script>
           @enderror
     </div>
-    <button type="submit" class="btn btn-primary" >
+    <button type="submit" class="btn btn-primary" onclick="return validarSesion();" >
         <i class="fas fa-sign-in-alt"></i>
         Ingresar
     </button>

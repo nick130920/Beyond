@@ -7,7 +7,7 @@
     <input type="hidden" name="token" value="{{ $token }}">
 
     <div class="form-group ">
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" autocomplete="email" autofocus placeholder="Email">
 
         @error('email')
             <span class="invalid-feedback" role="alert">
@@ -16,7 +16,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña nueva">
+        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="Contraseña nueva">
 
         @error('password')
             <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmación contraseña">
+        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" placeholder="Confirmación contraseña">
     </div>
     <button type="submit" class="btn btn-primary">
         {{ __('Reset Password') }}
