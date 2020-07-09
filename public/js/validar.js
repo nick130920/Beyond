@@ -25,7 +25,10 @@ function validarSesion() {
 function acceder(){
 	window.location.href = '../Profesor/indexProfesor.html';
 }
-
+function cambio() {
+	document.getElementById('ocultar').style.display = 'none';
+	document.getElementById('visible').style.display = 'block';
+}
 // Registro
 
 function validarRegistro(){
