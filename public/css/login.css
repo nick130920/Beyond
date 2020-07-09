@@ -1,5 +1,6 @@
 *{	
 	box-sizing: border-box;
+<<<<<<< Updated upstream
 }
 body{
 }
@@ -12,6 +13,13 @@ body{
 	height: 100%;
 	position: absolute;
 	display: table;
+=======
+}
+.body{
+	background-image: url(../images/img/fondoLogin.svg);
+	height: 100vh;
+	overflow: hidden;
+>>>>>>> Stashed changes
 }
 .contenTodo{
 	position: relative;
@@ -138,6 +146,29 @@ form p{
 	font-size: 20px;
 	padding: 15px;
 }
+<<<<<<< Updated upstream
+=======
+/*     Primer Registro     */
+.registro{
+	background-color: rgb(26, 95, 226, .6);
+	padding:0 20px 4px 20px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 3px #fff;
+	position: relative;
+	top: -50px;
+}
+/*        Segundo registro      */
+
+.contentRegistro2{
+	width: 700px;
+}
+.mainRegistro2{
+	margin-top: 20%;
+	background-color: rgb(250,250,250, .2);
+	padding:5px 10px 30px 10px;
+	border-radius: 15px;
+}
+>>>>>>> Stashed changes
 .Cards{
 	display: flex;
 	justify-content: center;
@@ -151,6 +182,7 @@ form p{
 	box-shadow: 0 0 5px #fff;
 	opacity: .9;
 }
+<<<<<<< Updated upstream
 .centro{
 	background-color: rgb(26, 95, 226, .5);
 	padding: 10px 20px 30px 20px;
@@ -163,4 +195,10 @@ form p{
 .centro h1{
 	font-size: 50px;
 	text-shadow:0 0 1px #fff;
+=======
+.registro2{
+	margin-top:0; 
+	position: relative;
+	padding: 0;
+>>>>>>> Stashed changes
 }

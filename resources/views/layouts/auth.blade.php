@@ -8,11 +8,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('auth.name', 'Beyond') }}</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <!-- Fuentes -->
-        <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
         <!-- mis Estilos -->
         <link rel="stylesheet" type="text/css" href="{{ asset('/css/login.css') }}">

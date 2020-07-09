@@ -2291,7 +2291,8 @@ h2 {
     width: 100%;
     float: left;
     clear: both;
-    margin-top: 5px
+    margin-top: 5px;
+    display: block;
 }
 
 .x_content h4 {
@@ -6020,4 +6021,58 @@ ul.notifications {
     }
 }
 
-/*       Nueva Clase      */
+/*      Editar Clase      */
+.x_content{
+}
+.x_content .centrarCard{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 10px;
+}
+.x_content .card{
+    width: 20rem;
+    margin-top: 5px;
+    display: inline-block;
+}
+.botonesEditError{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*   Popup Editar Clase   */
+.mensajeConfirmacion{
+    background-color: rgb(10,10,10, .5);
+    position: fixed;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition: all 500ms ease;
+}
+.mensajeConfirmacion.active{
+    visibility: visible;
+    transform: scale(1);
+}
+.contentMensaje{
+    background-color: #fbfbfb;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #262626;
+}
+.botonesConfirmar{
+    display: flex;
+    justify-content: center;
+}
+.botonesConfirmar .btn{
+    margin: auto 30px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
