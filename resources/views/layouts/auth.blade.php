@@ -10,10 +10,16 @@
         <title>{{ config('auth.name', 'Beyond') }}</title>
 
         <!-- Fuentes -->
+<<<<<<< HEAD
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
+=======
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+        @yield('links')
+>>>>>>> master/master
         <!-- mis Estilos -->
         <link rel="stylesheet" type="text/css" href="{{ asset('/css/login.css') }}">
+
         <!-- Alertas -->
         <link rel="stylesheet" type="text/css" href="{{ asset('/alertify/css/alertify.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('/alertify/css/themes/semantic.min.css') }}">
@@ -22,19 +28,13 @@
         <link href="{{ asset('/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-        
+
     </head>
     <body >
         <div class="body">
         <div class="contenTodo text-center">
             <div class="col-ms-8 main-section">
-                <div class="model-content">
-                    <div class="col-12 user-img">
-                        <img src="{{ asset('/images/img/logoRedondo.svg') }}">
-                    </div>
                     @yield('content')
-                </div>
-                @yield('sombra')
             </div>
         </div>
     </div>

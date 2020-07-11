@@ -1,104 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../build/images/img/logoRedondo.svg" type="image/svg" />
+@extends('layouts.app')
+@section('links')
+  <!-- sweetAlert 2-->
+  <link rel="stylesheet" type="text/css" href="{{asset('/sweetAlert/dist/sweetalert2.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/themes/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/alertify.min.css')}}">
+@endsection
+@section('sidebar_menu')
+  <!-- sidebar menu -->
+  <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+      <h3>General</h3>
 
-    <title>Beyond </title>
-    <!-- mis fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="../vendors/alertify/css/alertify.min.css">
-    <link rel="stylesheet" type="text/css" href="../vendors/alertify/css/themes/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="../vendors/sweetAlert/dist/sweetalert2.min.css">
-
-
-    <!-- NProgress -->
-    <!-- <link href="../vendors/nprogress/nprogress.css" rel="stylesheet"> -->
-    <!-- iCheck -->
-    <!-- <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet"> -->
-
-    <!-- bootstrap-progressbar -->
-    <!-- <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"> -->
-    <!-- JQVMap -->
-    <!-- <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/> -->
-    <!-- bootstrap-daterangepicker -->
-    <!-- <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"> -->
-
-    <!-- Custom Theme Style -->
-    <link rel="stylesheet" type="text/css" href="../build/css/custom.min.css">
-  </head>
-
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="../indexP.html" class="site_title"><i><img src="../build/images/img/logoRedondo.svg"></i> <span>Beyond</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-
-                <img src="../build/images/img.jpg" alt="..." class="img-circle profile_img">
-
-              </div>
-              <div class="profile_info">
-
-                <span>Bienvenido,</span>
-
-                <h2>John Doe</h2>
-
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-<<<<<<< HEAD
-                <h3>Profesor</h3>
-=======
-                <h3>General</h3>
->>>>>>> master/master
-
-                <ul class="nav side-menu">
-
-                  <li><a><i class="fas fa-house-user"></i> Inicio</a></li>
-
-                  <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="nuevaClase.html"><i class="fas fa-plus"></i> Nueva Clase</a></li>
-                      <li><a href="editarClase.html"><i class="fas fa-edit"></i> Editar Clase</a></li>
-                    </ul>
-                  </li>
-
-
-                  <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Mañana</a></li>
-                      <li><a href="#">Tarde</a></li>
-                      <li><a href="#">Sabatino</a></li>
-                    </ul>
-                  </li>
-                </ul>
-
-
-              </div>
-            </div>
-            <!-- /sidebar menu -->
+      <ul class="nav side-menu">
+        <li><a href="{{route('profesor')}}"><i class="fas fa-house-user"></i> Inicio </a>
+          <ul class="nav child_menu">
+          </ul>
+        </li>
+        <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="nuevaClase.html"> Crear Clase</a></li>
+            <li><a href="editarClase.html"> Editar Clase</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i> Mis Clases <span class="fas fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="#">Mañana</a></li>
+            <li><a href="#">Tarde</a></li>
+            <li><a href="#">Sabatino</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /sidebar menu -->
+@endsection
           </div>
         </div>
 
@@ -152,11 +87,7 @@
             </nav>
           </div>
         </div>
-<<<<<<< HEAD
-        <!-- /top navigation -->  
-=======
         <!-- /top navigation -->
->>>>>>> master/master
 
         <!-- Contenido de la pagina -->
         <div class="right_col" role="main">
@@ -244,53 +175,13 @@
       </div>
     </div>
 
-
-
-
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <!-- <script src="../vendors/fastclick/lib/fastclick.js"></script> -->
-    <!-- NProgress -->
-    <!-- <script src="../vendors/nprogress/nprogress.js"></script> -->
-    <!-- Chart.js -->
-    <!-- <script src="../vendors/Chart.js/dist/Chart.min.js"></script> -->
-    <!-- gauge.js -->
-    <!-- <script src="../vendors/gauge.js/dist/gauge.min.js"></script> -->
-    <!-- bootstrap-progressbar -->
-    <!-- <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> -->
-    <!-- iCheck -->
-    <!-- <script src="../vendors/iCheck/icheck.min.js"></script> -->
-    <!-- Skycons -->
-    <!-- <script src="../vendors/skycons/skycons.js"></script> -->
-    <!-- Flot -->
-    <!-- <script src="../vendors/Flot/jquery.flot.js"></script> -->
-    <!-- <script src="../vendors/Flot/jquery.flot.pie.js"></script> -->
-    <!-- <script src="../vendors/Flot/jquery.flot.time.js"></script> -->
-    <!-- <script src="../vendors/Flot/jquery.flot.stack.js"></script> -->
-    <!-- <script src="../vendors/Flot/jquery.flot.resize.js"></script> -->
-    <!-- Flot plugins -->
-    <!-- <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script> -->
-    <!-- <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script> -->
-    <!-- <script src="../vendors/flot.curvedlines/curvedLines.js"></script> -->
-    <!-- DateJS -->
-    <!-- <script src="../vendors/DateJS/build/date.js"></script> -->
-    <!-- JQVMap -->
-    <!-- <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script> -->
-    <!-- <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script> -->
-    <!-- <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script> -->
-    <!-- bootstrap-daterangepicker -->
-    <!-- <script src="../vendors/moment/min/moment.min.js"></script> -->
-    <!-- <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script> -->
-
-    <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-    <!-- mi poput -->
+    <script src="../build/js/validar.js"></script>
     <script src="../vendors/alertify/alertify.min.js"></script>
     <script src="../vendors/sweetAlert/dist/sweetalert2.min.js"></script>
-    <script src="../build/js/validar.js"></script>
-  
   </body>
 </html>
