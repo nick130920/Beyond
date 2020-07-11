@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+ @extends('layouts.auth')
 @section('content')
   <div class="model-content">
     <div class="col-12 user-img">
@@ -7,7 +7,7 @@
     <form class="col-12" method="POST" action="{{ route('login') }}">
       @csrf
       <div class="form-group">
-        <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder=" Usuario"/>
+        <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Usuario"/>
           @error('email')
             <script>
             window.onload = function alerta() {

@@ -1,4 +1,4 @@
-*{	
+*{
 	box-sizing: border-box;
 }
 body{
@@ -7,7 +7,7 @@ body{
 	background-image: url(../images/img/fondoLogin.svg);
 	background-size: cover;
 	background-position: center center;
-	background-attachment: fixed; 
+	background-attachment: fixed;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -54,6 +54,23 @@ button{
 	top: 20px;
 	box-shadow: 0 0 2px #fff;
 }
+.borrar{
+	width: auto;
+padding: 0;
+position: relative;
+top: 0;
+box-shadow: 0 0 2px #fff0;
+color: transparent;
+background: transparent;
+border: transparent;
+}
+button.borrar:focus {
+    border: transparent;
+    box-shadow: none;
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
 .sombra{
 	display: table;
 	width: 100%;
@@ -66,7 +83,7 @@ button{
 	margin: auto;
 }
 .abajo{
-	margin-top: 10px; 
+	margin-top: 10px;
 	font-size: 13px;
 	color: white;
 	transition: all 500ms ease;

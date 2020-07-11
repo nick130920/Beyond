@@ -11,7 +11,7 @@
           <img src="{{ asset('/images/img/logoRedondo.svg') }}">
         </div>
         <div class="form-group">
-          <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nombre">
+          <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Usuario">
             @error('name')
               <script type="text/javascript">
                 window.onload = function alerta() {
@@ -50,7 +50,7 @@
         <div class="form-group">
           <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password" placeholder="Contraseña confirmación">
         </div>
-        <button type="button" onclick="return validarAntes();" class="btn btn-primary" onclick="cambio()">
+        <button type="button" onclick="return validarRegistro();" class="btn btn-primary">
           {{ __('Siguiente') }}
         </button>
         <div class="separador">
@@ -63,18 +63,18 @@
         <div class="centro">
           <h1>¿Quien eres?</h1>
           <div class="Cards">
-            <div class="tarjeta">
-              <button type="submit" class="btn btn-primary">
-                <img src="{{asset('/images/img/profesor.svg')}}" class="card-img-top" alt="...">
-              </button>
-            </div>
-            <div class="tarjeta">
-              <button type="submit" class="btn btn-primary">
+            <button name="teacher" class="borrar" type="submit" value=1>
+              <div class="tarjeta">
+                  <img src="{{asset('/images/img/profesor.svg')}}" class="card-img-top" alt="...">
+              </div>
+            </button>
+            <button name="teacher" class="borrar" type="submit" value=0>
+              <div class="tarjeta">
                 <img src="{{asset('/images/img/estudiante.svg')}}" class="card-img-top" alt="...">
-              </button>
-            </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
-  </form>
+    </form>
 @endsection

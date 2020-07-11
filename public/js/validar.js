@@ -1,7 +1,7 @@
-var nombre = document.getElementById('Usuario');
+var nombre = document.getElementById('name');
 var email = document.getElementById('email');
 var password = document.getElementById('password');
-var password2 = document.getElementById('password2');
+var password2 = document.getElementById('password-confirm');
 
 function validarSesion() {
 	if (nombre.value === null || nombre.value === '' ) {
@@ -15,19 +15,8 @@ function validarSesion() {
 			alertify.notify ("La Contraseña es obligatoria",'error', 2, function(){});
 			return false;
 		}
-		else{
-			acceder();
-		}
 	}
 	return false;
-}
-
-function acceder(){
-	window.location.href = '../Profesor/indexProfesor.html';
-}
-function cambio() {
-	document.getElementById('ocultar').style.display = 'none';
-	document.getElementById('visible').style.display = 'block';
 }
 // Registro
 
@@ -43,7 +32,8 @@ function validarRegistro(){
 		return false;
 	}
 	else{
-		window.location.href = '../Sesion/registro2.html';
+		document.getElementById('ocultar').style.display = 'none';
+		document.getElementById('visible').style.display = 'block';
 	}
 
 	return false;

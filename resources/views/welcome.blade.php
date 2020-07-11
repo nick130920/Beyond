@@ -1,7 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <title>Beyond</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Beyond') }}</title>
     <link rel="icon" type="image/svg" href="{{asset('images/img/logoRedondo.svg')}}">
 
     <!-- mis Estilos -->
@@ -12,7 +18,7 @@
 
     <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    
+
 </head>
 <body>
   <div class="encabezado">
@@ -20,8 +26,38 @@
       <h1>Beyond</h1>
       <nav>
         <ul>
-          <li><a href="{{ route('register') }}" >Registro</a></li>
-          <li><a href="{{ route('login') }}" >Inicia Sesión</a></li>
+          <!-- Authentication Links -->
+          @guest
+            @if (Route::has('register'))
+              <li>
+                <a href="{{ route('register') }}">{{ __('Registro') }}</a>
+              </li>
+            @endif
+            <li>
+              <a href="{{ route('login') }}">{{ __('Inicia Sesión') }}</a>
+            </li>
+          @else
+            <li>
+              <a href="{{ route('home') }}">{{ __('Home') }}</a>
+            </li>
+            <li>
+                <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar sesión') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+          @endguest
         </ul>
       </nav>
     </div>
@@ -83,7 +119,7 @@
       <div class="Botones">
           <ul><a href="#">Saber más</a></ul>
       </div>
-      
+
   </div>
 </div>
   <div class="footer">
