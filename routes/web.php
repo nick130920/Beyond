@@ -31,8 +31,9 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   Route::post('/class/{id}/edit', 'ClassController@update'); //Actualizar producto
   Route::delete('/class/{id}', 'ClassController@destroy'); //Eliminar producto
 
-  Route::get('/class/{id}/resource', 'ResourceController@index'); //listado
-  Route::post('/class/{id}/resource', 'ResourceController@store'); //registrar
-  Route::delete('/class/{id}/resource', 'ResourceController@destroy'); //Eliminar Resource
-  Route::get('/class/{id}/resource/select/{resource}', 'ResourceController@select'); //Destacar resource
+});
+Route::middleware(['auth'])->group(function(){
+  Route::get('/{id}/profile', 'ProfileController@index'); //listado
+  Route::post('/{id}/profile', 'ProfileController@store'); //registrar
+  Route::delete('/{id}/profile', 'ProfileController@destroy'); //Eliminar Resource
 });

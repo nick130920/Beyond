@@ -68,3 +68,7 @@
     </div>
   </div>
 @endsection
+@section('scripts')
+  <!-- mi poput -->
+  <script src="{{asset('/js/popup.js')}}"></script>
+@endsection

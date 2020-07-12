@@ -59,7 +59,7 @@
                     <label class="col-form-label col-md-3 col-sm-3 label-align"  for="first-name">Nombre de la clase <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="nameClass" class="form-control @error('nameClass') is-invalid @enderror" name="nameClass" value="{{ old('nameClass') }}">
+                      <input type="text" id="nameClass" class="form-control @error('nameClass') is-invalid @enderror" name="nameClass">
                         @error('nameClass')
                           <script type="text/javascript">
                             window.onload = function alerta() {
@@ -75,19 +75,37 @@
                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Descripción de la clase <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="descripcionClase" class="form-control ">
+                      <input type="text" id="descriptionClass" class="form-control @error('descriptionClass') is-invalid @enderror" name="descriptionClass">
                     </div>
                   </div>
                   <div class="ln_solid"></div>
+                  <input type="hidden" name="code" value="@php
+                    $key = '';
+                    $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+                    $max = strlen($pattern)-1;
+                    for($i=0;$i < 6;$i++) $key .= $pattern{mt_rand(0,$max)};
+                    echo $key;
+                  @endphp">
                   <div class="item form-group">
                     <div class="col-md-6 col-sm-6 offset-md-3">
                       <a id="blanco" class="btn btn-primary" type="button">Cancel</a>
                       <button class="btn btn-primary" type="reset">Reset</button>
-                      <button type="submit" onclick=" return validarClaseNueva();" class="btn btn-success">Submit</button>
+                      <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success">Submit</button>
                     </div>
                   </div>
 
                 </form>
+                @if ($errors->any())
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  </div>
+                @endif
               </div>
 
             </div>

@@ -24,5 +24,4 @@ class groups extends Model
 	public function works(){
 		return $this->hasManyThrough('App\work', 'App\theme');
 	}
-ñ
 }
