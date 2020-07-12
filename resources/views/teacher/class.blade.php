@@ -22,13 +22,6 @@
             <li><a href="{{route('class')}}"> Editar Clase</a></li>
           </ul>
         </li>
-        <li><a><i class="fas fa-chalkboard-teacher"></i> Mis Clases <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            <li><a href="#">Mañana</a></li>
-            <li><a href="#">Tarde</a></li>
-            <li><a href="#">Sabatino</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
   </div>

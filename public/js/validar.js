@@ -40,8 +40,8 @@ function validarRegistro(){
 }
 
 // Validar Nueva Clase
-var nombreClase = document.getElementById('nombreClase');
-var	descripcion = document.getElementById('descripcionClase');
+var nombreClase = document.getElementById('nameClass');
+var	descripcion = document.getElementById('descriptionClass');
 
 var pulsado = false;
 jornada = document.getElementsByName('jornada');
@@ -53,22 +53,9 @@ jornada = document.getElementsByName('jornada');
 			return false;
 		}
 		else{
-			for(var i=0;i < jornada.length;i++){
-				if(jornada[i].checked){
-					pulsado = true;
-					break;
-				}
-			}
-			if (!pulsado) {
-				alertify.set('notifier','position', 'top-right');
-				alertify.notify ("No a seleccionado la jornada",'error', 5, function(){});
-				return false;
-			}
-			else{
-				Swal.fire(
-					'Clase creada con exito',
-  					'Click para continuar',
-  					'success')
-			}
+			Swal.fire(
+				'Clase creada con exito',
+				'Click para continuar',
+				'success')
 		}
 	}
