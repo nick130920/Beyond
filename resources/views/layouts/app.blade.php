@@ -115,5 +115,8 @@
   <script src="{{asset('/js/custom.min.js')}}"></script>
   <!-- mi poput -->
   <script src="{{asset('/js/popup.js')}}"></script>
+  <script src="{{asset('/js/validar.js')}}"></script>
+  <script src="{{asset('/alertify/alertify.min.js')}}"></script>
+  <script src="{{asset('/sweetAlert/dist/sweetalert2.min.js')}}"></script>
 </body>
 </html>

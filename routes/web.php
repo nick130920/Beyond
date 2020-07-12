@@ -22,11 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Vistas Usuario Profesor
 Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')->group(function(){
-  // Route::get('/','TeacherController@index') //home Teacher7
-  Route::view('/','teacher');
-  Route::get('/class', 'ClassController@index'); //listado
-  Route::get('/class/create', 'ClassController@create'); //Creacion de classo
-  Route::post('/class', 'ClassController@store'); //registrar
+  Route::get('/','TeacherController@index')->name('teacher'); //home Teacher
+
+  Route::get('/class','ClassController@index')->name('class');//Vistas de las clases
+  Route::get('/class/create', 'ClassController@create')->name('/create/class'); //Creacion de class
+  Route::post('/class', 'ClassController@store')->name('/class/store'); //registrar la creación
   Route::get('/class/{id}/edit', 'ClassController@edit'); //formulario edición
   Route::post('/class/{id}/edit', 'ClassController@update'); //Actualizar producto
   Route::delete('/class/{id}', 'ClassController@destroy'); //Eliminar producto

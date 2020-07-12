@@ -1,4 +1,4 @@
-*{  
+*{
     font-family: 'Noto Sans TC', sans-serif;
 }
 .daterangepicker .ranges li {
@@ -9,6 +9,9 @@
     background: #536A7F;
     border: 1px solid #536A7F;
     color: #fff
+}
+#blanco{
+	color: #fff;
 }
 
 .daterangepicker .input-mini {
@@ -5925,7 +5928,7 @@ ul.notifications {
     font-size: 20px;
     margin: 20px 0;
     font-weight: bold;
-    transition: all 500ms ease; 
+    transition: all 500ms ease;
 }
 .fa-chevron-down{
     float: right;

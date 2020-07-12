@@ -9,8 +9,8 @@
         {{-- YA ESTA EN INICIO --}}
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{route('login')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
-            <li><a href="editarClase.html"><i class="fas fa-edit"></i> Editar Clase</a></li>
+            <li><a href="{{route('class')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
+            {{-- <li><a href="{{route('/Teacher/class/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i> Editar Clase</a></li> --}}
           </ul>
         </li>
 
