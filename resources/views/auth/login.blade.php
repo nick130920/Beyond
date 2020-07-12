@@ -1,4 +1,4 @@
- @extends('layouts.auth')
+@extends('layouts.auth')
 @section('content')
   <div class="model-content">
     <div class="col-12 user-img">
