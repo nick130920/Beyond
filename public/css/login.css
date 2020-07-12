@@ -1,30 +1,20 @@
-*{
+*{	
 	box-sizing: border-box;
-<<<<<<< Updated upstream
 }
 body{
 }
 .body{
 	background-image: url(../images/img/fondoLogin.svg);
 	background-size: cover;
-	background-position: center center;
-	background-attachment: fixed;
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	display: table;
-=======
-}
-.body{
-	background-image: url(../images/img/fondoLogin.svg);
-	height: 100vh;
-	overflow: hidden;
->>>>>>> Stashed changes
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .contenTodo{
 	position: relative;
-	display: table-cell;
-	vertical-align: middle;
 }
 .user-img img{
 	width: 100px;
@@ -62,23 +52,6 @@ button{
 	top: 20px;
 	box-shadow: 0 0 2px #fff;
 }
-.borrar{
-	width: auto;
-padding: 0;
-position: relative;
-top: 0;
-box-shadow: 0 0 2px #fff0;
-color: transparent;
-background: transparent;
-border: transparent;
-}
-button.borrar:focus {
-    border: transparent;
-    box-shadow: none;
-    outline: 0px dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-}
-
 .sombra{
 	display: table;
 	width: 100%;
@@ -91,7 +64,7 @@ button.borrar:focus {
 	margin: auto;
 }
 .abajo{
-	margin-top: 10px;
+	margin-top: 10px; 
 	font-size: 13px;
 	color: white;
 	transition: all 500ms ease;
@@ -163,63 +136,67 @@ form p{
 	font-size: 20px;
 	padding: 15px;
 }
-<<<<<<< Updated upstream
-=======
-/*     Primer Registro     */
-.registro{
-	background-color: rgb(26, 95, 226, .6);
-	padding:0 20px 4px 20px;
-	border-radius: 15px;
-	box-shadow: 0px 0px 3px #fff;
-	position: relative;
-	top: -50px;
-}
-/*        Segundo registro      */
 
-.contentRegistro2{
-	width: 700px;
-}
-.mainRegistro2{
-	margin-top: 20%;
-	background-color: rgb(250,250,250, .2);
-	padding:5px 10px 30px 10px;
-	border-radius: 15px;
-}
->>>>>>> Stashed changes
-.Cards{
-	display: flex;
-	justify-content: center;
-	top: 30px;
-}
-.tarjeta{
-	margin: 0 20px;
-	width: 350px;
-	border-radius: 50%;
-	padding: 10px;
-	box-shadow: 0 0 5px #fff;
-	opacity: .9;
-}
-<<<<<<< Updated upstream
-.centro{
+/*         Estilos para los roles             */
+
+
+.registro2{
 	background-color: rgb(26, 95, 226, .5);
-	padding: 10px 20px 30px 20px;
+	padding: 30px;
 	border-radius: 15px;
 	box-shadow: 0px 0px 3px #fff;
 	width: 800px;
-	position: relative;
-	margin: auto;
 }
-.centro h1{
+.registro2 h1{
 	font-size: 50px;
 	text-shadow:0 0 1px #fff;
-<<<<<<< HEAD
-=======
-.registro2{
-	margin-top:0; 
+}
+.tarjetas{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	position: relative;
+}
+.rol{
+	width: 350px;
+	padding: 10px;
+	border-radius: 50%;
+	position: relative;
+}
+.rol ul{
+	list-style: none;
+	margin: 0;
 	padding: 0;
->>>>>>> Stashed changes
 }
-=======
+.rol1{
+	display: block;
+	width: 100%;
+	position: relative;
 }
->>>>>>> master/master
+
+.rol ul li button{
+	position: relative;
+	width: 100%;
+	padding: 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	opacity: .9;
+}
+.rol ul li button::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 5px solid rgb(250,250,250);
+	border-radius: 50%;
+	transform: scale(0);
+	opacity: 0;
+	transition: all 500ms ease;
+}
+.rol ul li button:hover:before{
+	transform: scale(1.08);
+	opacity: 1;
+	padding: 10px;
+}

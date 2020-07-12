@@ -1,4 +1,4 @@
-*{
+*{  
     font-family: 'Noto Sans TC', sans-serif;
 }
 .daterangepicker .ranges li {
@@ -9,9 +9,6 @@
     background: #536A7F;
     border: 1px solid #536A7F;
     color: #fff
-}
-#blanco{
-	color: #fff;
 }
 
 .daterangepicker .input-mini {
@@ -2020,7 +2017,6 @@ a:hover,a:focus {
 .toggle {
     float: left;
     margin: 0;
-    width: 70px
 }
 
 .toggle a {
@@ -5928,7 +5924,7 @@ ul.notifications {
     font-size: 20px;
     margin: 20px 0;
     font-weight: bold;
-    transition: all 500ms ease;
+    transition: all 500ms ease; 
 }
 .fa-chevron-down{
     float: right;
@@ -5945,16 +5941,19 @@ ul.notifications {
     top:0;
     bottom: 0;
     left: 0;
+    transform: translateY(-50px);
     right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0,0,0, .5);
-    visibility: hidden;
     z-index: 5000;
+    transition: all 1000ms ease;
 }
 .overlay.active{
-    visibility: visible;
+    opacity: 1;
+}
+.overlay.inactive{
+    display: none;
 }
 .popup{
     background-image: url(../images/img/fondopopup1.svg);
@@ -5962,19 +5961,12 @@ ul.notifications {
     background-attachment: fixed;
     width: 65%;
     padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 2px rgb(0,0,0, .5);
 
-    transition: all 500ms ease;
+    transition: all 1000ms ease;
     transform: scale(0.7);
     opacity: 0;
-}
-.separador1{
-    display: block;
-    padding: 8px 10px 0 10px;
-    background-color: rgb(26, 95, 226,.85);
-    color:white;
-    box-shadow: 0 0 2px 0 #1A5FE2;
-    border-radius: 10px;
-
 }
 .textoPopup{
     background-color: rgb(26, 95, 226, .9);
@@ -5991,17 +5983,6 @@ ul.notifications {
 .btn-next{
     float: right;
     color: white;
-}
-.btn-cerrar{
-    font-size: 20px;
-    line-height: 20px;
-    display: block;
-    text-align: right;
-    color: #bbbbbb;
-    transition: all 500ms ease;
-}
-.btn-cerrar:hover{
-    color: rgb(50,50,50,.5);
 }
 .popup.active{
     transform: scale(1);
@@ -6041,12 +6022,13 @@ ul.notifications {
 }
 .botonesEditError{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
-
+.fas.fa-times{
+    width: 16px;
+}
 /*   Popup Editar Clase   */
 .mensajeConfirmacion{
-    background-color: rgb(10,10,10, .5);
     position: fixed;
     z-index: 5000;
     display: flex;
@@ -6057,18 +6039,26 @@ ul.notifications {
     left: 0;
     right: 0;
     visibility: hidden;
-    transform: scale(0);
+    transform: scale(1);
     transition: all 500ms ease;
 }
 .mensajeConfirmacion.active{
     visibility: visible;
     transform: scale(1);
+    background-color: rgb(10,10,10,.5);
 }
 .contentMensaje{
     background-color: #fbfbfb;
     padding: 20px 10px;
     border-radius: 10px;
     box-shadow: 0 0 3px #262626;
+    transform: scale(0);
+    transition: all 500ms ease;
+    visibility: hidden;
+}
+.contentMensaje.active{
+    transform: scale(1);
+    visibility: visible;
 }
 .botonesConfirmar{
     display: flex;
@@ -6078,4 +6068,132 @@ ul.notifications {
     margin: auto 30px;
     padding: 5px 20px;
     cursor: pointer;
+}
+
+/*      Clase        */
+
+
+/*   Novedades   */
+.contenidoClase{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 3px #A4A0A0;
+    border-radius: 10px;
+}
+.imgTexto{
+    background-image: url(../images/img/jornadaM.svg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 250px;
+    position: relative;
+    padding: 5px;
+}
+.imgTexto h3{
+    position: absolute;
+    font-weight: 600;
+    color: #FBFBFB;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.contenido{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.contenido .pendientes{
+    box-shadow: 0 0 3px #A4A0A0;
+    display: inline-block;
+    border-radius: 10px;
+    max-height: 120px;
+    padding: 10px;
+    position: relative;
+}
+.contenido .envios{
+    display: block;
+    border-radius: 10px;
+    width: 75%;
+}
+.enviarTitulo{
+    display: block;
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #A4A0A0;
+}
+.comentario{
+    display: block;
+    position: relative;
+    width: 100%;
+    border:none;
+    padding: 10px;
+    height: 150px;
+}
+.indicaciones{
+    display: block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+    height: 80px;
+    position: relative;
+    transition: all 600ms ease;
+    box-shadow: 0 0 3px #A4A0A0;
+}
+.indicaciones.active{
+    overflow: hidden;
+    height: 0;
+    padding: 0 10px;
+}
+
+/*      Input File       */
+.btnComentarios{
+    display: flex;
+    justify-content: space-between;
+}
+.inputFile{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+.inputFileInput{
+    display: none;
+}
+.inputFile .btn-primary{
+    cursor: pointer;
+    width: 150px;
+    z-index: 1;
+}
+.inputFile .btn.btn-primary:hover{
+    width: 150px;
+    display: block;
+}
+.btn.btn-secondary {
+    position: relative;
+    left: -50%;
+    transition: all 500ms ease;
+}
+.btn.btn-secondary.active{
+    left: 0;
+}
+.inputInverso .btn.btn-secondary{
+    order: 1;
+}
+.mensaje{
+    overflow: hidden;
+    height: 0;
+    transition: all 600ms ease;
+}
+.camcelarEnviar > a{
+    color: white;
+}
+.mensaje.active{
+    display: block;
+    height: 100%;
+}
+.btn.btn-primary.blanco1{
+    display: block;
+    width: 100px;
+    color:#fff !important;
 }

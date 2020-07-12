@@ -23,8 +23,12 @@
 <body>
   <div class="encabezado">
     <div class="navBar">
-      <h1>Beyond</h1>
-      <nav>
+      <div class="titulo">
+        <h1>Beyond</h1>
+      </div>
+
+      <div class="enlaces">
+        <nav>
         <ul>
           <!-- Authentication Links -->
           @guest
@@ -60,6 +64,8 @@
           @endguest
         </ul>
       </nav>
+      </div>
+      
     </div>
 
     <div class="subEncabezado">

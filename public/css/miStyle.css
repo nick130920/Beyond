@@ -8,98 +8,97 @@
 .encabezado{
 	width: 100%;
 	background-image: url(../images/img/fondo1.2.svg);
-	background-size: 100%;
+	background-size: cover;
 	background-attachment: fixed;
 	display: block;
 }
 
 /*---------------------- Menu ----------------------------*/
 .navBar{
-	width: 100%;
-	height: 100px;
 	position: relative;
-	display: table;
-	border-bottom: 1.5px solid white;
+	display:flex;
+	align-items: center;
+	padding: 30px 20px;
+	flex-wrap: wrap;
+	border-bottom: 2px solid #fbfbfb;
 }
-.navBar h1{
-	display: table-cell;
-	vertical-align: middle;
+.titulo{
+	display: flex;
+	align-items: center;
+	width: 250px;
 	color: white;
-	padding: 0 20px;
-	text-shadow: 0px 0px 30px #09547A;
+	text-shadow: 0 0 10px #1A60E2;
+	text-align: center;
 }
-.navBar nav ul{
-	position: absolute;
-	top: 50%;
-	right:-10%;
-	transform: translate(-50%, -50%);
+.enlaces{
+	display:flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: calc(100% - 250px);
+}
+.enlaces nav{
+	display: inline-block;
+	float: right;
+}
+.enlaces nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
 	display: flex;
 }
-.navBar nav ul li{
+.enlaces nav ul li{
 	list-style: none;
 }
-.navBar nav ul li a{
+.enlaces nav ul li a{
 	position: relative;
 	display: block;
-	margin: 20px 0;
-	text-decoration: none;
+	padding: 10px 20px;	
+	margin: 0 10px;
+	font-size: 20px;
+	font-weight: bold;
 	color: white;
-	font-size: 25px;
 	transition: all 500ms ease;
-	padding: 5px 20px;
+	text-align: center;
 }
-.navBar nav ul li a::before{
+.enlaces nav ul li a:hover{
+	text-decoration: none;
+}
+
+/*      Estilos hover del menu    */
+.enlaces nav ul li a::before{
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border-top: 1px solid #1A5FE2;
-	border-bottom: 1px solid #1A5FE2;
-	transform: scaleY(1.5);
+	border-top: 2px solid #1A60E2;
+	border-bottom: 2px solid #1A60E2;
+	transform: scaleY(2);
 	opacity: 0;
 	transition: all 500ms ease;
-	z-index: -1;
 }
-.navBar nav ul li a:hover:before{
-	transform: scaleY(1.2);
+.enlaces nav ul li a:hover:before{
+	transform: scaleY(1);
 	opacity: 1;
 }
 
-.navBar nav ul li a::after{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background:rgb(26, 95, 226, .5);
-	transform: scale(0);
-	transition: all 500ms ease;
-	z-index: -1;
-}
-.navBar nav ul li a:hover:after{
-	transform: scale(1);
-}
 /*      Seccion de contactanos        */
 
 .subEncabezado{
 	margin: auto ;
-	height: 560px;
 	width: 90%;
-	padding: 40px;
-	display: table;
+	padding: 130px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
 }
 .subEncabezado .imagen{
-	display: table-cell;
-	vertical-align: middle;
-	width: 25%;
+	width: 300px;
 }
 .subEncabezado .texto{
-	display: table-cell;
-	vertical-align: middle;
-	width: 60%;
+	width: 800px;
 	text-align: center;
 }
 .texto h1{
@@ -107,7 +106,7 @@
 	color:white;
 }
 .texto p{
-	font-size: 35px;
+	font-size: 28px;
 	color: white;
 }
 .texto a{
@@ -212,14 +211,11 @@
 	transform: scaleY(1);
 }
 .footer	{
-	display: table;
-	background-color: #202A43;
+	background-color: #1A60E2;
 	width: 100%;
-}
-.footer p{
-	display: table-cell;
-	vertical-align: middle;
-	padding: 10px;
 	color: white;
-	text-align: center;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
 }

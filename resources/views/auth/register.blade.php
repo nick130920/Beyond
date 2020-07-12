@@ -60,21 +60,33 @@
       </div>
     </div>
     <div id="visible" style="display:none;">
-        <div class="centro">
+      <div class="registro2">
           <h1>¿Quien eres?</h1>
-          <div class="Cards">
-            <button name="teacher" class="borrar" type="submit" value=1>
-              <div class="tarjeta">
-                  <img src="{{asset('/images/img/profesor.svg')}}" class="card-img-top" alt="...">
+          <div class="tarjetas">
+            <div class="rol">
+              <div class="rol1">
+                <ul>
+                  <li>
+                    <button name="teacher" class="borrar" type="submit" value=1>
+                    <img src="{{asset('/images/img/profesor.svg')}}" class="card-img-top" alt="...">
+                    </button>
+                  </li>
+                </ul>
               </div>
-            </button>
-            <button name="teacher" class="borrar" type="submit" value=0>
-              <div class="tarjeta">
-                <img src="{{asset('/images/img/estudiante.svg')}}" class="card-img-top" alt="...">
+            </div>
+            <div class="rol">
+              <div class="rol1">
+                <ul>
+                  <li>
+                    <button name="teacher" class="borrar" type="submit" value=0>
+                    <img src="{{asset('/images/img/estudiante.svg')}}" class="card-img-top" alt="...">
+                    </button>
+                  </li>
+                </ul>
               </div>
-            </button>
+            </div>
           </div>
-        </div>
+          </div>
       </div>
     </form>
 @endsection

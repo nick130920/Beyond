@@ -10,13 +10,9 @@
         <title>{{ config('auth.name', 'Beyond') }}</title>
 
         <!-- Fuentes -->
-<<<<<<< HEAD
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
-=======
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
         @yield('links')
->>>>>>> master/master
         <!-- mis Estilos -->
         <link rel="stylesheet" type="text/css" href="{{ asset('/css/login.css') }}">
 
