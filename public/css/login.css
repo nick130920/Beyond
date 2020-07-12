@@ -1,6 +1,5 @@
 *{
 	box-sizing: border-box;
-<<<<<<< Updated upstream
 }
 body{
 }
@@ -13,13 +12,12 @@ body{
 	height: 100%;
 	position: absolute;
 	display: table;
-=======
+
 }
 .body{
 	background-image: url(../images/img/fondoLogin.svg);
 	height: 100vh;
 	overflow: hidden;
->>>>>>> Stashed changes
 }
 .contenTodo{
 	position: relative;
@@ -163,8 +161,6 @@ form p{
 	font-size: 20px;
 	padding: 15px;
 }
-<<<<<<< Updated upstream
-=======
 /*     Primer Registro     */
 .registro{
 	background-color: rgb(26, 95, 226, .6);
@@ -185,7 +181,6 @@ form p{
 	padding:5px 10px 30px 10px;
 	border-radius: 15px;
 }
->>>>>>> Stashed changes
 .Cards{
 	display: flex;
 	justify-content: center;
@@ -199,7 +194,6 @@ form p{
 	box-shadow: 0 0 5px #fff;
 	opacity: .9;
 }
-<<<<<<< Updated upstream
 .centro{
 	background-color: rgb(26, 95, 226, .5);
 	padding: 10px 20px 30px 20px;
@@ -212,14 +206,10 @@ form p{
 .centro h1{
 	font-size: 50px;
 	text-shadow:0 0 1px #fff;
-<<<<<<< HEAD
-=======
+
+}
 .registro2{
-	margin-top:0; 
+	margin-top:0;
 	position: relative;
 	padding: 0;
->>>>>>> Stashed changes
 }
-=======
-}
->>>>>>> master/master

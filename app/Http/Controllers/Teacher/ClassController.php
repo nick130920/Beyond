@@ -13,7 +13,9 @@ use App\group_member;
 class ClassController extends Controller
 {
   public function index(){
-    return view('/teacher/class');
+    $classes = Groups::all();
+
+    return view('/teacher/class')->with(compact('classes'));
   }
   public function create(){
     return view('/teacher/create');
@@ -33,6 +35,11 @@ class ClassController extends Controller
    $member->profile_id	= Auth::user()->id;
    $member->save();
    return redirect('/teacher/class');
+  }
+  public function edit($id)
+  {
+
+    return redirect('/teacher/class/edit');
   }
 
 }
