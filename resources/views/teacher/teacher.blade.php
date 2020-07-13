@@ -53,7 +53,7 @@
       <div class="popup" id="popup">
         <a class="btn-cerrar" id="btn-cerrar"><i class="fas fa-times"></i></a>
         <div class="textoPopup">
-          <h1>Hola Profesor {{ Auth::user()->name }}</h1>
+          <h1>Hola Profesor {{ $user->first_name }}</h1>
           <h2>Beyond te la bienvenida</h2>
           <p></p>
         </div>

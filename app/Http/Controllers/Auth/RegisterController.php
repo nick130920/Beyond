@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = route('teacher');
         $this->middleware('guest');
     }
 
@@ -50,7 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'alpha', 'min:6', 'max:255'],
+            'name' => ['required', 'string', 'min:6', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'teacher' => ['required', 'boolean'],

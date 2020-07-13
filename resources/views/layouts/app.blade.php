@@ -35,11 +35,11 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="{{asset('/images/img.jpg')}}" alt="..." class="img-circle profile_img">
+              <img src="{{ $user->image}}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Bienvenido</span>
-              <h2>{{ Auth::user()->name }}</h2>
+              <h2>{{ $user->first_name }}</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -57,8 +57,8 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset('/images/img.jpg')}}" alt="">
-                    {{ Auth::user()->name }}
+                    <img src="{{ $user->image}}" alt="">
+                    {{ $user->first_name }}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -79,9 +79,9 @@
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                     <li class="nav-item">
                       <a class="dropdown-item">
-                        <span class="image"><img src="{{asset('/images/img.jpg')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ $user->image}}" alt="Profile Image" /></span>
                         <span>
-                          <span>{{ Auth::user()->name }}</span>
+                          <span>{{ $user->first_name }}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">

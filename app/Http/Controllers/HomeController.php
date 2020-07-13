@@ -41,7 +41,7 @@ class HomeController extends Controller
         }elseif ($cuanto>3) {
           $profile->second_surname= $name[3];
         }
-        $profile->users = $id_user;
+        $profile->user_id = $id_user;
         $profile->save();
       }else {
 

@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\profile;
+use App\user;
+
 
 class TeacherController extends Controller
 {
   public function index()
   {
-    return view('/teacher/teacher');
+    $user = User::find(Auth::user()->id)->profile;
+    return view('/teacher/teacher')->with(compact('user'));
   }
 }

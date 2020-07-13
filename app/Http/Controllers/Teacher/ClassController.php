@@ -9,16 +9,18 @@ use App\Http\Requests\ValidarFormularioRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Groups;
 use App\group_member;
+use App\user;
 
 class ClassController extends Controller
 {
   public function index(){
+    $user = User::find(Auth::user()->id)->profile;
     $classes = Groups::all();
-
-    return view('/teacher/class')->with(compact('classes'));
+    return view('/teacher/class')->with(compact('classes', 'user'));
   }
   public function create(){
-    return view('/teacher/create');
+    $user = User::find(Auth::user()->id)->profile;
+    return view('/teacher/create')->with(compact('user'));
   }
   public function store(ValidarFormularioRequest $request){
    //registrar la nueva clase en la bd
@@ -38,7 +40,6 @@ class ClassController extends Controller
   }
   public function edit($id)
   {
-
     return redirect('/teacher/class/edit');
   }
 

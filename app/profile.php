@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class profile extends Model
 {
@@ -19,7 +20,6 @@ class profile extends Model
 		return $this->hasMany('App\news');
 	}
 	public function user(){
-		return $this->hasOne('App\User');
+		return $this->belongsTo('App\User');
 	}
-
 }

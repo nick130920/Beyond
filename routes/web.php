@@ -34,6 +34,6 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
 });
 Route::middleware(['auth'])->group(function(){
   Route::get('/{id}/profile', 'ProfileController@index'); //listado
-  Route::post('/{id}/profile', 'ProfileController@store'); //registrar
-  Route::delete('/{id}/profile', 'ProfileController@destroy'); //Eliminar Resource
+  Route::post('/{id}/profile', 'ProfileController@edit'); //editar
+  Route::delete('/{id}/profile', 'ProfileController@destroy'); //Eliminar
 });
