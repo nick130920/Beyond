@@ -51,18 +51,10 @@
     <!-- pop up -->
     <div class="overlay" id="overlay">
       <div class="popup" id="popup">
-        <a class="btn-cerrar" id="btn-cerrar"><i class="fas fa-times"></i></a>
         <div class="textoPopup">
           <h1>Hola Profesor {{ $user->first_name }}</h1>
           <h2>Beyond te la bienvenida</h2>
           <p></p>
-        </div>
-        <div class="separador1">
-          <input type="checkbox" class="formCheck" name="forget">
-          <label class="checkForm">No volver a mostrar</label>
-          <a class="btn-next" id="btn-next" href="">
-            <i class="fas fa-chevron-right"></i>
-          </a>
         </div>
       </div>
     </div>
