@@ -1437,6 +1437,8 @@
     border-bottom: 2px solid #D9DEE4;
     margin-bottom: 10px;
     width: 100%;
+    height: 57px;
+    justify-content: center;
     position: relative
 }
 
@@ -1476,7 +1478,7 @@
 }
 
 body .container.body .right_col {
-    background: #F7F7F7
+    background: #F7F7F7;
 }
 
 .nav-md .container.body .right_col {
@@ -1662,6 +1664,8 @@ body {
 }
 nav{
     background-color: rgb(250,250,250, .5);
+    justify-content: center;
+    height: 57px;
 }
 
 .main_container .top_nav {
@@ -1683,6 +1687,8 @@ nav{
     width: 100%;
     float: left;
     display: block;
+    position: relative;
+    top: -15px;
 }
 
 .page-title .title_left h3 {
@@ -2253,7 +2259,8 @@ h2 {
     -moz-column-break-inside: avoid;
     column-break-inside: avoid;
     opacity: 1;
-    transition: all .2s ease
+    top: -15px;
+    transition: all .2s ease;
 }
 
 .x_title {
@@ -6151,6 +6158,9 @@ ul.notifications {
     display: flex;
     justify-content: space-between;
 }
+.btn.btn-secondary.active{
+    display: none;
+}
 .inputFile{
     display: flex;
     justify-content: flex-start;
@@ -6193,8 +6203,6 @@ ul.notifications {
     height: 100%;
 }
 .btn.btn-primary.blanco1{
-    display: block;
-    width: 100px;
     color:#fff !important;
 }
 
@@ -6203,7 +6211,6 @@ ul.notifications {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px;
 }
 .infoPerfil{
     width: 250px;
@@ -6212,6 +6219,7 @@ ul.notifications {
     max-height: 340px;
     padding: 10px;
     text-align: justify;
+    margin: 10px 0;
 }
 .infoPerfil img{
     width: 100%;
@@ -6283,12 +6291,20 @@ ul.notifications {
 }
 .infoClase .titulo{
     display: flex;
+    position: relative;
     justify-content: center;
     color: rgb(25,96,226);
     width: 100%;
+    top: -15px;
+}
+.titulo h1{
+    font-weight: 900;
+    text-align: center;
 }
 .infoClase .clasesPerfil{
     display: flex;
+    position: relative;
+    top: -20px;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
@@ -6368,7 +6384,7 @@ ul.notifications {
     opacity: 0;
 }
 .cambiarFoto input[type="file"]{
-    display: none; 
+    display: none;
 }
 
 
@@ -6411,5 +6427,160 @@ ul.notifications {
     width: 50%;
     flex-wrap: wrap;
     margin: auto;
-    font-family:inherit !important;
+    font-family:'Arial' !important;
+}
+
+
+
+/*-------------------------------------- Estudiante -------------------------------------*/
+.novedadInexistente{
+    display: none;
+}
+.novedadExistente{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(26,26,26, .4);
+}
+.imagenNovedad{
+    width: 250px;
+    padding: 10px;
+    display: block;
+}
+.imagenNovedad img{
+    border-radius: 10px;
+}
+.contenidoNovedad{
+    width: calc(100% - 250px);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.contenidoNovedad .textoNovedad{
+    width: calc(100% - 87px);
+    padding-left: 15px;
+}
+.contenidoNovedad .botonesNovedad{
+    width: 87px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 20px;
+}
+.contenidoNovedad .botonesNovedad a, .contenidoNovedad .botonesNovedad button{
+    padding:5px 10px;
+    border: 0;
+    color: inherit;
+    background-color: inherit;
+    border-radius: 50%;
+    transition: all 250ms ease;
+}
+.contenidoNovedad .botonesNovedad a:hover{
+    color: #5991F9;
+}
+.contenidoNovedad .botonesNovedad button:hover{
+    color: #F92E56;
+    font-weight: 600;
+}
+
+/*  Segundo popup     */
+.overlay2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgb(26,26,26, .5);
+    z-index: -5000;
+    transition: all 500ms ease;
+}
+.overlay2.active{
+    opacity: 1;
+    z-index: 10000;
+}
+.btn.btn-danger.blanco1{
+    color: white !important;
+}
+.right_col{
+    min-height: 657px !important;
+}
+
+.popup2{
+    display: block;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 1px rgb(26,26,26, .5);
+    width: 30%;
+    min-width: 200px;
+}
+.texto2{
+    padding:0 10px;
+}
+.texto2 h2{
+    color: #000;
+    font-size: 25px;
+}
+.texto2 p{
+    color: #000;
+    font-size: 13px;
+}
+.texto2 form input{
+    width: 100%;
+    padding: 5px;
+    border:2px solid rgb(25,96,226, .5);
+    margin: 10px 0;
+}
+.btn.boton1{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(26,26,26, .5);
+    border:2px solid rgb(250,250,250, .5);
+    color: white !important;
+    position: relative;
+    bottom: 0;
+    transition: all 200ms ease;
+}
+.btn.boton1:hover{
+    bottom: 2px;
+    border:2px solid rgb(26,26,26, .8) ;
+    background-color: rgb(26,26,26, .8);
+    box-shadow: 0 5px 5px 0px rgb(26,26,26, .5);
+}
+.btn.boton2{
+    cursor: pointer;
+    background-color: rgb(25,96,226, .5);
+    border:2px solid rgb(250,250,250, .5);
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    transition: all 200ms ease;
+}
+.btn.boton2:hover{
+    bottom: 2px;
+    border:2px solid rgb(25,96,226);
+    background-color: rgb(25,96,226, .8);
+    box-shadow: 0 5px 5px 0px rgb(25,96,226, .5);
+}
+.tarjetasEstudiante{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tarjetasEstudiante .card{
+    display: block;
+    margin: 10px;
+}
+@media screen and (max-width: 700px){
+    .tarjetasEstudiante{
+        display: flex;
+        justify-content: space-around;
+    }
 }

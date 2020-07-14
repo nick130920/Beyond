@@ -88,7 +88,7 @@
                   @endphp">
                   <div class="item form-group">
                     <div class="col-md-6 col-sm-6 offset-md-3">
-                      <a id="blanco" class="btn btn-primary" type="button">Cancel</a>
+                      <a class="btn btn-primary blanco1" type="button">Cancel</a>
                       <button class="btn btn-primary" type="reset">Reset</button>
                       <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success">Submit</button>
                     </div>

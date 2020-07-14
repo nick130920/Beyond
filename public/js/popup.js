@@ -16,3 +16,16 @@ function borrar(){
 function borrar2(){
 	overlay.classList.add('inactive');
 }
+
+//------------------------- Segundo overlay
+
+var botonOverlay2 = document.getElementById('botonOverlay2');
+var overlay2 = document.getElementById('overlay2');
+var cancelarOverlay2 = document.getElementById('cancelarOverlay2')
+
+botonOverlay2.addEventListener('click', function(){
+	overlay2.classList.add('active');
+});
+cancelarOverlay2.addEventListener('click', function(){
+	overlay2.classList.remove('active');
+})
