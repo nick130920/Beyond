@@ -14,13 +14,13 @@ use App\group_member;
 class ClassController extends Controller
 {
   public function index(){
-    $user = Profile::find(Auth::user()->id);
-    $classes = $user->groups;
-    return view('/teacher/class')->with(compact('classes', 'user'));
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups;
+    return view('/teacher/class')->with(compact('classes', 'profile'));
   }
   public function create(){
     $profile = Profile::find(Auth::user()->id);
-    return view('/teacher/create')->with(compact('user'));
+    return view('/teacher/create')->with(compact('profile'));
   }
   public function store(ValidarFormularioRequest $request){
    //registrar la nueva clase en la bd

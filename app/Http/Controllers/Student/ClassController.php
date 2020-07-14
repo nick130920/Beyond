@@ -18,7 +18,7 @@ class ClassController extends Controller
   }
   public function store(Request $request){
     $codeClass = $request->input('code');
-    $class=
+    $class=;
     $member = new Group_member;
     $member->group_id = $idClass;
     $member->profile_id	= Auth::user()->id;
