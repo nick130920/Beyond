@@ -51,8 +51,8 @@
               <form class="formDatos" method="post" action="{{route('/edit/profile/update')}}">
                 @csrf
                 <div class="fotoDato">
-                  <div class="cambiarFoto">
-                    <input type="file" class="botonFoto" name="">
+                  <div class="cambiarFoto" id="cambiarFoto" onclick="document.getElementById('file').click()">
+                    <input type="file" id="file" class="botonFoto" name="file">
                     <img src="{{ $profile->image ?? asset('/images/profile/user_default.png')}}" class="imagenCambio">
                   </div>
                 </div>
