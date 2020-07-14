@@ -35,6 +35,11 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 ">
           <div class="x_panel">
+            @if (session('status'))
+              <div class="alert alert-success">
+                {{ session('status') }}
+              </div>
+            @endif
             <!-- Contenido Perfil -->
             <div class="perfil">
 
@@ -44,7 +49,13 @@
                 </div>
                 {{-- <h2>Perfil</h2> --}}
                 <h2><!-- Nombre --> {{$user->name}}</h2>
-                <h2> {{ $profile->id_type }} {{ $profile->id_number ?? "ID: Vacio" }}</h2>
+
+                <h2>
+                  @if ($profile->id_type && $profile->id_number)
+                    {{$id_type->contraction}} {{ $profile->id_number }}
+                  @else
+                    ID: Vacio
+                  @endif</h2>
                 <h2>{{ $user->email ?? "Email: Vacio"}}</h2>
                 <a href="{{route('/edit/profile')}}" class="enlaceA"> Editar perfil</a>
               </div>

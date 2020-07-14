@@ -23,10 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Vistas Usuario Profesor
 Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')->group(function(){
   Route::get('/','TeacherController@index')->name('teacher'); //home Teacher
-
-  Route::get('/class','ClassController@index')->name('/teacher/class');//Vistas de las clases Profesor
+  Route::get('/classes','ClassController@index')->name('/teacher/classes');//Vistas de las clases Profesor
   Route::get('/class/create', 'ClassController@create')->name('/create/class'); //Creacion de class
   Route::post('/class', 'ClassController@store')->name('/class/store'); //registrar la creación
+  Route::get('/class/{id}', 'ClassController@class'); //UNA CLASE
   Route::get('/class/{id}/edit', 'ClassController@edit'); //formulario edición
   Route::post('/class/{id}/edit', 'ClassController@update'); //Actualizar clase
   Route::delete('/class/{id}', 'ClassController@destroy'); //Eliminar clase
@@ -34,7 +34,9 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
 });
 Route::middleware(['auth', 'student'])->prefix('/student')->namespace('Student')->group(function(){
   Route::get('/','StudentController@index')->name('student'); //home student
-  Route::get('/class','ClassController@index')->name('/student/class');//Vistas de las clases
+  Route::post('/','StudentController@join')->name('join'); //unirse a clase
+  Route::get('/classes','ClassController@classes')->name('/student/classes');//Vistas de las clases
+  Route::get('/class','ClassController@class')->name('/student/class');//Clase
 
 });
 Route::middleware(['auth'])->group(function(){

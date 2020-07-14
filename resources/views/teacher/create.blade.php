@@ -1,10 +1,4 @@
 @extends('layouts.app')
-@section('links')
-  <!-- sweetAlert 2-->
-  <link rel="stylesheet" type="text/css" href="{{asset('/sweetAlert/dist/sweetalert2.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/themes/semantic.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/alertify.min.css')}}">
-@endsection
 @section('sidebar_menu')
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -18,9 +12,10 @@
         </li>
         <li><a><i class="fas fa-chalkboard-teacher"></i> Mis Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="#">Mañana</a></li>
-            <li><a href="#">Tarde</a></li>
-            <li><a href="#">Sabatino</a></li>
+            @foreach ($classes as $class)
+              <li><a href="{{url('/teacher/class/'.$class->id.'/edit')}}">{{$class->name}}</a></li>
+            @endforeach
+            {{ $classes->links() }}
           </ul>
         </li>
       </ul>

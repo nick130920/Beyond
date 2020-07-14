@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Http\Requests\ValidarFormularioRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
@@ -16,11 +15,12 @@ class ClassController extends Controller
   public function index(){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups;
-    return view('/teacher/class')->with(compact('classes', 'profile'));
+    return view('/teacher/classes')->with(compact('classes', 'profile'));
   }
   public function create(){
     $profile = Profile::find(Auth::user()->id);
-    return view('/teacher/create')->with(compact('profile'));
+    $classes = $profile->groups()->paginate(2);
+    return view('/teacher/create')->with(compact('profile', 'classes'));
   }
   public function store(ValidarFormularioRequest $request){
    //registrar la nueva clase en la bd
@@ -42,9 +42,17 @@ class ClassController extends Controller
    }
    return redirect('/teacher/class');
   }
-  public function edit($id)
-  {
-    return redirect('/teacher/class/edit');
+  public function edit($id){
+    $profile = Profile::find(Auth::user()->id);
+    $group= Groups::find($id);
+    $classes = $profile->groups()->paginate(2);
+    return view('/teacher/edit')->with(compact('group','profile', 'classes'));
+  }
+  public function class($id){
+    $profile = Profile::find(Auth::user()->id);
+    $group= Groups::find($id);
+    $classes = $profile->groups;
+    return view('/teacher/class')->with(compact('group','profile','classes'));
   }
 
 }

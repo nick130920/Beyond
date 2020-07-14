@@ -3,17 +3,18 @@
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
     <div class="menu_section">
-      <h3>General</h3>
-
+      <h3>Estudiante</h3>
       <ul class="nav side-menu">
-        <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
-          <ul class="nav child_menu">
-          </ul>
+        <li><a href="indexEstudiante.html"><i class="fas fa-house-user"></i> Inicio</a></li>
+        <li><a><i class="fas fa-clipboard"></i> Trabajo en clase </a>
         </li>
-        <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
+        <li><a id="botonOverlay2"><i class="fas fa-plus"></i> Unirme a una Clase </a>
+        </li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{route('/create/class')}}"> Crear Clase</a></li>
-            {{-- <li><a href="{{route('/class/{id}/edit')}}"> Editar Clase</a></li> --}}
+            @foreach ($classes as $class)
+              <li><a href="#">{{$class->name}}</a></li>
+            @endforeach
           </ul>
         </li>
       </ul>
@@ -22,7 +23,7 @@
   <!-- /sidebar menu -->
 @endsection
 @section('contenido')
-  <!-- Contenido de la pagina -->
+  <!-- Contenido -->
   <div class="right_col" role="main">
     <div class="">
       <div class="clearfix"></div>
@@ -30,7 +31,7 @@
         <div class="col-md-12 col-sm-12 ">
           <div class="contenidoClase">
             <div class="imgTexto">
-              <h3>Beyond | {{$group->name}}</h3>
+              <h3>Beyond | Titulo de la clase</h3>
             </div>
             <div class="contenido">
               <div class="pendientes">
@@ -44,6 +45,7 @@
                 <div class="enviarTitulo" id="enviarTitulo">
                   <h2>Comunícate con tu clase aquí</h2>
                 </div>
+
                 <div class="mensaje" id="mensaje">
                   <form class="was-validated">
                     <div class="mb-3">
@@ -62,19 +64,40 @@
                     </div>
                   </form>
                 </div>
+
+
                 <div class="indicaciones" id="indicaciones">
                     <h2><i class="fas fa-comment"></i> Crea anuncios.</h2>
                     <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
                 </div>
               </div>
             </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="overlay2" id="overlay2">
+        <div class="popup2" id="popup2">
+          <div class="texto2">
+            <form method="post" action="{{route('join')}}">
+              @csrf
+              <h2>Unirse a la clase</h2>
+              <p>
+                Pídele a tu profesor el código de la clase y, luego, ingrésalo aquí.
+              </p>
+              <input type="text" name="code" placeholder="Código de la clase" required>
+              <a id="cancelarOverlay2" class="btn boton1">Cancelar</a>
+              <button type="submit" class="btn boton2">Unirse</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- /Contenido de la pagina -->
 @endsection
 @section('scripts')
-  <script src="{{asset('/js/clase.js')}}"></script>  
+  <!-- mi poput -->
+  <script src="{{asset('/js/popup.js')}}"></script>
+  <script src="{{asset('/alertify/alertify.min.js')}}"></script>
+  <script src="{{asset('/js/clase.js')}}"></script>
 @endsection

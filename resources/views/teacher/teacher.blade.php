@@ -17,10 +17,11 @@
 
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="#">Mañana</a></li>
-            <li><a href="#">Tarde</a></li>
-            <li><a href="#">Sabatino</a></li>
+            @foreach ($classes as $class)
+              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
+            @endforeach
           </ul>
+          {{ $classes->links() }}
         </li>
       </ul>
 
@@ -49,15 +50,18 @@
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
     <!-- pop up -->
-    <div class="overlay" id="overlay">
-      <div class="popup" id="popup">
-        <div class="textoPopup">
-          <h1>Hola Profesor {{ $user->first_name }}</h1>
-          <h2>Beyond te la bienvenida</h2>
-          <p></p>
+    @if (session('status'))
+
+      <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+          <div class="textoPopup">
+            <h1>Hola Profesor {{ $profile->first_name }}</h1>
+            <h2>{{ session('status') }}</h2>
+            <p></p>
+          </div>
         </div>
       </div>
-    </div>
+    @endif
   </div>
 @endsection
 @section('scripts')

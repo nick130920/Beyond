@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Groups;
 use App\group_member;
 use App\user;
+use App\profile;
+
 
 class ClassController extends Controller
 {
@@ -16,16 +18,15 @@ class ClassController extends Controller
     $classes = $user->groups;
     return view('/student/class')->with(compact('classes', 'user'));
   }
-  public function store(Request $request){
-    $codeClass = $request->input('code');
-    $class=;
-    $member = new Group_member;
-    $member->group_id = $idClass;
-    $member->profile_id	= Auth::user()->id;
-    $saved = $member->save();
-    //Check if Group_member got saved
-    if (!$saved){
-      $class->delete();
-    }
+  public function classes(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(2);
+    return view('/student/classes')->with(compact('profile', 'classes'));
+  }
+  public function class(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(2);
+    $class = Group::find();
+    return view('/student/class')->with(compact('profile', 'classes', 'class'));
   }
 }

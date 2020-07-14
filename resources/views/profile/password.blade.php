@@ -14,7 +14,7 @@
           <ul class="nav child_menu">
             <li><a href="{{route('profile')}}"><i class="fas fa-user"></i> Información personal</a></li>
             <li><a href="{{route('/edit/profile')}}"><i class="fas fa-user-edit"></i> Editar usuario</a></li>
-            <li><a href="{{route('password')}}"><i class="fas fa-shield-alt"></i> Seguridad</a></li>
+            <li><a href="{{route('/edit/profile/password')}}"><i class="fas fa-shield-alt"></i> Seguridad</a></li>
           </ul>
         </li>
       </ul>
@@ -43,17 +43,22 @@
 
               <div class="x_content">
                 <br/>
-                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                @if (session('status'))
+                  <div class="alert alert-danger">
+                    {{ session('status') }}
+                  </div>
+                @endif
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" action="{{route('/edit/profile/password/update')}}">
+                  @csrf
                   <div class="formulario">
-
                     <div class="form-group">
-                      <input type="password" id="nombreClase" class="form-control " placeholder="Contaseña actual">
+                      <input type="password" id="nombreClase" class="form-control " placeholder="Contaseña actual" name="current_password">
                     </div>
                     <div class="form-group">
-                      <input type="password" id="descripcionClase" class="form-control " placeholder="Contraseña nueva">
+                      <input type="password" id="descripcionClase" class="form-control " placeholder="Contraseña nueva" name="password">
                     </div>
                     <div class="form-group">
-                      <input type="password" id="password" class="form-control" placeholder="Confirmar contraseña"/>
+                      <input type="password" id="password" class="form-control" placeholder="Confirmar contraseña"/ name="password_confirmation">
                     </div>
 
                   </div>

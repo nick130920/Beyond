@@ -1,4 +1,4 @@
-*{  
+*{
     font-family: 'Noto Sans TC', sans-serif;
 }
 .daterangepicker .ranges li {
@@ -5931,7 +5931,7 @@ ul.notifications {
     font-size: 20px;
     margin: 20px 0;
     font-weight: bold;
-    transition: all 500ms ease; 
+    transition: all 500ms ease;
 }
 .fa-chevron-down{
     float: right;
@@ -6089,7 +6089,7 @@ ul.notifications {
     border-radius: 10px;
 }
 .imgTexto{
-    background-image: url(../images/img/jornadaM.svg);
+    background-image: url('../images/img/jornadaM.svg');
     background-size: cover;
     background-attachment: fixed;
     height: 250px;

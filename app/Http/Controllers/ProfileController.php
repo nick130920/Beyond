@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Profile;
 use App\user;
 use App\id_type;
+use Validator;
 use File;
+use Hash;
 
 class ProfileController extends Controller
 {
@@ -15,7 +17,8 @@ class ProfileController extends Controller
     $user = User::find(Auth::user()->id);
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups;
-    return view('/profile/index')->with(compact('user', 'profile', 'classes'));
+    $id_type = id_type::find($profile->id_type);
+    return view('/profile/index')->with(compact('user', 'profile', 'classes', 'id_type'));
   }
   public function edit(){
     $profile = Profile::find(Auth::user()->id);
@@ -41,7 +44,35 @@ class ProfileController extends Controller
     $profile->first_surname = $request->input('first_surname');
     $profile->second_surname = $request->input('second_surname');
     $profile->save();//INSERT
-    return back();
+    return redirect()->route('profile');
+  }
+  public function editPassword(){
+    $profile = Profile::find(Auth::user()->id);
+
+    return view('/profile/password')->with(compact('profile'));
+  }
+  public function updatePassword(Request $request){
+    $rules = [
+      'current_password' => 'required',
+      'password'  => 'required|confirmed|min:6|max:20',
+    ];
+    $messages = [
+      'current_password.required' => 'El campo es requerido',
+      'password.required'  => 'La contraseña es requerida',
+      'password.confirmed'  => 'Las contraseñas no coinciden',
+      'password.min'  => 'Minimo 6 caracteres',
+      'password.max'  => 'Máximo 20 caracteres',
+    ];
+    $validator = Validator::make($request->all(), $rules, $messages);
+    if ($validator->fails()){
+      return redirect('/profile/password')->withErrors($validator);
+    }elseif (Hash::check($request->current_password, Auth::user()->password)){
+      $user = new User;
+      $user->where('email', '=', Auth::user()->email)->update(['password' => Hash::make($request['password'])]);
+      return redirect()->route('profile')->with('status', 'Contraseña cambiada con éxito');
+    }else {
+      return redirect()->route('/edit/profile/password')->with('status', 'Error!');
+    }
   }
   public function destroy()  {
     $profile= Profile::find(Auth::user()->id);

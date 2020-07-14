@@ -5,7 +5,7 @@
     <div class="menu_section">
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
-        <li><a><i class="fas fa-house-user"></i> Inicio</a></li>
+        <li><a href="indexEstudiante.html"><i class="fas fa-house-user"></i> Inicio</a></li>
         <li><a id="botonOverlay2"><i class="fas fa-plus"></i> Unirme a una Clase </a>
         </li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
@@ -25,43 +25,36 @@
   <!-- Contenido -->
   <div class="right_col" role="main">
     <div class="">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Beyond | Clases</h3>
+        </div>
+      </div>
       <div class="clearfix"></div>
       <div class="row">
         <div class="col-md-12 col-sm-12 ">
-          <div class="contenidoClase">
-            <div class="novedadInexistente">
-              <h2>
-                No hay novedades existentes.
-              </h2>
-            </div>
-            <div class="novedadExistente">
-              <div class="imagenNovedad">
-                <img src="{{asset('/images/img/fondo1.svg')}}">
-              </div>
-              <div class="contenidoNovedad">
-                <div class="textoNovedad">
-                  <h1>Titulo</h1>
-                  <p>Contenido</p>
-                </div>
-                <div class="botonesNovedad">
-                  <a href="#"><i class="fas fa-share"></i></a>
-                  <button href="#"><i class="fas fa-times"></i></button>
+          <div class="x_panel">
+            <div class="x_title">
+              <div class="x_content">
+                <div class="tarjetasEstudiante">
+                  @foreach ($classes as $class)
+                    <div class="card">
+                      <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{$class->name}}</h5>
+                        <p class="card-text">{{$class->description}}</p>
+                        <div class="botonesEditError">
+                          <a href="claseEstudiante.html" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
+                        </div>
+                      </div>
+                    </div>
+                  @endforeach
                 </div>
               </div>
             </div>
-            <div class="ln_solid"></div>
           </div>
         </div>
       </div>
-      <!-- <div class="overlay" id="overlay">
-      <div class="popup" id="popup">
-      <div class="textoPopup">
-      <h1>Hola Jhon Doe</h1>
-      <h2>Beyond te la bienvenida</h2>
-      <p></p>
-      </div>
-      </div>
-      </div> -->
       <div class="overlay2" id="overlay2">
         <div class="popup2" id="popup2">
           <div class="texto2">
