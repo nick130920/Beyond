@@ -13,7 +13,7 @@ class CreateGroupMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('group_members', function (Blueprint $table) {
+        Schema::create('group_member', function (Blueprint $table) {
             $table->id();
 
             #clave foranea grupo (fk)
@@ -22,7 +22,7 @@ class CreateGroupMembersTable extends Migration
             #clave foranea perfil (fk)
             $table->unsignedBigInteger('profile_id');
             $table->foreign('profile_id')->references('id')->on('profiles');
-            
+
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateGroupMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group_members');
+        Schema::dropIfExists('group_member');
     }
 }

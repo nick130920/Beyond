@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\profile;
+use App\user;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,9 @@ class HomeController extends Controller
     public function index()
     {
       $id_user = Auth::user()->id;
-      $id_perfil = profile::where('users', $id_user)->get();
+      $user = User::find($id_user)->profile;
+
+      $id_perfil = profile::where('user_id', $id_user)->get();
       if ($id_perfil->isEmpty()) {
         // code...
         $full_name = Auth::user()->name;
@@ -43,9 +46,13 @@ class HomeController extends Controller
         }
         $profile->user_id = $id_user;
         $profile->save();
-      }else {
-
       }
-      return view('home');
+      if (auth()->user()->teacher) {
+        return redirect('/teacher')->with(compact('user'));
+      }else {
+        return redirect('/student')->with(compact('user'));
+      }
+
+      // return view('home');
     }
 }

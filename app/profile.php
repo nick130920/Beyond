@@ -11,7 +11,7 @@ class profile extends Model
 		return $this->belongsToMany('App\groups', 'group_member', 'profile_id', 'group_id')->withTimestamps();
 	}
 	public function id_types(){
-		return $this->hasMany('App\id_type');
+		return $this->hasOne('App\id_type');
 	}
 	public function deliveries(){
 		return $this->hasMany('App\delivery');
