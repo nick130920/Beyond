@@ -20,7 +20,7 @@ class ClassController extends Controller
   }
   public function create(){
     $profile = Profile::find(Auth::user()->id);
-    return view('/teacher/create')->with(compact('user'));
+    return view('/teacher/create')->with(compact('profile'));
   }
   public function store(ValidarFormularioRequest $request){
    //registrar la nueva clase en la bd
