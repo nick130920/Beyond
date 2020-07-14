@@ -13,7 +13,8 @@ class TeacherController extends Controller
 {
   public function index()
   {
-    $user = User::find(Auth::user()->id)->profile;
+    $user = User::find(Auth::user()->id);
+    $profile = Profile::find(Auth::user()->id);
     return view('/teacher/teacher')->with(compact('user'));
   }
 }

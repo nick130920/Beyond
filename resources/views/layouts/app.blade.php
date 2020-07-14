@@ -17,6 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     @yield('links')
+    <!-- sweetAlert 2-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/sweetAlert/dist/sweetalert2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/themes/semantic.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/alertify.min.css')}}">
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{asset('/css/custom.min.css')}}">
 </head>
@@ -35,11 +39,11 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="{{ $user->image}}" alt="..." class="img-circle profile_img">
+              <img src="{{ $profile->image ?? asset('/images/profile/user_default.png')}}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Bienvenido</span>
-              <h2>{{ $user->first_name }}</h2>
+              <h2>{{ $profile->first_name }}</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -57,12 +61,12 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ $user->image}}" alt="">
-                    {{ $user->first_name }}
+                    <img src="{{ $profile->image ?? asset('/images/profile/user_default.png')}}" alt="">
+                    {{ $profile->first_name }}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                    <a class="dropdown-item"  href="{{route('profile')}}">Perfil</a>
+                    <a class="dropdown-item"  href="javascript:;">Aiuda</a>
                     <a class="dropdown-item"  href="{{ route('logout') }}" onclick="event.preventDefault();                    document.getElementById('logout-form').submit();">
                       <i class="fa fa-sign-out pull-right"></i>{{ __('Cerrar sesión')}}
                     </a>
@@ -79,9 +83,9 @@
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                     <li class="nav-item">
                       <a class="dropdown-item">
-                        <span class="image"><img src="{{ $user->image}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ $profile->image ?? asset('/images/profile/user_default.png')}}" alt="Profile Image" /></span>
                         <span>
-                          <span>{{ $user->first_name }}</span>
+                          <span>{{ $profile->first_name }}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">

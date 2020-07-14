@@ -14,7 +14,7 @@ class CreateIdTypesTable extends Migration
     public function up()
     {
         Schema::create('id_types', function (Blueprint $table) {
-            $table->id();            
+            $table->id();
             $table->string('name');
             $table->string('contraction',2);//'RC', 'TI', 'CC', 'CE', 'PA','SI'
             $table->timestamps();
