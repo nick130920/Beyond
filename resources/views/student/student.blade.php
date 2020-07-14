@@ -53,15 +53,17 @@
           </div>
         </div>
       </div>
-      <!-- <div class="overlay" id="overlay">
-      <div class="popup" id="popup">
-      <div class="textoPopup">
-      <h1>Hola Jhon Doe</h1>
-      <h2>Beyond te la bienvenida</h2>
-      <p></p>
+      @if (session('status'))
+      <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+          <div class="textoPopup">
+            <h1>Hola Jhon Doe</h1>
+            <h2>{{ session('status') }}</h2>
+            <p></p>
+          </div>
+        </div>
       </div>
-      </div>
-      </div> -->
+    @endif
       <div class="overlay2" id="overlay2">
         <div class="popup2" id="popup2">
           <div class="texto2">

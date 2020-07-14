@@ -124,5 +124,6 @@
   <!-- /Contenido de la pagina -->
 @endsection
 @section('scripts')
-  <script src="../build/js/eliminar.js"></script>
+  <script src="{{asset('js/eliminar.js')}}"></script>
+
 @endsection

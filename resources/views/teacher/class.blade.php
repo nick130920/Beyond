@@ -13,8 +13,16 @@
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{route('/create/class')}}"> Crear Clase</a></li>
-            {{-- <li><a href="{{route('/class/{id}/edit')}}"> Editar Clase</a></li> --}}
+            <li><a href="{{url('/class'.'/'.$group->id.'/edit')}}"> Editar Clase</a></li>
           </ul>
+        </li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            @foreach ($classes as $class)
+              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
+            @endforeach
+          </ul>
+          {{ $classes->links() }}
         </li>
       </ul>
     </div>
@@ -31,6 +39,7 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
+              <h6>{{$group->description}}</h6>
             </div>
             <div class="contenido">
               <div class="pendientes">
@@ -45,14 +54,16 @@
                   <h2>Comunícate con tu clase aquí</h2>
                 </div>
                 <div class="mensaje" id="mensaje">
-                  <form class="was-validated">
+                  <form class="was-validated" method="post" action="{{url('/teacher/class/'.$group->id.'/novelty')}}">
+                    @csrf
                     <div class="mb-3">
-                      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
+                      <input type="text" name="name" value="">
+                      <textarea name="content" class="form-control is-invalid" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
                     </div>
                     <div class="btnComentarios">
                       <div class="inputFile inputInverso">
                         <label for="" class="btn btn-secondary" id="nombreArchivo"></label>
-                        <input type="file" id="file" class="inputFileInput">
+                        <input type="file" id="file" name="resource" class="inputFileInput">
                         <label for="file" class="btn btn-primary" id="archivo">Agregar</label>
                       </div>
                       <div class="cancelarEnviar">
@@ -76,5 +87,5 @@
   <!-- /Contenido de la pagina -->
 @endsection
 @section('scripts')
-  <script src="{{asset('/js/clase.js')}}"></script>  
+  <script src="{{asset('/js/clase.js')}}"></script>
 @endsection

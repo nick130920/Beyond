@@ -30,7 +30,8 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   Route::get('/class/{id}/edit', 'ClassController@edit'); //formulario edición
   Route::post('/class/{id}/edit', 'ClassController@update'); //Actualizar clase
   Route::delete('/class/{id}', 'ClassController@destroy'); //Eliminar clase
-
+  //NOVEDADES CLASE
+  Route::post('/class/{id}/novelty', 'ClassController@novelty'); //UNA CLASE
 });
 Route::middleware(['auth', 'student'])->prefix('/student')->namespace('Student')->group(function(){
   Route::get('/','StudentController@index')->name('student'); //home student
