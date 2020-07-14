@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function(){
   Route::get('/profile', 'ProfileController@index')->name('profile'); //listado
   Route::get('/edit/profile', 'ProfileController@edit')->name('/edit/profile'); //editar
   Route::post('/edit/profile', 'ProfileController@update')->name('/edit/profile/update'); //actualizar
-  Route::get('/edit/profile/password', 'ProfileController@edit')->name('/edit/profile/password'); //editar
-  Route::post('/edit/profile/password', 'ProfileController@update')->name('/edit/profile/password/update'); //actualizar
+  Route::get('/edit/profile/password', 'ProfileController@editPassword')->name('/edit/profile/password'); //editar
+  Route::post('/edit/profile/password', 'ProfileController@updatePassword')->name('/edit/profile/password/update'); //actualizar
   Route::delete('/destroy/profile', 'ProfileController@destroy'); //Eliminar
 });

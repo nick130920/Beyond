@@ -15,6 +15,6 @@ class TeacherController extends Controller
   {
     $user = User::find(Auth::user()->id);
     $profile = Profile::find(Auth::user()->id);
-    return view('/teacher/teacher')->with(compact('user'));
+    return view('/teacher/teacher')->with(compact('user', 'profile'));
   }
 }
