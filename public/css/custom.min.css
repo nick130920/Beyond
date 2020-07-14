@@ -1,4 +1,4 @@
-*{
+*{  
     font-family: 'Noto Sans TC', sans-serif;
 }
 .daterangepicker .ranges li {
@@ -5931,7 +5931,7 @@ ul.notifications {
     font-size: 20px;
     margin: 20px 0;
     font-weight: bold;
-    transition: all 500ms ease;
+    transition: all 500ms ease; 
 }
 .fa-chevron-down{
     float: right;
@@ -6076,6 +6076,96 @@ ul.notifications {
     padding: 5px 20px;
     cursor: pointer;
 }
+/* overlay editar */
+.overlayEditar{
+    position: fixed;
+    z-index: -10000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 300ms ease;
+}
+.overlayEditar.active{
+    background-color: rgb(0,0,0, .5);
+    z-index: 10000;
+}
+.contenidoEditar{
+    width: 500px;
+    position: relative;
+    display: block;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 3px rgb(0,0,0, .3);
+}
+.contenidoEditar form{
+    width: 100%;
+    text-align: center;
+}
+.contenidoEditar form h1{
+    font-size: 35px;
+    width: 85%;
+    margin: 0 auto 10px auto;
+    display: block;
+    border-bottom: 1px solid rgb(25,96,226, .2);
+    color: rgb(25,96,226) !important;
+    font-weight: bold;
+}
+.contenidoEditar form input{
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border: 0;
+    background-color: rgb(25,96,226, .05);
+}
+.botonesEditar{
+    display: flex;
+    justify-content: center;
+}
+.botonesEditar .btn{
+    position: relative;
+    display: block;
+}
+.botonesEditar .botonCancelar{
+    background-color: rgb(231, 74, 74, .6);
+    border: 2px solid rgb(231,74,74, .7);
+    cursor: pointer;
+    color: white !important;
+}
+.botonesEditar .botonCancelar:hover{
+    background-color: rgb(231, 74, 74, .8);
+    border: 2px solid rgb(231,74,74);
+}
+.botonesEditar .botonReset{
+    background-color: rgb(0, 0, 0, .6);
+    border: 2px solid rgb(0, 0, 0, .7);
+    cursor: pointer;
+    color: white !important;
+}
+.botonesEditar .botonReset:hover{
+    background-color: rgb(0, 0, 0, .8);
+    border: 2px solid rgb(0, 0, 0);
+}
+.botonesEditar .botonGuardar{
+    background-color: rgb(25, 96, 226, .6);
+    border: 2px solid rgb(25,96,226, .7);
+    cursor: pointer;
+    color: white !important;
+}
+.botonesEditar .botonGuardar:hover{
+    background-color: rgb(25, 96, 226, .8);
+    border: 2px solid rgb(25,96,226);
+}
 
 /*      Clase        */
 
@@ -6089,7 +6179,7 @@ ul.notifications {
     border-radius: 10px;
 }
 .imgTexto{
-    background-image: url('../images/img/jornadaM.svg');
+    background-image: url(../images/img/jornadaM.svg);
     background-size: cover;
     background-attachment: fixed;
     height: 250px;
@@ -6097,11 +6187,15 @@ ul.notifications {
     padding: 5px;
 }
 .imgTexto h3{
-    position: absolute;
     font-weight: 600;
     color: #FBFBFB;
-    padding: 10px 20px;
-    display: inline-block;
+    padding: 0px 20px;
+    display: block;
+}
+.imgTexto p{
+    position: absolute;
+    color: #f7f7f7;
+    padding: 5px 20px;
 }
 .contenido{
     display:flex;
@@ -6112,14 +6206,35 @@ ul.notifications {
     box-shadow: 0 0 3px #A4A0A0;
     display: inline-block;
     border-radius: 10px;
-    max-height: 120px;
+    max-height: 250px;
+    height: 120px;
+    width: 250px;
     padding: 10px;
     position: relative;
+    overflow: hidden;
+}
+.contenido .pendientes > a{
+    position: absolute;
+    bottom: 0;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 5px;
 }
 .contenido .envios{
     display: block;
     border-radius: 10px;
-    width: 75%;
+    width: calc(97% - 250px);
+}
+@media screen and (max-width: 500px){
+    .contenido {
+        display: block;
+    }
+    .contenido .pendientes{
+        width: 100%;
+    }
+    .contenido .envios{
+        width: 100%;
+    }
 }
 .enviarTitulo{
     display: block;
@@ -6134,23 +6249,18 @@ ul.notifications {
     width: 100%;
     border:none;
     padding: 10px;
-    height: 150px;
 }
 .indicaciones{
     display: block;
     padding: 3px 10px;
     border-radius: 10px;
     margin: 10px 0;
-    overflow: hidden;
-    height: 80px;
     position: relative;
     transition: all 600ms ease;
     box-shadow: 0 0 3px #A4A0A0;
 }
 .indicaciones.active{
-    overflow: hidden;
-    height: 0;
-    padding: 0 10px;
+    display: none;
 }
 
 /*      Input File       */
@@ -6165,7 +6275,6 @@ ul.notifications {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 5px;
 }
 .inputFileInput{
     display: none;
@@ -6194,6 +6303,7 @@ ul.notifications {
     overflow: hidden;
     height: 0;
     transition: all 600ms ease;
+    position: relative;
 }
 .camcelarEnviar > a{
     color: white;
@@ -6206,6 +6316,114 @@ ul.notifications {
     color:#fff !important;
 }
 
+.novedadMensaje{
+    position: relative;
+    width: 99%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    box-shadow: 0 0 5px 1px rgb(202,202,202);
+}
+.novedadMensaje .tituloTarea, .novedadMensaje .textarea{
+    border: 0;
+    width: 100%;
+    background-color:rgb(247,247,247, .5);
+    padding: 5px 10px;
+}
+.novedadMensaje .tituloTarea{
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid rgb(26,26,26, .3)
+}
+.novedadMensaje .tituloTarea::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+}
+.novedadMensaje .textarea{
+    border-radius: 0 0 10px 10px;
+}
+/* ---------- Comentarios ----------*/
+.contentComentarios ul{
+    list-style: none;
+}
+.contentComentarios{
+    width: 100%;
+}
+.cajaComentario{
+    display: flex;
+    justify-content: space-between;
+}
+.cajaComentario .comentarioImg{
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 3px 1px rgb(0,0,0, .5);
+}
+.cajaComentario .comentarioImg img{
+    width: 65px;
+    height: 65px;
+}
+.cuerpoComentario{
+    width: calc(100% - 80px);
+    box-shadow: 0 0 3px #A4A0A0;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.comentarioHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+.comentarioHead::before{
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1px;
+    background-color: rgba(0,0,0, .3);
+}
+.head1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.head1 h3{
+    font-size: 18px;
+    background-color: rgb(25,96,226, .7);
+    color: white;
+    padding: 5px;border-radius: 5px;
+    border: 2px solid rgb(25,96,226);
+}
+.head1 span{
+    margin-left: 15px;
+}
+.comentarioHead .fas{
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease;
+    border-radius: 50%;
+}
+.comentarioHead .fas:hover{
+    background-color: rgb(0,0,0, .2);
+    color: rgb(25,96,226);
+}
 /*       Perfil     */
 .perfil{
     display: flex;
@@ -6434,7 +6652,7 @@ ul.notifications {
 
 /*-------------------------------------- Estudiante -------------------------------------*/
 .novedadInexistente{
-    display: none;
+    display: block;
 }
 .novedadExistente{
     display: flex;
@@ -6477,6 +6695,7 @@ ul.notifications {
     background-color: inherit;
     border-radius: 50%;
     transition: all 250ms ease;
+    outline: none;
 }
 .contenidoNovedad .botonesNovedad a:hover{
     color: #5991F9;
@@ -6583,4 +6802,96 @@ ul.notifications {
         display: flex;
         justify-content: space-around;
     }
+}
+
+/* Clase */
+.imgNovedades{
+    width: 45%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.imgNovedades .imgTextoEstudiante{
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.imgNovedades .imgTextoEstudiante img{
+    width: 100%;
+}
+.imgTextoEstudiante .texto1{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.imgTextoEstudiante .texto1 h2{
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+.imgTextoEstudiante .texto1 h3{
+    font-size: 20px;
+    top: -10px;
+    position: relative;
+    color: white;
+    border-bottom: 1px solid #f7f7f7;
+    display: inline-flex;
+}
+.pendientesEstudiante{
+    box-shadow: 0 0 3px 1px rgb(0,0,0,.5);
+    overflow: hidden;
+    height: 120px;
+    max-height: 500px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+}
+.pendientesEstudiante > a{
+    position: absolute;
+    bottom: 5px;
+    background-color: #f7f7f7;
+    display: block;
+    width: 100%;
+}
+.contenidoClaseEstudiante{
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 3px #A4A0A0;
+    border-radius: 10px;
+}
+.contenidoNovdades{
+    display: block;
+    width: 55%;
+    padding: 10px;
+}
+.novedadEstudiante{
+    margin-bottom: 10px; 
+    padding: 5px 10px;
+    box-shadow: 0 0 3px 1px rgb(0,0,0, .5);
+    border-radius: 10px;
+}
+.novedadEstudiante .head2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.novedadEstudiante .head2 h2{
+    font-size: 25px;
+    border-bottom: 1px solid rgb(0,0,0, .2)
+}
+.novedadEstudiante .head2 span{
+    font-size: 12px;
+    display: inline-block;
+    background-color: rgb(25,96,226, .7);
+    color: white;
+    padding: 5px;
+    border: 2px solid rgb(25,96,226);
+}
+.novedadEstudiante h3{
+    font-size: 20px;
 }

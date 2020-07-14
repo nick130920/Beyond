@@ -177,8 +177,9 @@
                             <div class="botonesEditError">
                                 <a href="clase.html" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
                               
-                                <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i></button>
-                                <button id="eliminar" class="btn btn-danger"><i class="fas fa-times"></i></button>
+                                <button id="editar" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+
+                                <button id="eliminar" class="btn btn-danger"data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-times"></i></button>
                               
                             </div>
                           </div>
@@ -201,6 +202,22 @@
                         </label>
                       </div>
                       
+                    </div>
+                  </div>
+
+                  <!-- popup para editar clase -->
+                  <div class="overlayEditar" id="overlayEditar">
+                    <div class="contenidoEditar" id="contenidoEditar">
+                      <form>
+                        <h1>Editar clase</h1>
+                        <input type="text" name="" placeholder="Titulo">
+                        <input type="text" name="" placeholder="Descripción">
+                        <div class="botonesEditar">
+                          <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
+                          <button type="reset" class="btn botonReset">Reiniciar</button>
+                          <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
 
