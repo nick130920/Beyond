@@ -45,7 +45,7 @@ class ClassController extends Controller
    if (!$saved){
      $class->delete();
    }
-   return view('/teacher/class');
+   return back();
   }
   public function edit($id){
     $profile = Profile::find(Auth::user()->id);
@@ -66,7 +66,7 @@ class ClassController extends Controller
     $novelty->content = $request->input('content');
     $novelty->groups = $id;
     $novelty->publication_date= Carbon::now()->toDateTimeString();
-    $novelty->save(); //INSERT
+    $exito = $novelty->save(); //INSERT
 
     // $idClass = $class->id;
     // $member = new Group_member;
@@ -77,7 +77,11 @@ class ClassController extends Controller
     // if (!$saved){
     //   $class->delete();
     // }
-    return back();
+    if ($exito) {
+      return back()->with('success', 'Novedad creada con éxito');
+    }else {
+      return back()->with('error', 'Novedad no creada');
+    }
 
   }
 

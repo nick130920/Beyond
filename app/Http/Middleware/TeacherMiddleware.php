@@ -15,8 +15,11 @@ class TeacherMiddleware
      */
     public function handle($request, Closure $next)
     {
-      if (!auth()->user()->teacher) {
+      if (!auth()->user()) {
         return redirect('/login');
+      }
+      if (!auth()->user()->teacher) {
+        return redirect('/student');
       }
         return $next($request);
     }

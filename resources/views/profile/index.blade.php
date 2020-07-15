@@ -45,7 +45,7 @@
 
               <div class="infoPerfil">
                 <div class="imgPerfil">
-                  <a href="{{route('/edit/profile')}}"><img src="{{ $user->image ?? asset('/images/profile/user_default.png')}}" alt="Hola"></a>
+                  <a href="{{route('/edit/profile')}}"><img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" alt="Hola"></a>
                 </div>
                 {{-- <h2>Perfil</h2> --}}
                 <h2><!-- Nombre --> {{$user->name}}</h2>
@@ -65,7 +65,7 @@
                 <div class="clasesPerfil">
                   @foreach ($classes as $class)
                     <div class="cardMio">
-                      <a href="">
+                      <a href="{{url('/teacher/class/'.$class->id.'/')}}">
                         <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h2>{{$class->name}}</h2>
@@ -74,6 +74,7 @@
                       </a>
                     </div>
                   @endforeach
+                  {{ $classes->links() }}
                 </div>
               </div>
             </div>

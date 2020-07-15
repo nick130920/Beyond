@@ -20,13 +20,13 @@ class ClassController extends Controller
   }
   public function classes(){
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(2);
+    $classes = $profile->groups;
     return view('/student/classes')->with(compact('profile', 'classes'));
   }
-  public function class(){
+  public function class($id){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups()->paginate(2);
-    $class = Group::find();
+    $class = Groups::find($id);
     return view('/student/class')->with(compact('profile', 'classes', 'class'));
   }
 }

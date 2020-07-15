@@ -22,4 +22,10 @@ class profile extends Model
 	public function user(){
 		return $this->belongsTo('App\User');
 	}
+  public function getUrlAttribute(){
+    if (substr($this->image,0,4) === "http") {
+      return $this->image;
+    }
+    return '/images/profile/'.$this->image;
+  }
 }

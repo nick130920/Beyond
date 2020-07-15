@@ -13,7 +13,7 @@
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{route('/create/class')}}"> Crear Clase</a></li>
-            <li><a href="{{url('/class'.'/'.$group->id.'/edit')}}"> Editar Clase</a></li>
+            <li><a href="{{url('/teacher/class/'.$group->id.'/edit')}}"> Editar Clase</a></li>
           </ul>
         </li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
@@ -39,7 +39,24 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
-              <h6>{{$group->description}}</h6>
+              <br><br>
+              <h3>{{$group->description}}</h3>
+              @if (session('success'))
+                <script type="text/javascript">
+                window.onload = function alerta() {
+                  alertify.set('notifier','position', 'top-right');
+                  alertify.notify ("{{ session('success') }}",'success', 2, function(){});
+                }
+                </script>
+              @endif
+              @if (session('error'))
+                <script type="text/javascript">
+                window.onload = function alerta() {
+                  alertify.set('notifier','position', 'top-right');
+                  alertify.notify ("{{ session('error') }}",'error', 2, function(){});
+                }
+                </script>
+              @endif
             </div>
             <div class="contenido">
               <div class="pendientes">

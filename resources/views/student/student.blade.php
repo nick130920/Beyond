@@ -11,7 +11,7 @@
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
-              <li><a href="#">{{$class->name}}</a></li>
+              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
             <li><a href="{{route('/student/classes')}}">Ver todas las clases</a></li>
           </ul>

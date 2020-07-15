@@ -5,15 +5,14 @@
     <div class="menu_section">
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
-        <li><a href="indexEstudiante.html"><i class="fas fa-house-user"></i> Inicio</a></li>
+        <li><a href="{{route('student')}}"><i class="fas fa-house-user"></i> Inicio</a></li>
         <li><a id="botonOverlay2"><i class="fas fa-plus"></i> Unirme a una Clase </a>
         </li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
-              <li><a href="#">{{$class->name}}</a></li>
+              <li><a href="{{url('/student/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
-            <li><a href="{{route('/student/classes')}}">Ver todas las clases</a></li>
           </ul>
         </li>
       </ul>
@@ -44,7 +43,7 @@
                         <h5 class="card-title">{{$class->name}}</h5>
                         <p class="card-text">{{$class->description}}</p>
                         <div class="botonesEditError">
-                          <a href="claseEstudiante.html" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
+                          <a href="{{url('/student/class/'.$class->id.'/')}}" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
                         </div>
                       </div>
                     </div>

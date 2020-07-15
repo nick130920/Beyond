@@ -37,7 +37,7 @@ Route::middleware(['auth', 'student'])->prefix('/student')->namespace('Student')
   Route::get('/','StudentController@index')->name('student'); //home student
   Route::post('/','StudentController@join')->name('join'); //unirse a clase
   Route::get('/classes','ClassController@classes')->name('/student/classes');//Vistas de las clases
-  Route::get('/class','ClassController@class')->name('/student/class');//Clase
+  Route::get('/class/{id}','ClassController@class')->name('/student/class');//Clase
 
 });
 Route::middleware(['auth'])->group(function(){

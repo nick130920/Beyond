@@ -13,9 +13,9 @@
         <li><a><i class="fas fa-chalkboard-teacher"></i> Mis Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/edit')}}">{{$class->name}}</a></li>
+              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
-            {{ $classes->links() }}
+            {{-- {{$classes->links() }} --}}
           </ul>
         </li>
       </ul>
@@ -40,65 +40,25 @@
 
             <!-- Clases de la Mañana -->
             <div class="x_title">
-              <h2>Jornada Mañana</h2>
-              <ul class="nav navbar-right panel_toolbox">
-                <li><a class="collapse-link"><i class="fas fa-chevron-down"></i></a>
-                </li>
-              </ul>
-
-              <div class="clearfix"></div>
-
               <div class="x_content">
                 <br/>
                 <div class="centrarCard">
                   <div class="card">
-                    <img src="../build/images/img/fondopopup1.svg" class="card-img-top" alt="...">
+                    <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Titulo de la clase</h5>
                       <p class="card-text">Descripcion de la clase</p>
                       <div class="botonesEditError">
-                        <button class="btn btn-primary"><i class="fas fa-edit"></i> Editar</button>
-                        <button id="eliminar" class="btn btn-danger"><i class="fas fa-edit"></i> Eliminar</button>
+                        <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
+
+                        <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                        <button id="eliminar" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fas fa-times"></i></button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
-
-            <!-- Clases de la Tarde -->
-            <div class="x_title">
-              <h2>Jornada Tarde</h2>
-              <ul class="nav navbar-right panel_toolbox">
-                <li><a class="collapse-link"><i class="fas fa-chevron-down"></i></a>
-                </li>
-              </ul>
-
-              <div class="clearfix"></div>
-
-              <div class="x_content">
-                <br/>
-              </div>
-
-            </div>
-
-            <!-- Clases de la Sabatina -->
-            <div class="x_title">
-              <h2>Jornada Sabatina</h2>
-              <ul class="nav navbar-right panel_toolbox">
-                <li><a class="collapse-link"><i class="fas fa-chevron-down"></i></a>
-                </li>
-              </ul>
-
-              <div class="clearfix"></div>
-
-              <div class="x_content">
-                <br/>
-              </div>
-
-            </div>
-
             <!-- Popup mensaje de confirmacion  -->
             <div class="mensajeConfirmacion" id="mensajeConfirmacion">
               <div class="contentMensaje" id="contentMensaje">
@@ -111,7 +71,6 @@
                     <input type="radio" id="confirmar" name="confirmar" class="join-btn" id="confirmar">Si
                   </label>
                 </div>
-
               </div>
             </div>
 

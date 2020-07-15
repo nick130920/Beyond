@@ -16,7 +16,7 @@ class ProfileController extends Controller
   public function index(){
     $user = User::find(Auth::user()->id);
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups;
+    $classes = $profile->groups()->paginate(4);
     $id_type = id_type::find($profile->id_type);
     return view('/profile/index')->with(compact('user', 'profile', 'classes', 'id_type'));
   }
@@ -27,16 +27,16 @@ class ProfileController extends Controller
     return view('/profile/edit')->with(compact('profile', 'id_type', 'id_types'));
   }
   public function update(Request $request){
+    $profile = Profile::find(Auth::user()->id);
     $file = $request->file('photo');
     if ($file) {
       //Guardar imagen
-      $path = public_path() . '/images/profiles';
-      $fileName = uniqid() . $file->getClientOriginalName();
+      $path = public_path().'/images/profile';
+      $fileName = uniqid().$file->getClientOriginalName();
       $file->move($path, $fileName);
       $profile->image = $fileName;
     }
     //Crear 1 registro en la tabla product_images
-    $profile = Profile::find(Auth::user()->id);
     $profile->id_type   = $request->input('id_type');
     $profile->id_number = $request->input('id_number');
     $profile->first_name = $request->input('first_name');

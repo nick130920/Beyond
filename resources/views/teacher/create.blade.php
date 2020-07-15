@@ -83,7 +83,7 @@
                   @endphp">
                   <div class="item form-group">
                     <div class="col-md-6 col-sm-6 offset-md-3">
-                      <a class="btn btn-primary blanco1" type="button">Cancel</a>
+                      <a href="{{url('/teacher/class/'.$class->id.'/edit')}}" class="btn btn-primary blanco1" type="button">Cancel</a>
                       <button class="btn btn-primary" type="reset">Reset</button>
                       <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success">Submit</button>
                     </div>

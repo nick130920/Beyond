@@ -48,12 +48,12 @@
                   </div>
                 </div>
               @endif
-              <form class="formDatos" method="post" action="{{route('/edit/profile/update')}}">
+              <form class="formDatos" method="post" action="{{route('/edit/profile/update')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="fotoDato">
                   <div class="cambiarFoto" id="cambiarFoto" onclick="document.getElementById('file').click()">
-                    <input type="file" id="file" class="botonFoto" name="file">
-                    <img src="{{ $profile->image ?? asset('/images/profile/user_default.png')}}" class="imagenCambio">
+                    <input type="file" id="file" class="botonFoto" name="photo">
+                    <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" class="imagenCambio">
                   </div>
                 </div>
                 <div class="cambiarDato">
@@ -62,7 +62,7 @@
                     <input type="text" name="second_name" placeholder="Cambiar segundo nombre" value="{{$profile->second_name}}">
                   </div>
                   <div class="apellidos">
-                    <input type="text" name="first_surname"placeholder="Cambiar primer apellido" value="{{$profile->first_surname}}">
+                    <input type="text" name="first_surname" placeholder="Cambiar primer apellido" value="{{$profile->first_surname}}">
                     <input type="text" name="second_surname" placeholder="Cambiar segundo apellido" value="{{$profile->second_surname}}">
                   </div>
                   <div class="documentacion">
