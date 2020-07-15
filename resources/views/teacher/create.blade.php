@@ -1,4 +1,10 @@
 @extends('layouts.app')
+@section('links')
+  <!-- sweetAlert 2-->
+  <link rel="stylesheet" type="text/css" href="{{asset('/sweetAlert/dist/sweetalert2.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/themes/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/alertify.min.css')}}">
+@endsection
 @section('sidebar_menu')
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -13,9 +19,8 @@
         <li><a><i class="fas fa-chalkboard-teacher"></i> Mis Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/edit')}}">{{$class->name}}</a></li>
+              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
-            {{ $classes->links() }}
           </ul>
         </li>
       </ul>
@@ -83,9 +88,8 @@
                   @endphp">
                   <div class="item form-group">
                     <div class="col-md-6 col-sm-6 offset-md-3">
-                      <a href="{{url('/teacher/class/'.$class->id.'/edit')}}" class="btn btn-primary blanco1" type="button">Cancel</a>
-                      <button class="btn btn-primary" type="reset">Reset</button>
-                      <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success">Submit</button>
+                      <a href="{{url('/teacher/classes/')}}" class="btn btn-danger blanco1" type="button">Cancelar</a>
+                      <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success"> Crear </button>
                     </div>
                   </div>
 

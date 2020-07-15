@@ -3,7 +3,7 @@
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
     <div class="menu_section">
-      <h3>General</h3>
+      <h3>Profesor</h3>
 
       <ul class="nav side-menu">
         <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
@@ -31,22 +31,23 @@
         </div>
       </div>
       <div class="clearfix"></div>
-      <div class="infoClase">
-        <div class="clasesPerfil">
-          @foreach ($classes as $class)
-            <div class="cardMio">
-              <a href="{{url('/teacher/class/'.$class->id.'/')}}">
-                <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h2>{{$class->name}}</h2>
-                  <p>{{$class->description}}</p>
-                </div>
-              </a>
-            </div>
-          @endforeach
-          {{ $classes->links() }}
 
+      <div class="x_content">
+        <br/>
+        <div class="centrarCard">
+          @foreach ($classes as $class)
+          <div class="card">
+            <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2>{{ $class->name}}</h2>
+              <p>{{ $class->description}}</p>
+              <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+          @endforeach
         </div>
+
+          {{ $classes->links() }}
       </div>
     </div>
   </div>

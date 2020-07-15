@@ -3,7 +3,7 @@
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
     <div class="menu_section">
-      <h3>General</h3>
+      <h3>Profesor</h3>
 
       <ul class="nav side-menu">
         <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
@@ -34,31 +34,27 @@
       </div>
 
       <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 ">
-          <div class="x_panel">
 
             <!-- Clases de la Mañana -->
-            <div class="x_title">
+            
               <div class="x_content">
                 <br/>
                 <div class="centrarCard">
                   <div class="card">
                     <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Titulo de la clase</h5>
-                      <p class="card-text">Descripcion de la clase</p>
+                      <h5 class="card-title">{{$group->name}}</h5>
+                      <p class="card-text">{{$group->description}}</p>
                       <div class="botonesEditError">
                         <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
 
-                        <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="btn btn-primary" id="editar" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fas fa-pencil-alt"></i></button>
                         <button id="eliminar" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fas fa-times"></i></button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             <!-- Popup mensaje de confirmacion  -->
             <div class="mensajeConfirmacion" id="mensajeConfirmacion">
               <div class="contentMensaje" id="contentMensaje">
@@ -74,9 +70,21 @@
               </div>
             </div>
 
-          </div>
-        </div>
-      </div>
+            <!-- popup para editar clase -->
+                  <div class="overlayEditar" id="overlayEditar">
+                    <div class="contenidoEditar" id="contenidoEditar">
+                      <form>
+                        <h1>Editar clase</h1>
+                        <input type="text" name="" placeholder="Titulo">
+                        <input type="text" name="" placeholder="Descripción">
+                        <div class="botonesEditar">
+                          <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
+                          <button type="reset" class="btn botonReset">Reiniciar</button>
+                          <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
 
     </div>
   </div>

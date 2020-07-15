@@ -31,9 +31,6 @@
       </div>
       <div class="clearfix"></div>
       <div class="row">
-        <div class="col-md-12 col-sm-12 ">
-          <div class="x_panel">
-            <div class="x_title">
               <div class="x_content">
                 <div class="tarjetasEstudiante">
                   @foreach ($classes as $class)
@@ -50,9 +47,6 @@
                   @endforeach
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="overlay2" id="overlay2">
         <div class="popup2" id="popup2">
@@ -64,8 +58,8 @@
                 Pídele a tu profesor el código de la clase y, luego, ingrésalo aquí.
               </p>
               <input type="text" name="code" placeholder="Código de la clase" required>
-              <a id="cancelarOverlay2" class="btn boton1">Cancelar</a>
-              <button type="submit" class="btn boton2">Unirse</button>
+              <a id="cancelarOverlay2" class="btn botonReset">Cancelar</a>
+              <button type="submit" class="btn botonGuardar">Unirse</button>
             </form>
           </div>
         </div>

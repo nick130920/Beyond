@@ -10,6 +10,7 @@
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{route('/create/class')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
+            <li><a href="" ><i class="fas fa-edit"></i> Editar</a></li>
             {{-- <li><a href="{{route('/Teacher/class/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i> Editar Clase</a></li> --}}
           </ul>
         </li>
@@ -20,8 +21,9 @@
             @foreach ($classes as $class)
               <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
+            <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
           </ul>
-          {{ $classes->links() }}
+          {{-- {{ $classes->links() }} --}}
         </li>
       </ul>
 
