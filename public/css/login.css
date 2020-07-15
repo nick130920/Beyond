@@ -181,6 +181,7 @@ form p{
 	border: 1px solid #fff;
 	border-radius: 50%;
 	opacity: .9;
+	outline: none;
 }
 .rol ul li button::before{
 	content: '';
