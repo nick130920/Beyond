@@ -40,9 +40,7 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
-
-              <br><br>
-              <h3>{{$group->description}}</h3>
+              <p>{{$group->code}}</p>
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
