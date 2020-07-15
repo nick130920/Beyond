@@ -66,18 +66,23 @@ class ClassController extends Controller
     $novelty->content = $request->input('content');
     $novelty->groups = $id;
     $novelty->publication_date= Carbon::now()->toDateTimeString();
-    $exito = $novelty->save(); //INSERT
 
-    // $idClass = $class->id;
-    // $member = new Group_member;
-    // $member->group_id = $idClass;
-    // $member->profile_id	= Auth::user()->id;
-    // $saved = $member->save();
-    // //Check if Group_member got saved
-    // if (!$saved){
-    //   $class->delete();
-    // }
+
+    $exito = $novelty->save(); //INSERT
     if ($exito) {
+      $resource = new Resource;
+      $file = $request->file('resource');
+      if ($file) {
+        //Guardar imagen
+        $path = public_path().'/resources';
+        $fileName = uniqid().$file->getClientOriginalName();
+        $file->move($path, $fileName);
+        $resource->url = $fileName;
+        $resource->name= $request->input('nameResource');
+        $resource->description = $request->input('descriptionResource');
+        $resource->save();
+        return back()->with('recurso', 'Novedad con recurso creado con éxito');
+      }
       return back()->with('success', 'Novedad creada con éxito');
     }else {
       return back()->with('error', 'Novedad no creada');

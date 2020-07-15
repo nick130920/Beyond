@@ -40,7 +40,7 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
-              <p>{{$group->code}}</p>
+
               @if (session('success'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
@@ -71,17 +71,13 @@
                   <h2>Comunícate con tu clase aquí</h2>
                 </div>
                 <div class="mensaje" id="mensaje">
-                  <form class="was-validated" method="post" action="{{url('/teacher/class/'.$group->id.'/novelty')}}">
+                  <form class="was-validated" method="post" action="{{url('/teacher/class/'.$group->id.'/novelty')}}" enctype="multipart/form-data">
                     @csrf
-                    <div class="novedadMensaje">
-                            <input type="text" class="tituloTarea" name="" placeholder="Asunto">
-                            <textarea class="textarea" id="validationTextarea"></textarea>
+
                     </div>
                     <div class="btnComentarios">
                       <div class="inputFile inputInverso">
-                        <label for="" class="btn btn-secondary" id="nombreArchivo"></label>
-                        <input type="file"  id="file" name="resource" class="inputFileInput">
-                        <label for="file" class="btn btn-primary" id="archivo"><i class="fas fa-paperclip"></i> Agregar</label>
+
                       </div>
                       <div class="cancelarEnviar">
                         <span class="btn btn-danger" id="cancelarEnviar">Cancelar</span>

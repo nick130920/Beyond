@@ -64,7 +64,7 @@
       <div class="overlay" id="overlay">
         <div class="popup" id="popup">
           <div class="textoPopup">
-            <h1>Hola Jhon Doe</h1>
+            <h1>Hola {{$profile->name}}</h1>
             <h2>{{ session('status') }}</h2>
             <p></p>
           </div>
