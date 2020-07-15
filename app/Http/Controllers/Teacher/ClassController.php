@@ -19,7 +19,7 @@ class ClassController extends Controller
 {
   public function index(){
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups;
+    $classes = $profile->groups()->paginate(4);
     return view('/teacher/classes')->with(compact('classes', 'profile'));
   }
   public function create(){
@@ -45,7 +45,7 @@ class ClassController extends Controller
    if (!$saved){
      $class->delete();
    }
-   return back();
+   return redirect()->route('/teacher/classes');
   }
   public function edit($id){
     $profile = Profile::find(Auth::user()->id);

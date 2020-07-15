@@ -35,7 +35,7 @@
         <div class="clasesPerfil">
           @foreach ($classes as $class)
             <div class="cardMio">
-              <a href="{{url('crear_vista_de_clase')}}">
+              <a href="{{url('/teacher/class/'.$class->id.'/')}}">
                 <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h2>{{$class->name}}</h2>
@@ -44,6 +44,8 @@
               </a>
             </div>
           @endforeach
+          {{ $classes->links() }}
+
         </div>
       </div>
     </div>
