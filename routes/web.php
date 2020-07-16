@@ -30,8 +30,19 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   Route::get('/class/{id}/edit', 'ClassController@edit'); //formulario edición
   Route::post('/class/{id}/edit', 'ClassController@update'); //Actualizar clase
   Route::delete('/class/{id}', 'ClassController@destroy'); //Eliminar clase
-  //NOVEDADES CLASE
+
+  ///////////NOVEDADES CLASE///////////////////
   Route::post('/class/{id}/novelty', 'ClassController@novelty'); //UNA CLASE
+  //////////TAREAS CLASE//////////////////////
+  Route::get('/homework', 'ClassController@homework'); //Vista creacion de tareas
+  //////////MATERIAL CLASE//////////////////////
+  Route::get('/material', 'ClassController@material'); //Vista creacion de material
+  //////////CALIFICACIONES CLASE//////////////////////
+  Route::get('/ratings', 'ClassController@ratings'); //Vista de calificaciones
+  //////////ESTUDIANTES CLASE//////////////////////
+  Route::get('/students', 'ClassController@students'); //Vista de estudiantes
+
+
 });
 Route::middleware(['auth', 'student'])->prefix('/student')->namespace('Student')->group(function(){
   Route::get('/','StudentController@index')->name('student'); //home student
