@@ -42,6 +42,7 @@
               <h2>{{ $class->name}}</h2>
               <p>{{ $class->description}}</p>
               <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn btn-primary">Ver</a>
+              <button type="submit" name="button"><i class="far fa-trash-alt"> Eliminar</button>
             </div>
           </div>
           @endforeach

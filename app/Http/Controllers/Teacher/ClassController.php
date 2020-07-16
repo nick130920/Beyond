@@ -85,27 +85,5 @@ class ClassController extends Controller
     }else {
       return back()->with('error', 'Novedad no creada');
     }
-
-  }
-  //////////////////STAREAS////////////////////
-  public function homework(){
-    $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
-    return view('/teacher/homework')->with(compact('classes', 'profile'));
-  }
-  public function material(){
-    $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
-    return view('/teacher/material')->with(compact('classes', 'profile'));
-  }
-  public function ratings(){
-    $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
-    return view('/teacher/ratings')->with(compact('classes', 'profile'));
-  }
-  public function students(){
-    $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
-    return view('/teacher/students')->with(compact('classes', 'profile'));
   }
 }

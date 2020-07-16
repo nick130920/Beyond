@@ -25,37 +25,22 @@
 @section('contenido')
   <!-- Contenido -->
   <div class="right_col" role="main">
-    <!-- Material -->
     <div class="page-title">
       <div class="title_left">
-        <h3>Beyond | Nueva tarea</h3>
-      </div>
-
-      <div class="contenidoTarea">
-        <div class="formularioTarea">
-          <form>
-            <div class="tareaTitulo">
-                <label><i class="fas fa-clipboard"></i> Titulo</label>
-                <input type="text" class="titulo" name="">
-            </div>
-            <div class="tareaContenido">
-                <label><i class="fas fa-stream"></i> Instrucciones</label>
-                <textarea type="text" class="titulo" name=""></textarea>
-            </div>
-            <div class="botonesMaterial">
-                <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="">
-                <a class="btn botonReset" onclick="document.getElementById('agregarTarea').click()"> Agregar documento</a>
-                <a  class="btn botonCancelar" name="">Cancelar</a>
-                <button class="btn botonGuardar">Publicar</button>
-              
-            </div>
-          </form>
-        </div>
+        <h3>Beyond | Nuevo Material</h3>
       </div>
     </div>
+    <div class="clearfix"></div>
+
+    <form method="post" action="{{route('/class/store')}}" class="dropzone" id="my-awesome-dropzone">
+      <input type="text" id="title" class="form-control" name="title">
+      <input type="text" id="description" class="form-control" name="description">
+
+
+    </form>
   </div>
 @endsection
 @section('scripts')
   <!-- mi poput -->
-  <script src="{{asset('/js/popup.js')}}"></script>
+  {{-- <script src="{{asset('/js/popup.js')}}"></script> --}}
 @endsection
