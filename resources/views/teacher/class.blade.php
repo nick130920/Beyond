@@ -82,9 +82,9 @@
                   <form class="was-validated" method="post" action="{{url('/teacher/class/'.$group->id.'/novelty')}}" enctype="multipart/form-data">
                     @csrf
 
-                    <div class="mb-3">
-                      <input type="text" name="name" placeholder="nombre">
-                      <textarea name="content" class="form-control is-invalid" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
+                    <div class="novedadMensaje">
+                      <input type="text" class="tituloTarea" name="name" placeholder="Asunto">
+                      <textarea name="content" class="textarea" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
                     </div>
                     <div class="btnComentarios">
                       <div class="inputFile inputInverso">
