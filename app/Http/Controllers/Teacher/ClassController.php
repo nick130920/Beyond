@@ -66,8 +66,6 @@ class ClassController extends Controller
     $novelty->content = $request->input('content');
     $novelty->groups = $id;
     $novelty->publication_date= Carbon::now()->toDateTimeString();
-
-
     $exito = $novelty->save(); //INSERT
     if ($exito) {
       $resource = new Resource;
@@ -89,5 +87,25 @@ class ClassController extends Controller
     }
 
   }
-
+  //////////////////STAREAS////////////////////
+  public function homework(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(4);
+    return view('/teacher/homework')->with(compact('classes', 'profile'));
+  }
+  public function material(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(4);
+    return view('/teacher/material')->with(compact('classes', 'profile'));
+  }
+  public function ratings(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(4);
+    return view('/teacher/ratings')->with(compact('classes', 'profile'));
+  }
+  public function students(){
+    $profile = Profile::find(Auth::user()->id);
+    $classes = $profile->groups()->paginate(4);
+    return view('/teacher/students')->with(compact('classes', 'profile'));
+  }
 }
