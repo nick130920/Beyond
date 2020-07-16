@@ -5,26 +5,16 @@
     <div class="menu_section">
       <h3>Profesor</h3>
       <ul class="nav side-menu">
-        {{-- <li><a><i class="fas fa-house-user"></i> Inicio</a></li> --}}
+        <li><a href="{{ url('/teacher') }}"><i class="fas fa-house-user"></i> Inicio</a></li>
         {{-- YA ESTA EN INICIO --}}
-        <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
+        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{route('/create/class')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
-            {{-- <li><a href="" ><i class="fas fa-edit"></i> Editar</a></li> --}}
-            {{-- <li><a href="{{route('/Teacher/class/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i> Editar Clase</a></li> --}}
+            <li><a href="{{url('/teacher/homework')}}"> Crear tarea</a></li>
+            <li><a href="{{url('/teacher/material')}}"> Crear material</a></li>
           </ul>
         </li>
-
-
-        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
-            @endforeach
-            <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
-          </ul>
-          {{-- {{ $classes->links() }} --}}
-        </li>
+        <li><a href="{{url('/teacher/students')}}"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="{{url('/teacher/ratings')}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
       </ul>
 
 
@@ -35,8 +25,34 @@
 @section('contenido')
   <!-- Contenido -->
   <div class="right_col" role="main">
-    <!-- prueba 1 -->
-    <h1>NUEVO MATERIAL</h1>
+    <!-- Material -->
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Beyond | Nueva tarea</h3>
+      </div>
+
+      <div class="contenidoTarea">
+        <div class="formularioTarea">
+          <form>
+            <div class="tareaTitulo">
+                <label><i class="fas fa-clipboard"></i> Titulo</label>
+                <input type="text" class="titulo" name="">
+            </div>
+            <div class="tareaContenido">
+                <label><i class="fas fa-stream"></i> Instrucciones</label>
+                <textarea type="text" class="titulo" name=""></textarea>
+            </div>
+            <div class="botonesMaterial">
+                <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="">
+                <a class="btn botonReset" onclick="document.getElementById('agregarTarea').click()"> Agregar documento</a>
+                <a  class="btn botonCancelar" name="">Cancelar</a>
+                <button class="btn botonGuardar">Publicar</button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 @endsection
 @section('scripts')
