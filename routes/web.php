@@ -34,13 +34,23 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   ///////////NOVEDADES CLASE///////////////////
   Route::post('/class/{id}/novelty', 'ClassController@novelty'); //UNA CLASE
   //////////TAREAS CLASE//////////////////////
-  Route::get('/homework', 'ClassController@homework'); //Vista creacion de tareas
+  Route::get('/homework', 'HomeworkController@index'); //Vista creacion de tareas
+  Route::post('/homework/{id}', 'HomeworkController@store'); // creacion de tareas
+  //////////TAREAS CLASE//////////////////////
+  Route::get('/themes', 'ThemesController@index'); //Vista creacion de tareas
+  Route::post('/themes/{id}', 'ThemesController@store'); // creacion de tareas
+
   //////////MATERIAL CLASE//////////////////////
-  Route::get('/material', 'ClassController@material'); //Vista creacion de material
+  Route::get('/material', 'MaterialController@index'); //Vista creacion de material
+  Route::post('/material/{id}', 'MaterialController@store'); // creacion de material
   //////////CALIFICACIONES CLASE//////////////////////
-  Route::get('/ratings', 'ClassController@ratings'); //Vista de calificaciones
+  Route::get('/ratings', 'RatingsController@index'); //Vista de calificacione
+  Route::post('/ratings/{id}', 'RatingsController@store'); // creacion de calificaciones
+
   //////////ESTUDIANTES CLASE//////////////////////
-  Route::get('/students', 'ClassController@students'); //Vista de estudiantes
+  Route::get('/students', 'StudentsController@index'); //Vista de estudiantes
+  Route::post('/students/{id}', 'StudentsController@store'); // creacion de estudiantes
+
 
 
 });

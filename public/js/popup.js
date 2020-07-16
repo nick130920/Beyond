@@ -1,7 +1,7 @@
 var overlay = document.getElementById('overlay');
 var	popup = document.getElementById('popup');
 var	btnCerrar = document.getElementById('btn-cerrar');
-	
+
 
 	window.onload = function añadirClase(){
 		overlay.classList.add('active');
@@ -28,4 +28,9 @@ botonOverlay2.addEventListener('click', function(){
 });
 cancelarOverlay2.addEventListener('click', function(){
 	overlay2.classList.remove('active');
-})
+});
+/////////////////////////////
+Dropzone.options.myAwesomeDropzone = {
+    paramName: "file", // Las imágenes se van a usar bajo este nombre de parámetro
+    maxFilesize: 2 // Tamaño máximo en MB
+};

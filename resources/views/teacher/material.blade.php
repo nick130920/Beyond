@@ -35,11 +35,23 @@
 @section('contenido')
   <!-- Contenido -->
   <div class="right_col" role="main">
-    <!-- prueba 1 -->
-    <h1>NUEVO MATERIAL</h1>
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Beyond | Nuevo Material</h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <form method="post" action="{{route('/class/store')}}" class="dropzone" id="my-awesome-dropzone">
+      <input type="text" id="title" class="form-control" name="title">
+      <input type="text" id="description" class="form-control" name="description">
+
+
+    </form>
   </div>
 @endsection
 @section('scripts')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
   <!-- mi poput -->
-  <script src="{{asset('/js/popup.js')}}"></script>
+  {{-- <script src="{{asset('/js/popup.js')}}"></script> --}}
 @endsection

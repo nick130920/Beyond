@@ -1,10 +1,4 @@
 @extends('layouts.app')
-@section('links')
-  <!-- sweetAlert 2-->
-  <link rel="stylesheet" type="text/css" href="{{asset('/sweetAlert/dist/sweetalert2.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/themes/semantic.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('/alertify/css/alertify.min.css')}}">
-@endsection
 @section('sidebar_menu')
   <!-- sidebar menu -->
   <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
