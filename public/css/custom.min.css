@@ -6197,6 +6197,7 @@ ul.notifications {
     position: absolute;
     color: #f7f7f7;
     padding: 5px 20px;
+    font-size: 15px;
 }
 .contenido{
     display:flex;
