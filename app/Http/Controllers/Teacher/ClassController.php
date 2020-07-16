@@ -19,7 +19,7 @@ class ClassController extends Controller
 {
   public function index(){
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
+    $classes = $profile->groups()->paginate(6);
     return view('/teacher/classes')->with(compact('classes', 'profile'));
   }
   public function create(){
