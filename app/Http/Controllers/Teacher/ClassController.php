@@ -22,9 +22,15 @@ class ClassController extends Controller
     $classes = $profile->groups()->paginate(6);
     return view('/teacher/classes')->with(compact('classes', 'profile'));
   }
+  public function class($id){
+    $profile = Profile::find(Auth::user()->id);
+    $group= Groups::find($id);
+    $classes = $profile->groups()->paginate(4);
+    return view('/teacher/class')->with(compact('group','profile','classes'));
+  }
   public function create(){
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(2);
+    $classes = $profile->groups()->paginate(4);
     return view('/teacher/create')->with(compact('profile', 'classes'));
   }
   public function store(ValidarFormularioRequest $request){
@@ -52,12 +58,6 @@ class ClassController extends Controller
     $group= Groups::find($id);
     $classes = $profile->groups()->paginate(2);
     return view('/teacher/edit')->with(compact('group','profile', 'classes'));
-  }
-  public function class($id){
-    $profile = Profile::find(Auth::user()->id);
-    $group= Groups::find($id);
-    $classes = $profile->groups()->paginate(2);
-    return view('/teacher/class')->with(compact('group','profile','classes'));
   }
   //////////////////NOVEDAD////////////////////
   public function novelty(Request $request, $id){

@@ -32,10 +32,16 @@
     </div>
     <div class="clearfix"></div>
 
-    <form method="post" action="{{route('/class/store')}}" class="dropzone" id="my-awesome-dropzone">
-      <input type="text" id="title" class="form-control" name="title">
+    <form method="post" action="{{url('/teacher/material/'.$class->id)}}" class="dropzone"  enctype="multipart/form-data" id="my-awesome-dropzone">
+      @csrf
+      <input type="text" id="title" class="form-control" >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" name="title" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
       <input type="text" id="description" class="form-control" name="description">
-
 
     </form>
   </div>

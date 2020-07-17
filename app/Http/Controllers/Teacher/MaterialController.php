@@ -10,9 +10,15 @@ use App\groups;
 
 class MaterialController extends Controller
 {
-  public function index(){
+  public function index($id){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups()->paginate(4);
-    return view('/teacher/material')->with(compact('classes', 'profile'));
+    $group= Groups::find($id);
+    return view('/teacher/material')->with(compact('classes', 'profile', 'group'));
+  }
+  public function store($id){
+    $group= Groups::find($id);
+    
+    return back();
   }
 }
