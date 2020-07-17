@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <link href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -115,6 +116,7 @@
   </div>
   <!-- jQuery -->
   <script src="{{asset('/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{asset('/jquery/dist/jquery-ui.min.js')}}"></script>
   <!-- Bootstrap -->
   <script src="{{asset('/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
   <!-- Custom Theme Scripts -->

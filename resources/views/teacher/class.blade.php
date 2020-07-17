@@ -7,23 +7,16 @@
 
       <ul class="nav side-menu">
         <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
+        </li>
+        <li><a href="#" id="editar"><i class="fas fa-edit"></i> Editar clase</a></li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
+            <li><a href="{{url('/teacher/homework')}}"> Crear tarea</a></li>
+            <li><a href="{{url('/teacher/material')}}"> Crear material</a></li>
           </ul>
         </li>
-        <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            <li><a href="{{route('/create/class')}}"> Crear Clase</a></li>
-            <li><a href="{{url('/teacher/class/'.$group->id.'/edit')}}"> Editar Clase</a></li>
-          </ul>
-        </li>
-        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
-            @endforeach
-          </ul>
-          {{ $classes->links() }}
-        </li>
+        <li><a href="{{url('/teacher/students')}}"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="{{url('/teacher/ratings')}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
       </ul>
     </div>
   </div>
@@ -39,8 +32,7 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
-              <br><br>
-              <h3>{{$group->description}}</h3>
+              <p>{{$group->code}}</p>
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
@@ -81,14 +73,14 @@
                 <div class="mensaje" id="mensaje">
                   <form class="was-validated" method="post" action="{{url('/teacher/class/'.$group->id.'/novelty')}}" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
-                      <input type="text" name="name" placeholder="nombre">
-                      <textarea name="content" class="form-control is-invalid" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
+                    <div class="novedadMensaje">
+                      <input type="text" class="tituloTarea" name="name" placeholder="Asunto">
+                      <textarea name="content" class="textarea" id="validationTextarea" placeholder="Crea tu novedad"></textarea>
                     </div>
                     <div class="btnComentarios">
                       <div class="inputFile inputInverso">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn botonReset" data-toggle="modal" data-target="#exampleModalCenter">
                         Agregar
                         </button>
 
@@ -117,11 +109,11 @@
                                   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="descriptionResource">
                                 </div>
                                 <input type="file" id="file" name="resource" class="inputFileInput">
-                                <label for="file" class="btn btn-primary" id="archivo">Archivo</label>
+                                <label for="file" class="btn botonReset" id="archivo">Archivo</label>
                               </div>
                               <div class="modal-footer">
-                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                                <button type="reset" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn botonGuardar" data-dismiss="modal">Guardar</button>
                               </div>
                             </div>
                           </div>
@@ -129,8 +121,8 @@
                           {{-- Aqui --}}
                       </div>
                       <div class="cancelarEnviar">
-                        <span class="btn btn-danger" id="cancelarEnviar">Cancelar</span>
-                        <button type="submit" class="btn btn-success">Enviar</button>
+                        <span class="btn botonCancelar" id="cancelarEnviar">Cancelar</span>
+                        <button type="submit" class="btn botonGuardar">Enviar</button>
                       </div>
                     </div>
                   </form>
@@ -139,12 +131,55 @@
                     <h2><i class="fas fa-comment"></i> Crea anuncios.</h2>
                     <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
                 </div>
+
+                <!-- Comentarios ya hechos   -->
+                      <div class="contentComentarios">
+                        <ul>
+                          <!-- Comentario 1 -->
+                          <li>
+                            <div class="cajaComentario">
+                              <div class="comentarioImg">
+                                <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
+                              </div>
+                              <div class="cuerpoComentario">
+                                <div class="comentarioHead">
+                                  <div class="head1">
+                                    <h3> {{$profile->first_name}} </h3>
+                                    <span> fecha de publicación</span>
+                                  </div>
+                                </div>
+                                <div class="comentarioCuerpo">
+                                  <h4>Asunto</h4>
+                                  <p>Novedad</p>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- popup para editar clase -->
+                  <div class="overlayEditar" id="overlayEditar">
+                    <div class="contenidoEditar" id="contenidoEditar">
+                      <form>
+                        <h1>Editar clase</h1>
+                        <input type="text" name="" placeholder="Titulo">
+                        <input type="text" name="" placeholder="Descripción">
+                        <div class="botonesEditar">
+                          <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
+                          <button type="reset" class="btn botonReset">Reiniciar</button>
+                          <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
   </div>
   <!-- /Contenido de la pagina -->
 @endsection
