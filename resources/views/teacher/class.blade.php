@@ -11,12 +11,12 @@
         <li><a href="#" id="editar"><i class="fas fa-edit"></i> Editar clase</a></li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{url('/teacher/homework')}}"> Crear tarea</a></li>
-            <li><a href="{{url('/teacher/material')}}"> Crear material</a></li>
+            <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
+            <li><a href="{{url('/teacher/material/'.$group->id)}}"> Crear material</a></li>
           </ul>
         </li>
-        <li><a href="{{url('/teacher/students')}}"><i class="fas fa-users"></i> Estudiantes</a></li>
-        <li><a href="{{url('/teacher/ratings')}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
+        <li><a href="{{url('/teacher/students/'.$group->id)}}"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="{{url('/teacher/ratings/'.$group->id)}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
       </ul>
     </div>
   </div>
@@ -146,15 +146,15 @@
                                 <div class="comentarioHead">
                                   <div class="head1">
                                     <h3> {{$profile->first_name}} </h3>
-                                    <span> fecha de publicación</span>
+                                    <span> {{$news->publication_date}}</span>
                                   </div>
                                 </div>
                                 <div class="comentarioCuerpo">
-                                  <h4>Asunto</h4>
-                                  <p>Novedad</p>
+                                  <h4>{{$news->name}}</h4>
+                                  <p>{{$news->content}}</p>
                                 </div>
                               </div>
-                              
+
                             </div>
                           </li>
                         </ul>
@@ -184,17 +184,18 @@
     {{--  - - - - - - Popup para el tema     - - - - -  - -  --}}
                   <div class="overlayTema" id="overlayTema">
                     <div class="contenedorTema" id="contenedorTema">
-                      <form>
+                      <form method="post" action="{{url('/teacher/themes/'.$group->id)}}">
+                        @csrf
                         <h1>Crear tema</h1>
 
                         <h2>Tema</h2>
-                        <input type="text" name="">
+                        <input type="text" name="name">
                         <h2>Descripcion del tema</h2>
-                        <input type="text" name="">
+                        <input type="text" name="description">
 
                         <div class="botonesTema">
                           <a class="btn botonCancelar" id="cancelarTema"> Cancelar</a>
-                          <button class="btn botonGuardar">Guardar tema</button>
+                          <button type="submit" class="btn botonGuardar">Guardar tema</button>
                         </div>
                       </form>
                     </div>

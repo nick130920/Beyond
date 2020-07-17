@@ -10,9 +10,10 @@ use App\groups;
 
 class HomeworkController extends Controller
 {
-  public function index(){
+  public function index($id){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups()->paginate(4);
-    return view('/teacher/homework')->with(compact('classes', 'profile'));
+    $group= Groups::find($id);
+    return view('/teacher/homework')->with(compact('classes', 'profile', 'group'));
   }
 }

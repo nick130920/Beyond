@@ -37,7 +37,6 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   Route::get('/homework/{id}', 'HomeworkController@index'); //Vista creacion de tareas
   Route::post('/homework/{id}', 'HomeworkController@store'); // creacion de tareas
   //////////TAREAS CLASE//////////////////////
-  Route::get('/themes/{id}', 'ThemesController@index'); //Vista creacion de tareas
   Route::post('/themes/{id}', 'ThemesController@store'); // creacion de tareas
 
   //////////MATERIAL CLASE//////////////////////

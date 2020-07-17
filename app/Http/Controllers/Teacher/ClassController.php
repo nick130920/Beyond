@@ -26,7 +26,8 @@ class ClassController extends Controller
     $profile = Profile::find(Auth::user()->id);
     $group= Groups::find($id);
     $classes = $profile->groups()->paginate(4);
-    return view('/teacher/class')->with(compact('group','profile','classes'));
+    $news = News::find($group)->first();
+    return view('/teacher/class')->with(compact('group','profile','classes', 'news'));
   }
   public function create(){
     $profile = Profile::find(Auth::user()->id);
