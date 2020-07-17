@@ -28,3 +28,15 @@ editar.addEventListener('click', function(){
 botonCancelar.addEventListener('click', function(){
 	overlayEditar.classList.remove('active');
 });
+
+// ----------------------- Tema ---------------------------------
+var crearTema = document.getElementById('crearTema');
+var overlayTema = document.getElementById('overlayTema');
+var cancelarTema = document.getElementById('cancelarTema');
+
+crearTema.addEventListener('click', function(){
+	overlayTema.classList.add('active');
+});
+cancelarTema.addEventListener('click', function(){
+	overlayTema.classList.remove('active');
+});

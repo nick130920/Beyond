@@ -33,6 +33,7 @@
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
               <p>{{$group->code}}</p>
+              <a id="crearTema">Crear tema</a>
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
@@ -176,6 +177,24 @@
                           <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
                           <button type="reset" class="btn botonReset">Reiniciar</button>
                           <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+    {{--  - - - - - - Popup para el tema     - - - - -  - -  --}}
+                  <div class="overlayTema" id="overlayTema">
+                    <div class="contenedorTema" id="contenedorTema">
+                      <form>
+                        <h1>Crear tema</h1>
+
+                        <h2>Tema</h2>
+                        <input type="text" name="">
+                        <h2>Descripcion del tema</h2>
+                        <input type="text" name="">
+
+                        <div class="botonesTema">
+                          <a class="btn botonCancelar" id="cancelarTema"> Cancelar</a>
+                          <button class="btn botonGuardar">Guardar tema</button>
                         </div>
                       </form>
                     </div>

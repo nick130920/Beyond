@@ -6217,7 +6217,7 @@ ul.notifications {
     background-color: #f7f7f7;
     transition: all 500ms ease;
 }
-.imgTexto:hover > p::before{
+.imgTexto > p:hover:before{
     width: 100%;
     left: 0;
 }
@@ -7000,4 +7000,60 @@ ul.notifications {
 }
 .botonesMaterial{
     margin-top: 10px;
+}
+/*   overlay tema    */
+.overlayTema{
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+    background-color: rgb(0,0,0, .5);
+    z-index: -10000;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease;
+}
+.overlayTema.active{
+    z-index: 10000;
+    opacity: 1;
+}
+.contenedorTema{
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgb(250,250,250, .5);
+    background-color: #f7f7f7;
+}
+.contenedorTema form{
+    padding: 0 10px;
+}
+.contenedorTema form h1{
+    text-align: center;
+}
+.contenedorTema form input{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgb(0,0,0, .5);
+    background-color: rgb(25,96,226, .1);
+    padding:7px 5px;
+}
+.contenedorTema form .botonesTema{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.imgTexto > a{
+    display: inline-block;
+    background-color: rgb(25,96,226, .5);
+    color: #fff !important;
+    font-weight: bold;
+    bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    left: 20px;
+    position: absolute;
+    padding: 10px;
 }
