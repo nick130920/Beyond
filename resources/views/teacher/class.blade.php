@@ -132,33 +132,35 @@
                     <h2><i class="fas fa-comment"></i> Crea anuncios.</h2>
                     <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
                 </div>
-
-                <!-- Comentarios ya hechos   -->
-                      <div class="contentComentarios">
-                        <ul>
-                          <!-- Comentario 1 -->
-                          <li>
-                            <div class="cajaComentario">
-                              <div class="comentarioImg">
-                                <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
+                @if ($news)
+                  <!-- Comentarios ya hechos   -->
+                  <div class="contentComentarios">
+                    <ul>
+                      <!-- Comentario 1 -->
+                      <li>
+                        <div class="cajaComentario">
+                          <div class="comentarioImg">
+                            <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
+                          </div>
+                          <div class="cuerpoComentario">
+                            <div class="comentarioHead">
+                              <div class="head1">
+                                <h3> {{$profile->first_name}} </h3>
+                                <span> {{$news->publication_date}}</span>
                               </div>
-                              <div class="cuerpoComentario">
-                                <div class="comentarioHead">
-                                  <div class="head1">
-                                    <h3> {{$profile->first_name}} </h3>
-                                    <span> {{$news->publication_date}}</span>
-                                  </div>
-                                </div>
-                                <div class="comentarioCuerpo">
-                                  <h4>{{$news->name}}</h4>
-                                  <p>{{$news->content}}</p>
-                                </div>
-                              </div>
-
                             </div>
-                          </li>
-                        </ul>
-                      </div>
+                            <div class="comentarioCuerpo">
+                              <h4>{{$news->name}}</h4>
+                              <p>{{$news->content}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                @else
+                {{-- SI NO EXISTE NINGUNA NOVEDAD --}}
+                @endif
 
               </div>
             </div>
