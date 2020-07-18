@@ -17,7 +17,7 @@ class CreateMaterialsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->foreignId('themes')->constrained();
+            $table->foreignId('theme_id')->constrained();
             $table->timestamps();
         });
     }

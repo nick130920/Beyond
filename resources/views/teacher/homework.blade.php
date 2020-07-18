@@ -33,7 +33,8 @@
 
       <div class="contenidoTarea">
         <div class="formularioTarea">
-          <form>
+          <form enctype="multipart/form-data" method="post" action="{{url('/teacher/homework/'.$group->id)}}">
+            @csrf
             <div class="tareaTitulo">
                 <label><i class="fas fa-clipboard"></i> Titulo</label>
                 <input type="text" class="titulo" name="title">
@@ -44,15 +45,25 @@
             </div>
             <div class="botonesTarea">
               <div class="fechaLimite">
-                <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="">
+                <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="resource">
                 <a class="botonReset" onclick="document.getElementById('agregarTarea').click()"> Agregar documento</a>
                 <a for="datepicker" class="labelFecha"><i class="fas fa-calendar-alt"></i> Fecha limite: </a>
-                <input type="text" id="fecha" class="inputFecha" name="">
+                <input type="text" id="fecha" class="inputFecha" name="finish_date">
               </div>
+              <select title="theme" name="themes">
+                @foreach ($themes as $theme)
+                  <option value="{{$theme->id}}">{{$theme->name}}</option>
+                @endforeach
+              </select>
+              <select title="theme" name="evaluation_criterias">
+                @foreach ($evaluations as $evaluation)
+                  <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
+                @endforeach
+              </select>
 
               <div class="botonesUno">
                 <a  class="btn botonCancelar" name="">Cancelar</a>
-                <button class="btn botonGuardar">Publicar</button>
+                <button type="submit" class="btn botonGuardar">Publicar</button>
               </div>
 
             </div>

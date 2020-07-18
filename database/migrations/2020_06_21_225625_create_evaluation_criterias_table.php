@@ -18,7 +18,7 @@ class CreateEvaluationCriteriasTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->double('percentage',2,2);
-            $table->foreignId('groups')->constrained();
+            $table->foreignId('groups_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

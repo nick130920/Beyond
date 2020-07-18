@@ -15,7 +15,7 @@ class ThemesController extends Controller
     $theme = new Theme;
     $theme->name = $request->input('name');
     $theme->description = $request->input('description');
-    $theme->groups = $id;
+    $theme->groups_id = $id;
     $exito = $theme->save();
     if ($exito) {
       return back()->with('success', 'Tema creado con éxito');

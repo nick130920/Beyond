@@ -17,7 +17,7 @@ class CreateThemesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->foreignId('groups')->constrained();
+            $table->foreignId('groups_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

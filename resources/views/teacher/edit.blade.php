@@ -36,7 +36,7 @@
       <div class="clearfix"></div>
 
             <!-- Clases de la Mañana -->
-            
+
               <div class="x_content">
                 <br/>
                 <div class="centrarCard">
@@ -64,7 +64,12 @@
                     <input type="radio" id="cancelar" name="cancelar" class="join-btn" id="cancelar">No
                   </label>
                   <label class="btn btn-success">
-                    <input type="radio" id="confirmar" name="confirmar" class="join-btn" id="confirmar">Si
+                    <form class="" action="{{url('/teacher/class/'.$group->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+
+                      <input type="submit" id="confirmar" name="confirmar" class="join-btn" id="confirmar">Si
+                    </form>
                   </label>
                 </div>
               </div>
@@ -73,10 +78,11 @@
             <!-- popup para editar clase -->
                   <div class="overlayEditar" id="overlayEditar">
                     <div class="contenidoEditar" id="contenidoEditar">
-                      <form>
+                      <form method="post" action="{{url('/teacher/class/'.$group->id.'/edit')}}">
+                        @csrf
                         <h1>Editar clase</h1>
-                        <input type="text" name="" placeholder="Titulo">
-                        <input type="text" name="" placeholder="Descripción">
+                        <input type="text" name="name" placeholder="Titulo">
+                        <input type="text" name="description" placeholder="Descripción">
                         <div class="botonesEditar">
                           <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
                           <button type="reset" class="btn botonReset">Reiniciar</button>

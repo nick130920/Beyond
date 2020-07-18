@@ -34,30 +34,6 @@
               <h3>Beyond | {{$group->name}}</h3>
               <p>{{$group->code}}</p>
               <a id="crearTema">Crear tema</a>
-              @if (session('recurso'))
-                <script type="text/javascript">
-                window.onload = function alerta() {
-                  alertify.set('notifier','position', 'top-right');
-                  alertify.notify ("{{ session('recurso') }}",'success', 2, function(){});
-                }
-                </script>
-              @endif
-              @if (session('success'))
-                <script type="text/javascript">
-                window.onload = function alerta() {
-                  alertify.set('notifier','position', 'top-right');
-                  alertify.notify ("{{ session('success') }}",'success', 2, function(){});
-                }
-                </script>
-              @endif
-              @if (session('error'))
-                <script type="text/javascript">
-                  window.onload = function alerta() {
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.notify ("{{ session('error') }}",'error', 2, function(){});
-                  }
-                </script>
-              @endif
             </div>
             <div class="contenido">
               <div class="pendientes">
@@ -140,7 +116,7 @@
                       <li>
                         <div class="cajaComentario">
                           <div class="comentarioImg">
-                            <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
+                            <img src="{{asset($profile->url)  }}">
                           </div>
                           <div class="cuerpoComentario">
                             <div class="comentarioHead">
@@ -171,10 +147,11 @@
     <!-- popup para editar clase -->
                   <div class="overlayEditar" id="overlayEditar">
                     <div class="contenidoEditar" id="contenidoEditar">
-                      <form>
+                      <form method="post" action="{{url('/teacher/class/'.$group->id.'/edit')}}">
+                        @csrf
                         <h1>Editar clase</h1>
-                        <input type="text" name="" placeholder="Titulo">
-                        <input type="text" name="" placeholder="Descripción">
+                        <input type="text" name="name" placeholder="Titulo">
+                        <input type="text" name="description" placeholder="Descripción">
                         <div class="botonesEditar">
                           <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
                           <button type="reset" class="btn botonReset">Reiniciar</button>

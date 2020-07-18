@@ -53,7 +53,7 @@
                 <div class="fotoDato">
                   <div class="cambiarFoto" id="cambiarFoto" onclick="document.getElementById('file').click()">
                     <input type="file" id="file" class="botonFoto" name="photo">
-                    <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" class="imagenCambio">
+                    <img src="{{asset($profile->url)  }}" class="imagenCambio">
                   </div>
                 </div>
                 <div class="cambiarDato">

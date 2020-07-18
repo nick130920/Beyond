@@ -48,7 +48,7 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
 
   //////////ESTUDIANTES CLASE//////////////////////
   Route::get('/students/{id}', 'StudentsController@index'); //Vista de estudiantes
-  Route::post('/students/{id}', 'StudentsController@store'); // creacion de estudiantes
+  Route::post('/students/{id}', 'StudentsController@join'); // creacion de estudiantes
 
 
 

@@ -17,8 +17,8 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('content');
-            $table->foreignId('groups')->constrained();
-            $table->foreignId('profiles')->constrained()->nullable();
+            $table->foreignId('groups_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('profiles')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->date('publication_date');
 
             $table->timestamps();

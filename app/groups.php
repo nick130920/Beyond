@@ -15,6 +15,9 @@ class groups extends Model
 	public function profiles(){
 		return $this->belongsToMany('App\profile', 'group_member','group_id','profile_id')->withTimestamps();
 	}
+  public function deliveries(){
+		return $this->profiles->belongsToMany('App\profile', 'group_member','group_id','profile_id')->withTimestamps();
+	}
 	public function themes(){
 		return $this->hasMany('App\theme');
 	}

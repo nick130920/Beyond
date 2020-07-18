@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_type')->constrained()->nullable();
+            $table->foreignId('id_type')->nullable()->constrained();
             $table->bigInteger('id_number')->unique()->nullable();
             $table->string('first_name', 30);
             $table->string('second_name', 30)->nullable();

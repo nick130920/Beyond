@@ -42,7 +42,7 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" alt="..." class="img-circle profile_img">
+              <img src="{{asset($profile->url)}}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Bienvenido</span>
@@ -52,6 +52,30 @@
           <!-- /menu profile quick info -->
           <br/>
           @yield('sidebar_menu')
+          @if (session('recurso'))
+            <script type="text/javascript">
+            window.onload = function alerta() {
+              alertify.set('notifier','position', 'top-right');
+              alertify.notify ("{{ session('recurso') }}",'success', 2, function(){});
+            }
+            </script>
+          @endif
+          @if (session('success'))
+            <script type="text/javascript">
+            window.onload = function alerta() {
+              alertify.set('notifier','position', 'top-right');
+              alertify.notify ("{{ session('success') }}",'success', 2, function(){});
+            }
+            </script>
+          @endif
+          @if (session('error'))
+            <script type="text/javascript">
+              window.onload = function alerta() {
+                alertify.set('notifier','position', 'top-right');
+                alertify.notify ("{{ session('error') }}",'error', 2, function(){});
+              }
+            </script>
+          @endif
         </div>
       </div>
       <!-- top navigation -->
@@ -64,7 +88,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" alt="">
+                    <img src="{{asset($profile->url)  }}" alt="">
                     {{ $profile->first_name }}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
@@ -86,7 +110,7 @@
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                     <li class="nav-item">
                       <a class="dropdown-item">
-                        <span class="image"><img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{asset($profile->url)  }}" alt="Profile Image" /></span>
                         <span>
                           <span>{{ $profile->first_name }}</span>
                           <span class="time">3 mins ago</span>

@@ -18,9 +18,9 @@ class CreateWorksTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->foreignId('evaluation_criterias')->constrained();
-            $table->foreignId('themes')->constrained();
+            $table->foreignId('theme_id')->constrained();
             $table->date('finish_date');
-            
+
 
             $table->timestamps();
         });

@@ -26,6 +26,10 @@ class profile extends Model
     if (substr($this->image,0,4) === "http") {
       return $this->image;
     }
-    return '/images/profile/'.$this->image;
+    if ($this->image) {
+      return '/images/profile/'.$this->image;
+    }else {
+      return '/images/profile/user_default.png';
+    }
   }
 }

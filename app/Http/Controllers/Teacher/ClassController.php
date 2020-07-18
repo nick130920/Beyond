@@ -26,7 +26,7 @@ class ClassController extends Controller
     $profile = Profile::find(Auth::user()->id);
     $group= Groups::find($id);
     $classes = $profile->groups()->paginate(4);
-    $news = News::find($group)->first();
+    $news = News::all()->where('groups_id', $group->id)->last();
     return view('/teacher/class')->with(compact('group','profile','classes', 'news'));
   }
   public function create(){
@@ -54,26 +54,45 @@ class ClassController extends Controller
    }
    return redirect()->route('/teacher/classes');
   }
+  public function update(Request $request, $id){
+    $group= Groups::find($id);
+    if ($request->input('name')) {
+      $group->name = $request->input('name');
+    }
+    if ($request->input('description')) {
+      $group->description = $request->input('description');
+    }
+    if ($request->input('name') || $request->input('description')) {
+      $group->save();
+    }
+    return back();
+
+  }
   public function edit($id){
     $profile = Profile::find(Auth::user()->id);
     $group= Groups::find($id);
     $classes = $profile->groups()->paginate(2);
     return view('/teacher/edit')->with(compact('group','profile', 'classes'));
   }
+  public function destroy($id){
+    $group = Groups::find($id);
+    $group->delete();
+    return redirect()->route('/teacher/classes');
+  }
   //////////////////NOVEDAD////////////////////
   public function novelty(Request $request, $id){
     $novelty = new News();
     $novelty->name = $request->input('name');
     $novelty->content = $request->input('content');
-    $novelty->groups = $id;
+    $novelty->groups_id = $id;
     $novelty->publication_date= Carbon::now()->toDateTimeString();
     $exito = $novelty->save(); //INSERT
     if ($exito) {
-      $resource = new Resource;
       $file = $request->file('resource');
       if ($file) {
+        $resource = new Resource;
         //Guardar imagen
-        $path = public_path().'/resources';
+        $path = public_path().'/images/novedad';
         $fileName = uniqid().$file->getClientOriginalName();
         $file->move($path, $fileName);
         $resource->url = $fileName;

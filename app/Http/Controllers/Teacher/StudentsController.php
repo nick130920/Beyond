@@ -12,7 +12,7 @@ class StudentsController extends Controller
 {
   public function index(){
     $profile = Profile::find(Auth::user()->id);
-    $classes = $profile->groups()->paginate(4);
+    $classes = $profile->groups()->paginate(10);
     return view('/teacher/students')->with(compact('classes', 'profile'));
   }
 }

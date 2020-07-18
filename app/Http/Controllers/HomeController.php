@@ -39,9 +39,9 @@ class HomeController extends Controller
         $profile->first_name= $name[0];
         if ($cuanto>1) {
           $profile->second_name= $name[1];
-        }elseif ($cuanto>2) {
+        }if ($cuanto>2) {
           $profile->first_surname= $name[2];
-        }elseif ($cuanto>3) {
+        }if ($cuanto>3) {
           $profile->second_surname= $name[3];
         }
         $profile->user_id = $id_user;

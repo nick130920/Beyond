@@ -27,7 +27,15 @@
         <link href="{{ asset('/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-
+        <script type="text/javascript">
+        $(document).ready(function() {
+          $("form").keypress(function(e) {
+            if (e.which == 13) {
+              return false;
+            }
+          });
+        });
+        </script>
     </head>
     <body >
         <div class="body">

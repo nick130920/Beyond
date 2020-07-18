@@ -45,7 +45,7 @@
 
               <div class="infoPerfil">
                 <div class="imgPerfil" >
-                  <a href="{{route('/edit/profile')}}"><img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}" alt=""></a>
+                  <a href="{{route('/edit/profile')}}"><img src="{{asset($profile->url)  }}" alt=""></a>
                 </div>
                 {{-- <h2>Perfil</h2> --}}
                 <h2><!-- Nombre --> {{$user->name}}</h2>
