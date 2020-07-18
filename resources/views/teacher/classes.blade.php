@@ -40,9 +40,9 @@
             <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2>{{ $class->name}}</h2>
-              <p>{{ $class->description}}</p>
-              <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i>  Ver</a>
-              <button class="btn btn-danger" type="submit" name="button"><i class="far fa-trash-alt"></i> Eliminar</button>
+              <p>{{ \Illuminate\Support\Str::limit($class->description, 70) }}</p>
+              <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fa fa-eye" aria-hidden="true"></i>  Ver</a>
+              <button class="btn botonCancelar" type="submit" name="button"><i class="far fa-trash-alt"></i> Eliminar</button>
             </div>
           </div>
           @endforeach

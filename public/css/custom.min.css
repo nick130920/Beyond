@@ -1216,7 +1216,9 @@
 }
 
 .left_col {
-    background:rgb(26, 95, 226,.5);
+    background:rgb(26, 95, 226);
+    position: fixed;
+    height: 100%;
 }
 
 .container {
@@ -1235,11 +1237,11 @@
 
 .nav-sm .container.body .col-md-3.left_col.menu_fixed {
     position: fixed;
-    height: 100%
+    height: 100%;
 }
 
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,.nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
-    overflow: visible
+    overflow: visible;
 }
 
 .nav-sm .hidden-small {
@@ -1302,20 +1304,22 @@
 }
 
 .nav-sm .nav.side-menu li a i {
-    font-size: 25px !important;
+    font-size: 20px !important;
     text-align: center;
     width: 100% !important;
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    position: relative !important;
 }
 
 .nav-sm ul.nav.child_menu {
     left: 100%;
     position: absolute;
     top: 0;
+    font-size: 15px;
     width: 210px;
     z-index: 4000;
-    background: #3E5367;
-    display: none
+    background-color: rgb(25,96,226);
+    display: none;
 }
 
 .nav-sm ul.nav.child_menu li {
@@ -1323,7 +1327,9 @@
 }
 
 .nav-sm ul.nav.child_menu li a {
-    text-align: center !important
+    text-align: center !important;
+    font-size: 13px !important;
+    color: #fff !important;
 }
 
 .nav-sm .profile {
@@ -1421,7 +1427,10 @@
 }
 
 .nav-sm .menu_section {
-    margin: 0
+    margin: 0;
+    position: fixed;
+    width: 70px;
+    background-color: rgb(25,96,226) !important;
 }
 
 .nav-sm span.fas,.nav-sm .menu_section h3 {
@@ -1440,7 +1449,8 @@
     width: 100%;
     height: 57px;
     justify-content: center;
-    position: relative
+    z-index: 9999;
+    position: fixed !important;
 }
 
 .info-number .badge {
@@ -1682,6 +1692,7 @@ nav{
     width: 100%;
     height: 65px;
     padding: 10px 0;
+    margin-top: 57px;
 }
 
 .page-title .title_left {
@@ -1825,7 +1836,9 @@ a:hover,a:focus {
 .top_nav .navbar-right {
     margin: 13px;
     width: auto;
-    float: right
+    position: fixed; 
+    top: 0;
+    right: 0 !important;
 }
 
 .top_nav .navbar-right li {
@@ -2024,6 +2037,9 @@ a:hover,a:focus {
 .toggle {
     float: left;
     margin: 0;
+    position: fixed;
+    height: 57px;
+    background-color: rgb(25,96,226, .2);
 }
 
 .toggle a {
@@ -6025,12 +6041,8 @@ ul.notifications {
 }
 .x_content .card{
     width: 20rem;
-    display: inline-block;
-    margin: 10px 10px 0 10px;
-}
-.botonesEditError{
     display: flex;
-    justify-content: flex-end;
+    margin: 10px 10px 0 10px;
 }
 .fas.fa-times{
     width: 16px;
@@ -6137,35 +6149,41 @@ ul.notifications {
     position: relative;
     display: block;
 }
+.miBoton.botonCancelar{
+    background-color: inherit;
+}
 .botonCancelar{
-    background-color: rgb(231, 74, 74, .6);
+    background-color: white;
     border: 2px solid rgb(231,74,74, .7);
     cursor: pointer;
-    color: white !important;
+    color: rgb(231, 74, 74, .6) !important;
 }
 .botonCancelar:hover{
     background-color: rgb(231, 74, 74, .8);
     border: 2px solid rgb(231,74,74);
+    color: white !important;
 }
 .botonReset{
-    background-color: rgb(0, 0, 0, .6);
+    background-color: white;
     border: 2px solid rgb(0, 0, 0, .7);
     cursor: pointer;
-    color: white !important;
+    color: rgb(0, 0, 0, .6) !important;
 }
 .botonReset:hover{
     background-color: rgb(0, 0, 0, .8);
     border: 2px solid rgb(0, 0, 0);
+    color: white !important;
 }
 .botonGuardar{
-    background-color: rgb(25, 96, 226, .6);
+    background-color: white ;
     border: 2px solid rgb(25,96,226, .7);
     cursor: pointer;
-    color: white !important;
+    color: rgb(25, 96, 226, .6) !important;
 }
 .botonGuardar:hover{
     background-color: rgb(25, 96, 226, .8);
     border: 2px solid rgb(25,96,226);
+    color: white !important;
 }
 .modal-header button{
     outline: none;
@@ -6181,6 +6199,7 @@ ul.notifications {
     padding: 10px;
     box-shadow: 0 0 3px #A4A0A0;
     border-radius: 10px;
+    margin-top: 58px;
 }
 .imgTexto{
     background-image: url(../images/img/jornadaM.svg);
@@ -6197,7 +6216,17 @@ ul.notifications {
     display: block;
 }
 
-.imgTexto p{
+.imgTexto > p{
+    position: relative;
+    color: #f7f7f7;
+    margin-left: 20px;
+    padding: 4px 20px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50%;
+}
+.imgTexto .imgTextoBajo > p{
     position: relative;
     color: #f7f7f7;
     margin-left: 20px;
@@ -6206,7 +6235,21 @@ ul.notifications {
     font-size: 20px;
     cursor: pointer;
 }
-.imgTexto p::before{
+.imgTextoBajo{
+    display: flex;
+    bottom: 0;
+    position: absolute;
+}
+.imgTexto .imgTextoBajo > p, .imgTexto .imgTextoBajo > a{
+    position: relative;
+    color: #f7f7f7;
+    margin-left:5px;
+    padding: 4px 10px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+}
+.imgTexto .imgTextoBajo p::before{
     content: '';
     width: 0;
     display: block;
@@ -6217,7 +6260,7 @@ ul.notifications {
     background-color: #f7f7f7;
     transition: all 500ms ease;
 }
-.imgTexto > p:hover:before{
+.imgTexto .imgTextoBajo > p:hover:before{
     width: 100%;
     left: 0;
 }
@@ -6985,6 +7028,7 @@ ul.notifications {
     font-weight: 600;
 }
 .fechaLimite .labelFecha{
+    border: 2px solid rgb(0,0,0, .7);
     background-color: rgb(0, 0, 0, .6);
     color: white !important;
 }
@@ -7045,15 +7089,49 @@ ul.notifications {
     justify-content: space-between;
     padding: 10px 20px;
 }
-.imgTexto > a{
-    display: inline-block;
-    background-color: rgb(25,96,226, .5);
-    color: #fff !important;
-    font-weight: bold;
-    bottom: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    left: 20px;
-    position: absolute;
+
+@media screen and (max-width: 700px){
+    .imgTexto > p{
+        display: none;
+    }
+}
+
+/*-----------------------------       Student         ------------------------*/
+.contentStudent{
+    width: 100%;
     padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -7px rgb(0,0,0);
+}
+.contentStudent table{
+    border-collapse: collapse;
+    font-size: 15px;
+    width: 100%;
+}
+.contentStudent table th{
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(25,96,226, .8);
+    color: #fff;
+}
+.contentStudent table tr:nth-child(odd){
+    background-color: rgb(25,96,226, .1);
+}
+.contentStudent table td{
+    padding: 10px;
+    text-align: left;
+}
+.contentStudent table td a{
+    padding: 5px 10px;
+}
+.contentStudent table td.eliminarTD{
+    text-align: center;
+}
+.contentStudent table th.eliminarTH{
+    text-align: center;
+}
+.pagAgregar{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
