@@ -28,7 +28,7 @@ class MaterialController extends Controller
     $material = new Material;
     $material->title = $request->input('title');
     $material->description = $request->input('description');
-    $material->themes = $request->input('theme');
+    $material->theme_id = $request->input('theme');
     $exito = $material->save();
 
     if ($exito) {
@@ -49,11 +49,11 @@ class MaterialController extends Controller
           $registro->materials = $material->id;
           $yes = $registro->save();
           if ($yes) {
-            return redirect('/teacher/class/'.$id)->with('status', 'Marerial con recurso creada con éxito');
+            return redirect('/teacher/class/'.$id)->with('status', 'Material con recurso creada con éxito');
           }
         }
       }
-      return redirect('/teacher/class/'.$id)->with('status', 'Marerial creada con éxito');
+      return redirect('/teacher/class/'.$id)->with('status', 'Material creada con éxito');
     }else {
       return redirect('/teacher/class/'.$id)->with('error', 'Error tarea no creada');
     }
