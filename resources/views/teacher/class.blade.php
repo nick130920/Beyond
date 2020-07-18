@@ -132,11 +132,8 @@
                     </div>
                   </form>
                 </div>
-                <div class="indicaciones" id="indicaciones">
-                    <h2><i class="fas fa-comment"></i> Crea anuncios.</h2>
-                    <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
-                </div>
                 @if ($news)
+                  <br>
                   <!-- Comentarios ya hechos   -->
                   <div class="contentComentarios">
                     <ul>
@@ -164,6 +161,10 @@
                   </div>
                 @else
                 {{-- SI NO EXISTE NINGUNA NOVEDAD --}}
+                <div class="indicaciones" id="indicaciones">
+                    <h2><i class="fas fa-comment"></i> Crea anuncios.</h2>
+                    <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
+                </div>
                 @endif
 
               </div>
