@@ -10,7 +10,7 @@
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
-            <li><a href="{{url('/teacher/material/'.$group->id)}}"> Crear material</a></li>
+            <li><a href="{{url('/teacher/material')}}"> Crear material</a></li>
           </ul>
         </li>
         <li><a href="{{url('/teacher/students/'.$group->id)}}"><i class="fas fa-users"></i> Estudiantes</a></li>
@@ -35,34 +35,35 @@
         <div class="formularioTarea">
           <form enctype="multipart/form-data" method="post" action="{{url('/teacher/homework/'.$group->id)}}">
             @csrf
-            <div class="tareaTitulo">
+            <div class="tarea1">
+              <div class="tareaTitulo">
                 <label><i class="fas fa-clipboard"></i> Titulo</label>
                 <input type="text" class="titulo" name="title">
-            </div>
-            <div class="tareaContenido">
+              </div>
+              <div class="tareaContenido">
                 <label><i class="fas fa-stream"></i> Instrucciones</label>
                 <textarea type="text" class="titulo" name="description"></textarea>
-            </div>
-            <div class="botonesTarea">
-              <div class="fechaLimite">
-                <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="resource">
-                <a class="botonReset" onclick="document.getElementById('agregarTarea').click()"> Agregar documento</a>
-                <a for="datepicker" class="labelFecha"><i class="fas fa-calendar-alt"></i> Fecha limite: </a>
-                <input type="text" id="fecha" class="inputFecha" name="finish_date">
               </div>
-              <select title="theme" name="themes">
+            </div>
+            
+            <div class="botonesTarea">
+              <a class="botonReset botonTarea1" onclick="document.getElementById('agregarTarea').click()"> Agregar documento</a>
+              <a for="datepicker" class="botonReset botonTarea2"><i class="fas fa-calendar-alt"></i> Fecha limite: </a>
+              <input type="file" multiple class="fechaLimiteInput" id="agregarTarea" name="resource">
+              <input type="text" id="fecha" class="inputFecha botonTarea3" name="finish_date">
+              <select class="botonReset" title="theme" name="themes">
                 @foreach ($themes as $theme)
                   <option value="{{$theme->id}}">{{$theme->name}}</option>
                 @endforeach
               </select>
-              <select title="theme" name="evaluation_criterias">
+              <select class="botonReset" title="theme" name="evaluation_criterias">
                 @foreach ($evaluations as $evaluation)
                   <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
                 @endforeach
               </select>
 
               <div class="botonesUno">
-                <a  class="btn botonCancelar" name="">Cancelar</a>
+                <a href="{{url('teacher/class/'.$group->id)}}" class="btn botonCancelar" name="">Cancelar</a>
                 <button type="submit" class="btn botonGuardar">Publicar</button>
               </div>
 

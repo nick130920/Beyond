@@ -37,7 +37,7 @@
                 <p id="crearTema" class="">Crear tema</p>
                 <p class="">{{$group->code}}</p>
               </div>
-
+              
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
@@ -144,7 +144,7 @@
                       <li>
                         <div class="cajaComentario">
                           <div class="comentarioImg">
-                            <img src="{{asset($profile->url)  }}">
+                            <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
                           </div>
                           <div class="cuerpoComentario">
                             <div class="comentarioHead">
@@ -175,11 +175,10 @@
     <!-- popup para editar clase -->
                   <div class="overlayEditar" id="overlayEditar">
                     <div class="contenidoEditar" id="contenidoEditar">
-                      <form method="post" action="{{url('/teacher/class/'.$group->id.'/edit')}}">
-                        @csrf
+                      <form>
                         <h1>Editar clase</h1>
-                        <input type="text" name="name" placeholder="Titulo">
-                        <input type="text" name="description" placeholder="Descripción">
+                        <input type="text" name="" placeholder="Titulo">
+                        <input type="text" name="" placeholder="Descripción">
                         <div class="botonesEditar">
                           <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
                           <button type="reset" class="btn botonReset">Reiniciar</button>

@@ -15,6 +15,7 @@
             @foreach ($classes as $class)
               <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
+            <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
           </ul>
         </li>
       </ul>
@@ -82,8 +83,8 @@
                   @endphp">
                   <div class="item form-group">
                     <div class="col-md-6 col-sm-6 offset-md-3">
-                      <a href="{{url('/teacher/classes/')}}" class="btn btn-danger blanco1" type="button">Cancelar</a>
-                      <button type="submit" onclick="return validarClaseNueva()" class="btn btn-success"> Crear </button>
+                      <a href="{{url('/teacher/classes/')}}" class="btn botonCancelar blanco1" type="button">Cancelar</a>
+                      <button type="submit" onclick="return validarClaseNueva()" class="btn botonGuardar"> Crear </button>
                     </div>
                   </div>
 

@@ -6223,8 +6223,8 @@ ul.notifications {
     padding: 4px 20px;
     display: inline-block;
     font-size: 20px;
-    cursor: pointer;
     width: 50%;
+    text-align: justify;
 }
 .imgTexto .imgTextoBajo > p{
     position: relative;
@@ -6319,6 +6319,7 @@ ul.notifications {
 }
 .indicaciones{
     display: block;
+    margin-top: 10px;
     padding: 3px 10px;
     border-radius: 10px;
     margin: 10px 0;
@@ -6971,17 +6972,17 @@ ul.notifications {
 .contenidoTarea{
     background-color: white;
     clear: both;
-    display: flex;
+    display: block;
     width: 100%;
     padding: 10px;
 }
-.contenidoTarea .formularioTarea{
-    width: 90%;
-    margin: auto;
-}
-.contenidoTarea .formularioTarea .tareaTitulo, .tareaContenido{
+.contenidoTarea .formularioTarea form{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.formularioTarea form > .tarea1{
+    width: 65%;
 }
 .tareaContenido {
     margin-top: 15px;
@@ -7009,34 +7010,44 @@ ul.notifications {
 .fechaLimiteInput{
     display: none;
 }
-.botonesTarea{
-    margin-top: 10px;
+.formularioTarea form > .botonesTarea{
+    width:30%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
-.fechaLimite input, .fechaLimite a{
-    padding: 10px;
+.formularioTarea form > .botonesTarea .botonTarea1{
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    padding: 0 0 0 10px;
+    align-items: center;
 }
-.fechaLimite a{
-    border-radius: 3px;
+.formularioTarea form > .botonesTarea .botonTarea2{
+    height: 50px;
+    display: flex;
+    width: 110px;
+    align-items: center;
+    padding: 0 5px;
 }
-.fechaLimite .inputFecha{
-    border: 0;
-    background-color: rgb(0,0,0, .05);
-    border-bottom: 2px solid rgb(0,0,0, .6);
-    font-size: 15px;
-    font-weight: 600;
+.formularioTarea form > .botonesTarea .botonTarea3{
+    width: calc(100% - 110px);
+    height: 50px;
 }
-.fechaLimite .labelFecha{
-    border: 2px solid rgb(0,0,0, .7);
-    background-color: rgb(0, 0, 0, .6);
-    color: white !important;
-}
-
-@media screen and (max-width: 500px){
+@media screen and (max-width: 800px){
+    .formularioTarea form > .tarea1{
+    width: 100%;
+    }
+    .contenidoTarea .formularioTarea form{
+        display: block;
+    }
     .botonesTarea{
         display: block;
     }
+}
+.botonesUno{
+    margin-top: 10px;
 }
 .tareaContenido textarea{
     height: 150px;

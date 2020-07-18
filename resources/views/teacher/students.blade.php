@@ -53,10 +53,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="pagAgregar">
-          <a></a>
-          <a class="btn botonGuardar">Agregar estudiante</a>
-        </div>
       </div>
     </div>
   </div>
