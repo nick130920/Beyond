@@ -32,8 +32,12 @@
           <div class="contenidoClase">
             <div class="imgTexto">
               <h3>Beyond | {{$group->name}}</h3>
-              <p>{{$group->code}}</p>
-              <a id="crearTema">Crear tema</a>
+              <p>{{$group->description}}</p>
+              <div class="imgTextoBajo">
+                <p id="crearTema" class="">Crear tema</p>
+                <p class="">{{$group->code}}</p>
+              </div>
+              
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
