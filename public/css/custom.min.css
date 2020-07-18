@@ -6149,8 +6149,11 @@ ul.notifications {
     position: relative;
     display: block;
 }
-.botonCancelar{
+.miBoton.botonCancelar{
     background-color: inherit;
+}
+.botonCancelar{
+    background-color: white;
     border: 2px solid rgb(231,74,74, .7);
     cursor: pointer;
     color: rgb(231, 74, 74, .6) !important;
