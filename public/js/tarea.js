@@ -12,7 +12,7 @@ $( "#fecha" ).datepicker({
 	dayNamesShort: [ "dom","lun","mar","mié","jue","vie","sáb" ],
 	dayNamesMin: [ "Do","Lu","Ma","Mi","Ju","Vi","Sa" ],
 	weekHeader: "Sm",
-	dateFormat: 'yy / mm / dd',
+	dateFormat: 'yy-mm-dd',
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,

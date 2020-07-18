@@ -31,29 +31,70 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <div class="row">
-      <div class="input-group col-5">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Titulo</span>
-        </div>
-        <input type="text" name="title" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" form="my-awesome-dropzone">
-      </div>
-      <div class="input-group col-3">
-        <select name="theme" class="form-control" form="my-awesome-dropzone">
-          <option></option>
-        </select>
-      </div>
-      <div class="input-group col-8">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Descripción</span>
-        </div>
-        <textarea name="description" form="my-awesome-dropzone" class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-      </div>
-    </div>
-    <form method="post" action="{{url('/teacher/material/'.$class->id)}}" class="dropzone"  enctype="multipart/form-data" id="my-awesome-dropzone">
+    <form method="post" action="{{url('/teacher/material/'.$class->id)}}" enctype="multipart/form-data">
       @csrf
+      <div class="row">
+        <div class="input-group col-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Titulo</span>
+          </div>
+          <input type="text" name="title" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" >
+        </div>
+        <div class="input-group col-3">
+          <select name="theme" class="form-control" >
+            @foreach ($themes as $theme)
+              <option value="{{$theme->id}}">{{$theme->name}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="input-group col-8">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Descripción</span>
+          </div>
+          <textarea name="description"  class="form-control" rows="1"></textarea>
+        </div>
+      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn botonReset" data-toggle="modal" data-target="#exampleModalCenter">
+      Agregar
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Agregar recurso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{-- <label for="" class="btn btn-secondary" id="nombreArchivo"></label> --}}
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Nombre </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="nameResource">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="descriptionResource">
+              </div>
+              <input type="file" id="file" name="resource" class="inputFileInput">
+              <label for="file" class="btn botonReset" id="archivo">Archivo</label>
+            </div>
+            <div class="modal-footer">
+              <button type="reset" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn botonGuardar" data-dismiss="modal">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        {{-- Aqui --}}
+        <button class="btn btn-info" type="submit" name="button"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button>
     </form>
-    <button class="btn btn-info" form="my-awesome-dropzone" type="submit" name="button"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button>
   </div>
 @endsection
 @section('scripts')

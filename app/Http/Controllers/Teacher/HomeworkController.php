@@ -5,6 +5,8 @@ namespace App\Http\Controllers\teacher;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Resources_has_works;
+use App\resource;
 use App\profile;
 use App\groups;
 use App\work;
@@ -38,12 +40,20 @@ class HomeworkController extends Controller
         $resource->url = $fileName;
         $resource->name= $request->input('nameResource');
         $resource->description = $request->input('descriptionResource');
-        $resource->save();
-        return redirect()->route('/teacher/class/'.$id)->with('status', 'Tarea con recurso creada con éxito');
+        $great = $resource->save();
+        if ($great) {
+          $registro = new Resources_has_works;
+          $registro->resources = $resource->id;
+          $registro->works = $work->id;
+          $yes = $registro->save();
+          if ($yes) {
+            return redirect('/teacher/class/'.$id)->with('status', 'Tarea con recurso creada con éxito');
+          }
+        }
       }
-      return redirect()->route('/teacher/class/'.$id)->with('status', 'Tarea creada con éxito');
+      return redirect('/teacher/class/'.$id)->with('status', 'Tarea creada con éxito');
     }else {
-      return redirect()->route('/teacher/class/'.$id)->with('error', 'Error tarea no creada');
+      return redirect('/teacher/class/'.$id)->with('error', 'Error tarea no creada');
     }
   }
 }
