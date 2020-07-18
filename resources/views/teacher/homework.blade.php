@@ -10,7 +10,7 @@
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
-            <li><a href="{{url('/teacher/material')}}"> Crear material</a></li>
+            <li><a href="{{url('/teacher/material/'.$group->id)}}"> Crear material</a></li>
           </ul>
         </li>
         <li><a href="{{url('/teacher/students/'.$group->id)}}"><i class="fas fa-users"></i> Estudiantes</a></li>

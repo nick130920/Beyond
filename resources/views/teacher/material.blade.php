@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <form method="post" action="{{url('/teacher/material/'.$class->id)}}" enctype="multipart/form-data">
+    <form method="post" action="{{url('/teacher/material/'.$group->id)}}" enctype="multipart/form-data">
       @csrf
       <div class="row">
         <div class="input-group col-5">
