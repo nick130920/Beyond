@@ -15,7 +15,9 @@ class CreateDeliveriesTable extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profiles')->constrained();
+            $table->foreignId('profile_id')->constrained();
+            $table->foreignId('work_id')->constrained();
+            $table->double('score',2,1)->nullable();
             $table->text('content')->nullable();
             $table->date('deliver_date');
             $table->boolean('editable')->default($value=false);

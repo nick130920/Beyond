@@ -37,6 +37,32 @@
   <div class="right_col" role="main">
     <!-- prueba 1 -->
     <h1>CALIFICACIONES</h1>
+    <div class="contentStudent">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              @foreach ($evaluations as $evaluation)
+                <th>{{$evaluation->name}} {{ $evaluation->percentage}}%</th>
+              @endforeach
+            </tr>
+          </thead>
+            <tbody>
+              @foreach ($students as $student)
+                @if ($student->profile_id !== $profile->id)
+                  <tr>
+                    <td>{{$student->profiles->id_number}}</td>
+                    <td>{{$student->user->name}}</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                @endif
+            @endforeach
+            </tbody>
+        </table>
+      </div>
   </div>
 @endsection
 @section('scripts')

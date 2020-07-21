@@ -46,13 +46,15 @@
           </thead>
             <tbody>
               @foreach ($students as $student)
-              <tr>
-                <td>{{$student->profiles->id}}</td>
-                <td>{{$student->profiles->first_name}} {{$student->profiles->second_name}}</td>
-                <td>{{$student->profiles->first_surname}} {{$student->profiles->second_surname}}</td>
-                <td>{{$student->user->email}}</td>
-                <td class="eliminarTD"><form action="{{url('/teacher/students/'.$student->profiles->id)}}" method="post">@csrf @method('DELETE')<button type="submit" name="button" class="miBoton botonCancelar"><i class="fas fa-trash-alt"></i></button></form></td>
-              </tr>
+                @if ($student->profile_id !== $profile->id)
+                  <tr>
+                    <td>{{$student->profiles->id}}</td>
+                    <td>{{$student->profiles->first_name}} {{$student->profiles->second_name}}</td>
+                    <td>{{$student->profiles->first_surname}} {{$student->profiles->second_surname}}</td>
+                    <td>{{$student->user->email}}</td>
+                    <td class="eliminarTD"><form action="{{url('/teacher/students/'.$student->profiles->id)}}" method="post">@csrf @method('DELETE')<button type="submit" name="button" class="miBoton botonCancelar"><i class="fas fa-trash-alt"></i></button></form></td>
+                  </tr>
+                @endif
             @endforeach
             </tbody>
         </table>

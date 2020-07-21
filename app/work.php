@@ -12,6 +12,9 @@ class work extends Model
 	public function evaluation_criterias(){
 		return $this->belongsTo('App\evaluation_criteria');
 	}
+	public function delivery(){
+		return $this->hasMany('App\delivery');
+	}
 	public function resources(){
 		return $this->belongsToMany('App\resource', 'resources_has_works','works','resources');
 	}

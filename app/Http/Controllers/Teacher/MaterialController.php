@@ -1,4 +1,4 @@
-pp<?php
+<?php
 
 namespace App\Http\Controllers\teacher;
 
@@ -60,4 +60,3 @@ class MaterialController extends Controller
 
   }
 }
-ýyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyk

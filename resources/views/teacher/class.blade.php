@@ -158,20 +158,21 @@
                     <div class="modal-dialog modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="contenidoEditar" id="contenidoEditar">
-                        <form>
-                          <h1>Editar clase</h1>
-                          <input type="text" name="" placeholder="Titulo">
-                          <textarea type="text" name="" placeholder="Descripción"></textarea>
-                        <div class="botonesEditar">
-                          <a class="btn botonCancelar" id="botonCancelar" data-dismiss="modal">Cancelar</a>
-                          <button type="reset" class="btn botonReset">Reiniciar</button>
-                          <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                          <form method="post" action="{{url('/teacher/class/'.$group->id.'/edit')}}">
+                            @csrf
+                            <h1>Editar clase</h1>
+                            <input type="text" name="name" placeholder="Titulo">
+                            <textarea type="text" name="description" placeholder="Descripción"></textarea>
+                            <div class="botonesEditar">
+                              <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
+                              <button type="reset" class="btn botonReset">Reiniciar</button>
+                              <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
+                            </div>
+                          </form>
                         </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
     {{--  - - - - - - Popup para el tema     - - - - -  - -  --}}
                   <div class="overlayTema" id="overlayTema">
                     <div class="contenedorTema" id="contenedorTema">
