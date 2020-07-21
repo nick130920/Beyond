@@ -10,9 +10,10 @@ use App\groups;
 
 class StudentsController extends Controller
 {
-  public function index(){
+  public function index($id){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups()->paginate(10);
-    return view('/teacher/students')->with(compact('classes', 'profile'));
+    $group= Groups::find($id);
+    return view('/teacher/students')->with(compact('classes', 'profile', 'group'));
   }
 }
