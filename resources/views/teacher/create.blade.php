@@ -70,7 +70,7 @@
                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Descripción de la clase <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="descriptionClass" class="form-control @error('descriptionClass') is-invalid @enderror" name="descriptionClass">
+                      <textarea type="text" id="descriptionClass" class="form-control @error('descriptionClass') is-invalid @enderror" name="descriptionClass"></textarea>
                     </div>
                   </div>
                   <div class="ln_solid"></div>

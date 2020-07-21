@@ -46,12 +46,11 @@
                 <textarea type="text" class="titulo" name="description"></textarea>
               </div>
             </div>
-
             <div class="botonesTarea">
               <div class="fechaLimite">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn botonReset" data-toggle="modal" data-target="#exampleModalCenter">
-                  Agregar
+                  Agregar recurso
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -88,31 +87,39 @@
                   </div>
                 </div>
                 {{-- Aqui --}}
-
-                <a for="datepicker" class="labelFecha"><i class="fas fa-calendar-alt"></i> Fecha limite: </a>
-                <input type="text" id="fecha" class="inputFecha" name="finish_date">
+                
               </div>
-              <select  style="padding: 9px 15px 8px 15px;margin-top: -4px;" class="col-8" title="theme" name="themes">
-                @foreach ($themes as $theme)
-                  <option value="{{$theme->id}}">{{$theme->name}}</option>
-                @endforeach
-              </select>
-              <div data-toggle="tooltip" data-placement="top" title="Crear tema">
-                <button type="button" class="btn botonReset" data-toggle="modal" data-target="#themes">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
+              <div class="themaDiv">
+                <div data-toggle="tooltip" data-placement="top" title="Crear tema">
+                  <button type="button" class="botonReset"  data-toggle="modal" data-target="#themes">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <select   class="selectMio" title="theme" name="themes">
+                  @foreach ($themes as $theme)
+                    <option value="{{$theme->id}}">{{$theme->name}}</option>
+                  @endforeach
+                </select>
               </div>
-              <select style="padding: 9px 15px 8px 15px;margin-top: -4px;" class="col-8" title="evaluation_criterias" name="evaluation_criterias">
-                @foreach ($evaluations as $evaluation)
-                  <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
-                @endforeach
-              </select>
-              <!-- Button trigger modal -->
-              <div data-toggle="tooltip" data-placement="top" title="Crear criterio">
+              
+              <div class="themaDiv">
+                <div data-toggle="tooltip" data-placement="top" title="Crear criterio">
                 <button type="button" class="btn botonReset" data-toggle="modal" data-target="#evaluation_criteria">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </button>
               </div>
+              <select class="selectMio" title="evaluation_criterias" name="evaluation_criterias">
+                @foreach ($evaluations as $evaluation)
+                  <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
+                @endforeach
+              </select>
+              </div>
+              
+
+              <div class="fechaDiv">
+                  <a for="datepicker" class="botonReset">Fecha limite:</a>
+                  <input type="text" id="fecha" class="" name="finish_date">
+                </div>
               <div class="botonesUno">
                 <a href="{{url('teacher/class/'.$group->id)}}" class="btn botonCancelar" name="">Cancelar</a>
                 <button type="submit" class="btn botonGuardar">Publicar</button>
@@ -157,6 +164,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- Modal  evaluation_criterias-->
   <div class="modal fade" id="evaluation_criteria" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
