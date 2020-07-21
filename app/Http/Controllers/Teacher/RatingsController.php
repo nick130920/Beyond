@@ -11,7 +11,7 @@ use App\evaluation_criteria;
 
 class RatingsController extends Controller
 {
-  public function index(){
+  public function index($id){
     $profile = Profile::find(Auth::user()->id);
     $classes = $profile->groups()->paginate(4);
     return view('/teacher/ratings')->with(compact('classes', 'profile'));

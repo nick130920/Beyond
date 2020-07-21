@@ -13,8 +13,8 @@
             <li><a href="{{url('/teacher/material/'.$group->id)}}"> Crear material</a></li>
           </ul>
         </li>
-        <li><a href="{{url('/teacher/students/')}}"><i class="fas fa-users"></i> Estudiantes</a></li>
-        <li><a href="{{url('/teacher/ratings/')}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
+        <li><a href="{{url('/teacher/students/'.$group->id)}}"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="{{url('/teacher/ratings/'.$group->id)}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
       </ul>
 
 
