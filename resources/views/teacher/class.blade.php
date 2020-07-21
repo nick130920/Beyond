@@ -8,7 +8,7 @@
       <ul class="nav side-menu">
         <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
         </li>
-        <li><a href="#" id="editar"><i class="fas fa-edit"></i> Editar clase</a></li>
+        <li><a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i> Editar clase</a></li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
@@ -153,20 +153,25 @@
       </div>
     </div>
     <!-- popup para editar clase -->
-                  <div class="overlayEditar" id="overlayEditar">
-                    <div class="contenidoEditar" id="contenidoEditar">
-                      <form>
-                        <h1>Editar clase</h1>
-                        <input type="text" name="" placeholder="Titulo">
-                        <input type="text" name="" placeholder="Descripción">
+
+                  <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="contenidoEditar" id="contenidoEditar">
+                        <form>
+                          <h1>Editar clase</h1>
+                          <input type="text" name="" placeholder="Titulo">
+                          <textarea type="text" name="" placeholder="Descripción"></textarea>
                         <div class="botonesEditar">
-                          <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
+                          <a class="btn botonCancelar" id="botonCancelar" data-dismiss="modal">Cancelar</a>
                           <button type="reset" class="btn botonReset">Reiniciar</button>
                           <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
                         </div>
                       </form>
                     </div>
                   </div>
+                </div>
+              </div>
     {{--  - - - - - - Popup para el tema     - - - - -  - -  --}}
                   <div class="overlayTema" id="overlayTema">
                     <div class="contenedorTema" id="contenedorTema">
