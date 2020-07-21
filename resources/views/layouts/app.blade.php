@@ -55,7 +55,7 @@
           @if (session('recurso'))
             <script type="text/javascript">
             window.onload = function alerta() {
-              alertify.set('notifier','position', 'top-right');
+              alertify.set('notifier','position', 'bottom-right');
               alertify.notify ("{{ session('recurso') }}",'success', 2, function(){});
             }
             </script>
@@ -63,7 +63,7 @@
           @if (session('success'))
             <script type="text/javascript">
             window.onload = function alerta() {
-              alertify.set('notifier','position', 'top-right');
+              alertify.set('notifier','position', 'bottom-right');
               alertify.notify ("{{ session('success') }}",'success', 2, function(){});
             }
             </script>
@@ -71,7 +71,7 @@
           @if (session('error'))
             <script type="text/javascript">
               window.onload = function alerta() {
-                alertify.set('notifier','position', 'top-right');
+                alertify.set('notifier','position', 'bottom-right');
                 alertify.notify ("{{ session('error') }}",'error', 2, function(){});
               }
             </script>

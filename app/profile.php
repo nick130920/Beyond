@@ -22,6 +22,9 @@ class profile extends Model
 	public function user(){
 		return $this->belongsTo('App\User');
 	}
+  public function group_member(){
+    return $this->hasMany('App\group_member', 'profile_id');
+  }
   public function getUrlAttribute(){
     if (substr($this->image,0,4) === "http") {
       return $this->image;

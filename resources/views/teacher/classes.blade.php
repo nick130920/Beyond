@@ -35,17 +35,26 @@
       <div class="x_content">
         <br/>
         <div class="centrarCard">
-          @foreach ($classes as $class)
-          <div class="card">
-            <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h2>{{ $class->name}}</h2>
-              <p>{{ \Illuminate\Support\Str::limit($class->description, 70) }}</p>
-              <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fa fa-eye" aria-hidden="true"></i>  Ver</a>
-              <button class="btn botonCancelar" type="submit" name="button"><i class="far fa-trash-alt"></i> Eliminar</button>
-            </div>
-          </div>
-          @endforeach
+          @if ($classes->isEmpty())
+            <h2 class="col-12">No perteneces a ninguna clase</h2>
+            <a class="btn botonGuardar" href="{{route('/create/class')}}"> Crear Clase</a>
+            @else
+              @foreach ($classes as $class)
+                <div class="card">
+                  <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h2>{{ $class->name}}</h2>
+                    <p>{{ \Illuminate\Support\Str::limit($class->description, 70) }}</p>
+                    <form action="{{url('/teacher/class/'.$class->id)}}" method="post">
+                      <a href="{{url('/teacher/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fa fa-eye" aria-hidden="true"></i>  Ver</a>
+                      @csrf
+                      @method('DELETE')
+                      <button class="btn botonCancelar" type="submit" name="button"><i class="far fa-trash-alt"></i> Eliminar</button>
+                    </form>
+                  </div>
+                </div>
+              @endforeach
+          @endif
         </div>
 
           {{ $classes->links() }}

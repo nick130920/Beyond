@@ -43,15 +43,17 @@
               <th class="eliminarTH">Eliminar</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>William Steven</td>
-              <td>Bonilla Diaz</td>
-              <td>wsbonilladiaz@gmail.com</td>
-              <td class="eliminarTD"><a class="miBoton botonCancelar"><i class="fas fa-trash-alt"></i></a></td>
-            </tr>
-          </tbody>
+            <tbody>
+              @foreach ($students as $student)
+              <tr>
+                <td>{{$student->profiles->id}}</td>
+                <td>{{$student->profiles->first_name}} {{$student->profiles->second_name}}</td>
+                <td>{{$student->profiles->first_surname}} {{$student->profiles->second_surname}}</td>
+                <td>{{$student->user->email}}</td>
+                <td class="eliminarTD"><form action="{{url('/teacher/students/'.$student->profiles->id)}}" method="post">@csrf @method('DELETE')<button type="submit" name="button" class="miBoton botonCancelar"><i class="fas fa-trash-alt"></i></button></form></td>
+              </tr>
+            @endforeach
+            </tbody>
         </table>
       </div>
     </div>

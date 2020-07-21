@@ -26,7 +26,7 @@ class HomeworkController extends Controller
     $work->title = $request->input('title');
     $work->description = $request->input('description');
     $work->evaluation_criterias = $request->input('evaluation_criterias');
-    $work->themes = $request->input('themes');
+    $work->theme_id = $request->input('themes');
     $work->finish_date = $request->input('finish_date');
     $exito = $work->save();
     if ($exito) {
