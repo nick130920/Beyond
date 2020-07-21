@@ -34,7 +34,7 @@
               <h3>Beyond | {{$group->name}}</h3>
               <p>{{$group->description}}</p>
               <div class="imgTextoBajo">
-                <p id="crearTema" class="">Crear tema</p>
+                <p data-toggle="modal" data-target="#modalTema">Crear tema</p>
                 <p class="">{{$group->code}}</p>
               </div>
 
@@ -174,8 +174,11 @@
                     </div>
                   </div>
     {{--  - - - - - - Popup para el tema     - - - - -  - -  --}}
-                  <div class="overlayTema" id="overlayTema">
-                    <div class="contenedorTema" id="contenedorTema">
+              <div class="modal fade" id="modalTema" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="contenedorTema" id="contenedorTema">
                       <form method="post" action="{{url('/teacher/themes/'.$group->id)}}">
                         @csrf
                         <h1>Crear tema</h1>
@@ -183,14 +186,20 @@
                         <h2>Tema</h2>
                         <input type="text" name="name">
                         <h2>Descripcion del tema</h2>
-                        <input type="text" name="description">
+                        <textarea type="text" name="description"></textarea>
 
                         <div class="botonesTema">
-                          <a class="btn botonCancelar" id="cancelarTema"> Cancelar</a>
+                          <a class="btn botonCancelar" data-dismiss="modal"> Cancelar</a>
                           <button type="submit" class="btn botonGuardar">Guardar tema</button>
                         </div>
                       </form>
                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <div class="overlayTema" id="overlayTema">
+                    
                   </div>
   </div>
   <!-- /Contenido de la pagina -->
