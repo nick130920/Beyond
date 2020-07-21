@@ -48,11 +48,6 @@
               @endif
             </div>
             <div class="contenido">
-              <div class="pendientes">
-                <h2>Próximas</h2>
-                <p>Todavia no tienes tareas por revisar</p>
-                <a href="">Ver todo</a>
-              </div>
               <!-- Formulario para envio de comentarios   -->
               <div class="envios">
 
