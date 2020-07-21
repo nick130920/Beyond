@@ -15,7 +15,8 @@ class StudentsController extends Controller
     $profile = Profile::find(Auth::user()->id);
     $students = Group_member::all()->where('group_id', $id)->sortBy('id');
     $classes = $profile->groups()->paginate(10);
-    return view('/teacher/students')->with(compact('classes', 'profile', 'students'));
+    $group= Groups::find($id);
+    return view('/teacher/students')->with(compact('classes', 'profile', 'students', 'group'));
   }
   public function destroy($id){
     $student = Group_member::all()->where('profile_id', $id)->first();
