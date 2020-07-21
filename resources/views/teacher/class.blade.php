@@ -37,29 +37,13 @@
                 <p id="crearTema" class="">Crear tema</p>
                 <p class="">{{$group->code}}</p>
               </div>
-              
+
               @if (session('recurso'))
                 <script type="text/javascript">
                 window.onload = function alerta() {
                   alertify.set('notifier','position', 'top-right');
                   alertify.notify ("{{ session('recurso') }}",'success', 2, function(){});
                 }
-                </script>
-              @endif
-              @if (session('success'))
-                <script type="text/javascript">
-                window.onload = function alerta() {
-                  alertify.set('notifier','position', 'top-right');
-                  alertify.notify ("{{ session('success') }}",'success', 2, function(){});
-                }
-                </script>
-              @endif
-              @if (session('error'))
-                <script type="text/javascript">
-                  window.onload = function alerta() {
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.notify ("{{ session('error') }}",'error', 2, function(){});
-                  }
                 </script>
               @endif
             </div>

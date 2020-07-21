@@ -12,5 +12,10 @@ class group_member extends Model
    * @var string
    */
   protected $table = 'group_member';
-  
+  public function profiles(){
+    return $this->belongsTo('App\profile', 'profile_id', 'id');
+  }
+  public function user(){
+		return $this->profiles->belongsTo('App\User');
+	}
 }

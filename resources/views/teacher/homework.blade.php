@@ -46,7 +46,7 @@
                 <textarea type="text" class="titulo" name="description"></textarea>
               </div>
             </div>
-            
+
             <div class="botonesTarea">
               <div class="fechaLimite">
                 <!-- Button trigger modal -->
@@ -92,17 +92,27 @@
                 <a for="datepicker" class="labelFecha"><i class="fas fa-calendar-alt"></i> Fecha limite: </a>
                 <input type="text" id="fecha" class="inputFecha" name="finish_date">
               </div>
-              <select title="theme" name="themes">
+              <select  style="padding: 9px 15px 8px 15px;margin-top: -4px;" class="col-8" title="theme" name="themes">
                 @foreach ($themes as $theme)
                   <option value="{{$theme->id}}">{{$theme->name}}</option>
                 @endforeach
               </select>
-              <select class="botonReset" title="theme" name="evaluation_criterias">
+              <div data-toggle="tooltip" data-placement="top" title="Crear tema">
+                <button type="button" class="btn botonReset" data-toggle="modal" data-target="#themes">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+              <select style="padding: 9px 15px 8px 15px;margin-top: -4px;" class="col-8" title="evaluation_criterias" name="evaluation_criterias">
                 @foreach ($evaluations as $evaluation)
                   <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
                 @endforeach
               </select>
-
+              <!-- Button trigger modal -->
+              <div data-toggle="tooltip" data-placement="top" title="Crear criterio">
+                <button type="button" class="btn botonReset" data-toggle="modal" data-target="#evaluation_criteria">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
               <div class="botonesUno">
                 <a href="{{url('teacher/class/'.$group->id)}}" class="btn botonCancelar" name="">Cancelar</a>
                 <button type="submit" class="btn botonGuardar">Publicar</button>
@@ -112,13 +122,83 @@
         </div>
       </div>
     </div>
-
+  </div>
+  <!-- Modal Themes-->
+  <div class="modal fade" id="themes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Crear tema</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="theme" action="{{url('/teacher/themes/'.$group->id)}}" method="post">
+          @csrf
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre </span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="name">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="description">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn botonGuardar" >Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal  evaluation_criterias-->
+  <div class="modal fade" id="evaluation_criteria" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Crear criterio de evaluación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="theme" action="{{url('/teacher/ratings/'.$group->id)}}" method="post">
+          @csrf
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre </span>
+              </div>
+              <input type="text" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="name">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Descripción</span>
+              </div>
+              <input type="text" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="description">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Porcentaje(%)</span>
+              </div>
+              <input type="number" required class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="percentage" step="0.01" max="100">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn botonGuardar" >Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 @endsection
 @section('scripts')
   <!-- mi poput -->
   <script src="{{asset('/js/tarea.js')}}"></script>
-  <script>
-
-  </script>
 @endsection
