@@ -6,12 +6,12 @@
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
         <li><a><i class="fas fa-house-user"></i> Inicio</a></li>
-        <li><a id="botonOverlay2"><i class="fas fa-plus"></i> Unirme a una Clase </a>
-        </li>
+        <li><a href="#" data-toggle="modal" data-target="#modalMessege"><i class="fas fa-envelope"></i> Mensaje</a></li>
+        <li><a data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Unirme a una Clase </a></li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
+              <li><a href="{{url('/student/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
             <li><a href="{{route('/student/classes')}}">Ver todas las clases</a></li>
           </ul>
@@ -26,12 +26,6 @@
   <div class="right_col" role="main">
     <div class="">
 
-            <div class="page-title">
-              <div class="title_left">
-                <h3> Notificaciones</h3>
-              </div>
-            </div>
-
       <div class="clearfix"></div>
       <div class="row">
         <div class="col-md-12 col-sm-12 ">
@@ -41,20 +35,29 @@
                 No hay novedades existentes.
               </h2>
             </div>
-            <div class="novedadExistente">
-              <div class="imagenNovedad">
-                <img src="{{asset('/images/img/fondo1.svg')}}">
-              </div>
-              <div class="contenidoNovedad">
-                <div class="textoNovedad">
-                  <h1>Titulo</h1>
-                  <p>Contenido</p>
-                </div>
-                <div class="botonesNovedad">
-                  <a href="#"><i class="fas fa-share"></i></a>
-                  <button href="#"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
+            <div class="contentComentarios">
+              <ul>
+                      <!-- Comentario 1 -->
+                <li>
+                  <div class="cajaComentario">
+                    <div class="comentarioImg">
+                      <img src="{{asset($profile->url) ?? asset('/images/profile/user_default.png')}}">
+                    </div>
+                    <div class="cuerpoComentario">
+                      <div class="comentarioHead">
+                        <div class="head1">
+                          <h3> Nombre </h3>
+                          <span> Fecha</span>
+                        </div>
+                      </div>
+                      <div class="comentarioCuerpo">
+                        <h4>Asunto</h4>
+                        <p>Contenido</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="ln_solid"></div>
           </div>
@@ -71,24 +74,56 @@
         </div>
       </div>
     @endif
-      <div class="overlay2" id="overlay2">
-        <div class="popup2" id="popup2">
-          <div class="texto2">
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Unirse a la clase</h2>
+            </div>
+            <div class="contentModalStudent">
             <form method="post" action="{{route('join')}}">
               @csrf
-              <h2>Unirse a la clase</h2>
               <p>
                 Pídele a tu profesor el código de la clase y, luego, ingrésalo aquí.
               </p>
-              <input type="text" name="code" placeholder="Código de la clase" required>
-              <a id="cancelarOverlay2" class="btn boton1">Cancelar</a>
-              <button type="submit" class="btn boton2">Unirse</button>
+              <input type="text" name="code" placeholder="Código de la clase">
+              <div class="footerStudent">
+                <button data-dismiss="modal" class="btn botonCancelar">Cancelar</button>
+                <button type="submit" class="btn botonGuardar">Unirse</button>
+              </div>
             </form>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
+
+  <div class="modal fade" id="modalMessege" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Mensaje </h5>
+          </div>
+          <form>
+            <div class="contentModal">
+              <label>Clase:</label>
+              <select>
+                <option>Holis:3</option>
+              </select>
+              <input type="text" name="" placeholder="Asunto">
+              <textarea placeholder=""></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn botonGuardar">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 @endsection
 @section('scripts')
   <!-- mi poput -->

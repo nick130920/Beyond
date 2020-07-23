@@ -30,33 +30,31 @@
       </div>
     </div>
     <div class="clearfix"></div>
+    <div class="contenedorMaterial">
     <form method="post" action="{{url('/teacher/material/'.$group->id)}}" enctype="multipart/form-data">
       @csrf
-      <div class="row">
-        <div class="input-group col-5">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Titulo</span>
-          </div>
-          <input type="text" name="title" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" >
+      <div class="materialContent">
+
+        <div class="tituloMaterial">
+          <span class="spanTitulo" id="basic-addon1">Titulo</span>
+          <input type="text" name="title" class="inputMaterial" placeholder="" aria-label="Username" aria-describedby="basic-addon1" >
         </div>
-        <div class="input-group col-3">
-          <select name="theme" class="form-control" >
+
+        <div class="tituloMaterial">
+            <span class="spanTitulo" id="basic-addon1">Tema</span>
+          <select name="theme" class="inputMaterial" >
             @foreach ($themes as $theme)
               <option value="{{$theme->id}}">{{$theme->name}}</option>
             @endforeach
           </select>
         </div>
-        <div class="input-group col-8">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Descripción</span>
-          </div>
-          <textarea name="description"  class="form-control" rows="1"></textarea>
+        <div class="descripcionMaterial">
+          <span class="descriptionM" id="basic-addon1">Descripción</span>
+          <textarea name="description"  class="descriptionText"></textarea>
         </div>
       </div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn botonReset" data-toggle="modal" data-target="#exampleModalCenter">
-      Agregar
-      </button>
+      
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -92,8 +90,16 @@
         </div>
       </div>
         {{-- Aqui --}}
-        <button class="btn btn-info" type="submit" name="button"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button>
+        <div class="botonesMaterial">
+          <button type="button" class="btn botonReset" data-toggle="modal" data-target="#exampleModalCenter">
+      Agregar
+        </button>
+        <button class="btn botonGuardar" type="submit" name="button"><i class="fa fa-plus" aria-hidden="true"></i> Crear</button>
+        </div>
+        
+        
     </form>
+    </div>
   </div>
 @endsection
 @section('scripts')

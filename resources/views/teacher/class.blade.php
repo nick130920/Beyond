@@ -8,7 +8,7 @@
       <ul class="nav side-menu">
         <li><a href="{{route('teacher')}}"><i class="fas fa-house-user"></i> Inicio </a>
         </li>
-        <li><a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i> Editar clase</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i> Editar clase</a></li> 
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
@@ -164,8 +164,7 @@
                             <input type="text" name="name" placeholder="Titulo">
                             <textarea type="text" name="description" placeholder="Descripción"></textarea>
                             <div class="botonesEditar">
-                              <a class="btn botonCancelar" id="botonCancelar">Cancelar</a>
-                              <button type="reset" class="btn botonReset">Reiniciar</button>
+                              <a class="btn botonCancelar" id="botonCancelar" data-dismiss="modal">Cancelar</a>
                               <button type="submit" class="btn botonGuardar" id="botonGuardar">Guardar</button>
                             </div>
                           </form>

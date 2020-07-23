@@ -5,26 +5,15 @@
     <div class="menu_section">
       <h3>Profesor</h3>
       <ul class="nav side-menu">
-        {{-- <li><a><i class="fas fa-house-user"></i> Inicio</a></li> --}}
-        {{-- YA ESTA EN INICIO --}}
-        <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
+        <li><a href="{{ url('/teacher') }}"><i class="fas fa-house-user"></i> Inicio</a></li>
+        <li><a href="#"><i class="fas fa-chalkboard"></i> Clase</a></li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{route('/create/class')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
-            {{-- <li><a href="" ><i class="fas fa-edit"></i> Editar</a></li> --}}
-            {{-- <li><a href="{{route('/Teacher/class/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i> Editar Clase</a></li> --}}
+            <li><a href="#"> Crear tarea</a></li>
+            <li><a href="#"> Crear material</a></li>
           </ul>
         </li>
-
-
-        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            @foreach ($classes as $class)
-              <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
-            @endforeach
-            <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
-          </ul>
-          {{-- {{ $classes->links() }} --}}
-        </li>
+        <li><a href="#"><i class="fas fa-users"></i> Estudiantes</a></li>
       </ul>
 
 
@@ -35,9 +24,13 @@
 @section('contenido')
   <!-- Contenido -->
   <div class="right_col" role="main">
-    <!-- prueba 1 -->
-    <h1>CALIFICACIONES</h1>
-    <div class="contentStudent">
+    <div class="page-title">
+
+      <div class="title_left">
+        <h3>Beyond | Calificaciones </h3>
+      </div>
+<div class="clearfix"></div>
+    <div class="contentRatings">
         <table>
           <thead>
             <tr>
@@ -52,7 +45,7 @@
               @foreach ($students as $student)
                 @if ($student->profile_id !== $profile->id)
                   <tr>
-                    <td>{{$student->profiles->id_number}}</td>
+                    <td>{{$student->profiles->id}}</td>
                     <td>{{$student->user->name}}</td>
                     <td>0</td>
                     <td>0</td>
@@ -62,6 +55,7 @@
             @endforeach
             </tbody>
         </table>
+      </div>
       </div>
   </div>
 @endsection
