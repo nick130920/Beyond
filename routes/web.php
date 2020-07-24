@@ -33,6 +33,8 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
 
   ///////////NOVEDADES CLASE///////////////////
   Route::post('/class/{id}/novelty', 'ClassController@novelty'); //UNA CLASE
+  Route::get('/class/novelty', 'ClassController@noveltyIndex'); //UNA CLASE
+
   //////////TAREAS CLASE//////////////////////
   Route::get('/homework/{id}', 'HomeworkController@index'); //Vista creacion de tareas
   Route::post('/homework/{id}', 'HomeworkController@store'); // creacion de tareas
@@ -45,6 +47,8 @@ Route::middleware(['auth', 'teacher'])->prefix('/teacher')->namespace('Teacher')
   //////////CALIFICACIONES CLASE//////////////////////
   Route::get('/ratings/{id}', 'RatingsController@index'); //Vista de calificacione
   Route::post('/ratings/{id}', 'RatingsController@store'); // creacion de calificaciones
+  Route::post('/consolidated/{id}', 'ConsolidatedController@store'); // creacion de consolidado
+
 
   //////////ESTUDIANTES CLASE//////////////////////
   Route::get('/students/{id}', 'StudentsController@index'); //Vista de estudiantes
@@ -58,6 +62,7 @@ Route::middleware(['auth', 'student'])->prefix('/student')->namespace('Student')
   Route::post('/','StudentController@join')->name('join'); //unirse a clase
   Route::get('/classes','ClassController@classes')->name('/student/classes');//Vistas de las clases
   Route::get('/class/{id}','ClassController@class')->name('/student/class');//Clase
+  Route::get('/homework','HomeworkController@index')->name('/student/homework');//Vistas de las clases
 
 });
 Route::middleware(['auth'])->group(function(){

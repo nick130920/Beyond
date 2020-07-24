@@ -27,4 +27,7 @@ class groups extends Model
 	public function works(){
 		return $this->hasManyThrough('App\work', 'App\theme');
 	}
+  public function consolidated(){
+		return $this->hasMany('App\consolidated');
+	}
 }
