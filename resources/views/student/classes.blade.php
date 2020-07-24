@@ -38,8 +38,8 @@
                     <div class="card">
                       <img src="{{asset('/images/img/fondopopup1.svg')}}" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">{{$class->name}}</h5>
-                        <p class="card-text">{{$class->description}}</p>
+                        <h2>{{$class->name}}</h2>
+                        <p>{{ \Illuminate\Support\Str::limit($class->description, 70) }}</p>
                         <div class="botonesEditError">
                           <a href="{{url('/student/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fas fa-sign-in-alt"></i> Clase </a>
                           <button class="btn botonCancelar">Salir</button>

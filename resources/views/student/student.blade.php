@@ -5,8 +5,9 @@
     <div class="menu_section">
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
-        <li><a><i class="fas fa-house-user"></i> Inicio</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#modalMessege"><i class="fas fa-envelope"></i> Mensaje</a></li>
+        <li><a href="{{url('/student')}}"><i class="fas fa-house-user"></i> Inicio</a></li>
+        <li><a><i class="fas fa-clipboard"></i> Tareas </a></li>{{-- 
+        <li><a href="#" data-toggle="modal" data-target="#modalMessege"><i class="fas fa-envelope"></i> Mensaje</a></li> --}}
         <li><a data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Unirme a una Clase </a></li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
@@ -102,7 +103,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="modalMessege" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  {{-- <div class="modal fade" id="modalMessege" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -124,7 +125,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> --}}
 @endsection
 @section('scripts')
   <!-- mi poput -->

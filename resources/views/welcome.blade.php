@@ -22,12 +22,9 @@
 </head>
 <body>
   <div class="encabezado">
-    <div class="navBar">
-      <div class="titulo">
-        <h1>Beyond</h1>
-      </div>
 
       <div class="enlaces">
+        <h1>Beyond</h1>
         <nav>
         <ul>
           <!-- Authentication Links -->
@@ -65,8 +62,6 @@
         </ul>
       </nav>
       </div>
-      
-    </div>
 
     <div class="subEncabezado">
       <div class="imagen">
