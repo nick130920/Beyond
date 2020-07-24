@@ -48,7 +48,7 @@ class HomeController extends Controller
         $profile->save();
       }
       if (auth()->user()->teacher) {
-        return redirect('/teacher')->with(compact('user'))->with('status', 'Beyond te la bienvenida');
+        return redirect('/teacher/classes')->with(compact('user'))->with('status', 'Beyond te la bienvenida');
       }else {
         return redirect('/student')->with(compact('user'))->with('status', 'Beyond te la bienvenida');
       }

@@ -71,6 +71,7 @@ class ProfileController extends Controller
       $user->where('email', '=', Auth::user()->email)->update(['password' => Hash::make($request['password'])]);
       return redirect()->route('profile')->with('status', 'Contraseña cambiada con éxito');
     }else {
+
       return redirect()->route('/edit/profile/password')->with('status', 'Error!');
     }
   }

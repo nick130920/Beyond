@@ -39,11 +39,11 @@
             <div class="tarea1">
               <div class="tareaTitulo">
                 <label><i class="fas fa-clipboard"></i> Titulo</label>
-                <input type="text" class="titulo" name="title">
+                <input type="text" class="titulo" name="title"required>
               </div>
               <div class="tareaContenido">
                 <label><i class="fas fa-stream"></i> Instrucciones</label>
-                <textarea type="text" class="titulo" name="description"></textarea>
+                <textarea type="text" class="titulo" name="description"required></textarea>
               </div>
             </div>
             <div class="botonesTarea">
@@ -68,7 +68,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Nombre </span>
                           </div>
-                          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="nameResource">
+                          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"name="nameResource" >
                         </div>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
@@ -87,7 +87,7 @@
                   </div>
                 </div>
                 {{-- Aqui --}}
-                
+
               </div>
               <div class="themaDiv">
                 <div data-toggle="tooltip" data-placement="top" title="Crear tema">
@@ -95,26 +95,35 @@
                     <i class="fa fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
-                <select   class="selectMio" title="theme" name="themes">
-                  @foreach ($themes as $theme)
-                    <option value="{{$theme->id}}">{{$theme->name}}</option>
-                  @endforeach
+                @if ($themes->isEmpty())
+                <select   class="selectMio" title="theme" required>
+                    <option>No existe ningun tema, por favor crea uno.</option>
+                    @else
+                    <select   class="selectMio" title="theme" name="themes" required>
+                    @foreach ($themes as $theme)
+                      <option value="{{$theme->id}}">{{$theme->name}}</option>
+                    @endforeach
+                  @endif
                 </select>
               </div>
-              
+
               <div class="themaDiv">
                 <div data-toggle="tooltip" data-placement="top" title="Crear criterio">
                 <button type="button" class="btn botonReset" data-toggle="modal" data-target="#evaluation_criteria">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </button>
               </div>
-              <select class="selectMio" title="evaluation_criterias" name="evaluation_criterias">
-                @foreach ($evaluations as $evaluation)
-                  <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
-                @endforeach
+              <select class="selectMio" title="evaluation_criterias" name="evaluation_criterias" required>
+                @if ($evaluations->isEmpty())
+                  <option>No existe ningun criterio, por favor crea uno.</option>
+                @else
+                  @foreach ($evaluations as $evaluation)
+                    <option value="{{$evaluation->id}}">{{$evaluation->name}}</option>
+                  @endforeach
+                @endif
               </select>
               </div>
-              
+
 
               <div class="fechaDiv">
                   <a for="datepicker" class="botonReset">Fecha limite:</a>
