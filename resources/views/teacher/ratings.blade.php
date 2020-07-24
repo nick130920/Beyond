@@ -5,7 +5,6 @@
     <div class="menu_section">
       <h3>Profesor</h3>
       <ul class="nav side-menu">
-<<<<<<< HEAD
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
@@ -22,17 +21,6 @@
             <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
           </ul>
         </li>
-=======
-        <li><a href="{{ url('/teacher') }}"><i class="fas fa-house-user"></i> Inicio</a></li>
-        <li><a href="#"><i class="fas fa-chalkboard"></i> Clase</a></li>
-        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Trabajo en clase <span class="fas fa-chevron-down"></span></a>
-          <ul class="nav child_menu">
-            <li><a href="#"> Crear tarea</a></li>
-            <li><a href="#"> Crear material</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><i class="fas fa-users"></i> Estudiantes</a></li>
->>>>>>> b127184c0043922041dd6575b2a4688b9b239405
       </ul>
 
 
