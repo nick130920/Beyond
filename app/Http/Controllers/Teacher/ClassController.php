@@ -106,4 +106,7 @@ class ClassController extends Controller
       return back()->with('error', 'Novedad no creada');
     }
   }
+  public function noveltyIndex(){
+    return view('/teacher/novelty');
+  }
 }

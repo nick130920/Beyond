@@ -18,10 +18,23 @@ class RatingsController extends Controller
     $classes = $profile->groups()->paginate(4);
     $evaluations = evaluation_criteria::all()->where('groups_id', $id)->sortBy('id');
     $students = Group_member::all()->where('group_id', $id)->sortBy('id');
+    $group= Groups::find($id);
+    $id_cry = $evaluations->pluck('id');
+    $count = $id_cry->count();
+    $sumatory = 0;
     foreach ($students as $student) {
-      $note = Delivery::all()->where('profile_id', $student->id);
+      $notes = Delivery::all()->where('profile_id', $student->profile_id);
+      for ($i=0; $i < $count; $i++) {
+        foreach ($notes as $note) {
+          if ($note->work->evaluation_criterias === $id_cry[$i]) {
+            $sumatory += $note->score;
+          }
+        }
+        // return $sumatory;
+        // return $student->id;
+      }
     }
-    return view('/teacher/ratings')->with(compact('classes', 'profile', 'evaluations', 'students'));
+    return view('/teacher/ratings')->with(compact('classes', 'profile', 'evaluations', 'students', 'group', 'sumatory'));
   }
   public function store(Request $request, $id){
     $evaluation = new evaluation_criteria;

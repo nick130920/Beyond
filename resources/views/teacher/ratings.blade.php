@@ -5,25 +5,21 @@
     <div class="menu_section">
       <h3>Profesor</h3>
       <ul class="nav side-menu">
-        {{-- <li><a><i class="fas fa-house-user"></i> Inicio</a></li> --}}
-        {{-- YA ESTA EN INICIO --}}
         <li><a><i class="fas fa-plus-circle"></i> Nueva Clase <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{route('/create/class')}}"><i class="fas fa-plus"></i> Nueva Clase</a></li>
-            {{-- <li><a href="" ><i class="fas fa-edit"></i> Editar</a></li> --}}
-            {{-- <li><a href="{{route('/Teacher/class/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i> Editar Clase</a></li> --}}
+            <li><a href="{{url('/teacher/homework/'.$group->id)}}"> Crear tarea</a></li>
+            <li><a href="{{url('/teacher/material/'.$group->id)}}"> Crear material</a></li>
           </ul>
         </li>
-
-
-        <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
+        <li><a href="{{url('/teacher/students/'.$group->id)}}"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="{{url('/teacher/ratings/'.$group->id)}}"><i class="fas fa-book-open"></i> Calificaciones</a></li>
+        <li><a><i class="fas fa-chalkboard-teacher"></i> Mis clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
               <li><a href="{{url('/teacher/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
             <li><a href="{{url('/teacher/classes/')}}"> Todas las clases</a></li>
           </ul>
-          {{-- {{ $classes->links() }} --}}
         </li>
       </ul>
 
@@ -54,7 +50,7 @@
                   <tr>
                     <td>{{$student->profiles->id_number}}</td>
                     <td>{{$student->user->name}}</td>
-                    <td>0</td>
+                    <td>{{$sumatory ?? 'g lou'}}</td>
                     <td>0</td>
                     <td>0</td>
                   </tr>

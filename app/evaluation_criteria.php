@@ -12,4 +12,7 @@ class evaluation_criteria extends Model
 	public function works(){
 		return $this->hasMany('App\work');
 	}
+  public function consolidated(){
+		return $this->hasMany('App\consolidated');
+	}
 }
