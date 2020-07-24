@@ -48,6 +48,7 @@
                         <div class="head1">
                           <h3> Nombre </h3>
                           <span> Fecha</span>
+                          <a href=""><i class="fas fa-share"></i></a>
                         </div>
                       </div>
                       <div class="comentarioCuerpo">

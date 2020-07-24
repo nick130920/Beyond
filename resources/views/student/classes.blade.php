@@ -42,6 +42,7 @@
                         <p class="card-text">{{$class->description}}</p>
                         <div class="botonesEditError">
                           <a href="{{url('/student/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fas fa-sign-in-alt"></i> Clase </a>
+                          <button class="btn botonCancelar">Salir</button>
                         </div>
                       </div>
                     </div>
