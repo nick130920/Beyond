@@ -6110,7 +6110,7 @@ ul.notifications {
     z-index: 10000;
 }
 .contenidoEditar{
-    width: 500px;
+    width: auto;
     position: relative;
     display: block;
     padding: 10px;
@@ -6273,26 +6273,41 @@ ul.notifications {
 }
 .contenido{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 10px 0;
 }
-.contenido .pendientes{
-    box-shadow: 0 0 3px #A4A0A0;
-    display: inline-block;
-    border-radius: 10px;
-    max-height: 250px;
-    height: 120px;
-    width: 250px;
-    padding: 10px;
+.contenido .tareas{
     position: relative;
-    overflow: hidden;
+    height: 100%;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin: 0 10px;
+    min-width: 250px;
 }
-.contenido .pendientes > a{
-    position: absolute;
-    bottom: 0;
-    background-color: #f7f7f7;
+.contenido .tareas > h1{
+    margin-top: 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.contenido .tareas .tareaIndividual{
     width: 100%;
+    padding:5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px 1px rgb(25,96,226, .2);
+}
+.contenido .tareas .tareaIndividual h1{
+    font-size: 15px;
+}
+.contenido .tareas .tareaIndividual button{
+    width: 100%;
+    display: block;
+    border: 0;
+    position: relative;
     padding: 5px;
+    background-color: rgb(25,96,226, .1);
+    font-weight: 600;
+    outline: none;
 }
 .contenido .envios{
     display: block;
@@ -6309,7 +6324,13 @@ ul.notifications {
 }
 @media screen and (max-width: 500px){
     .contenido {
-        display: block;
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .contenido .tareas{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
     }
     .contenido .envios{
         width: 100%;
@@ -6515,6 +6536,32 @@ ul.notifications {
     background-color: rgb(0,0,0, .2);
     color: rgb(25,96,226);
 }
+
+.modal-body .tareaDetalle {
+    padding: 10px;
+}
+.modal-body .tareaDetalle h1{
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-bottom: 2px solid rgb(25,96,226, .5);
+    text-align: center;
+}
+.modal-body .tareaDetalle p{
+    margin-bottom: 0 !important;
+}
+.modal-body .tareaDetalle .temasTarea{
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-bottom: 2px solid rgb(0,0,0,.3);
+}
+.modal-body .tareaDetalle h2{
+    font-size: 25px;
+}
+
 /*       Perfil     */
 .perfil{
     display: flex;

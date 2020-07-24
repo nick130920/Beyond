@@ -55,6 +55,7 @@
         </button>
         <div class="separador">
           <h1>Beyond</h1>
+          <p>¿Ya tienes una cuenta? <a href="{{url('login')}}">Inicia sesión</a></p>
           <p>Todos los derechos reservados © Beyond 2020.</p>
         </div>
       </div>

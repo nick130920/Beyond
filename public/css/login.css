@@ -10,6 +10,7 @@ body{
 	height: 100%;
 	position: absolute;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
@@ -106,8 +107,18 @@ button{
 	margin-top: 60px;
 	color:white;
 }
+.separador p {
+	font-size: 18px !important;
+	padding: 0;
+	margin-bottom: 0;
+}
+.separador p a{
+	color: white;
+	text-decoration: underline;
+}
 .separador h1{
 	padding: 10px;
+	font-size: 25px !important;
 }
 .separador::before{
 	content: "";

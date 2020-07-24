@@ -6,7 +6,7 @@
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
         <li><a href="{{url('/student')}}"><i class="fas fa-house-user"></i> Inicio</a></li>
-        <li><a><i class="fas fa-clipboard"></i> Trabajo en clase </a></li>
+        <li><a><i class="fas fa-clipboard"></i> Tareas </a></li>
         <li><a data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Unirme a una Clase </a>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
@@ -34,7 +34,7 @@
             </div>
             <div class="contenido">
               <!-- Formulario para envio de comentarios   -->
-              <div class="envios">
+              {{-- <div class="envios">
 
                 <div class="enviarTitulo" id="enviarTitulo">
                   <h2>Comunícate con tu profesor aquí.</h2>
@@ -55,7 +55,7 @@
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> --}}
             </div>
 
             <div class="contentComentarios">

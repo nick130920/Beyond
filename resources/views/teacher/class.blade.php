@@ -145,7 +145,15 @@
                     <h2><i class="fas fa-comments"></i> Responde a publicaciones de alumnos.</h2>
                 </div>
                 @endif
+              </div>
 
+
+              <div class="tareas">
+                <h1>Tareas asignadas</h1>
+                <div class="tareaIndividual">
+                  <h1>Titulo</h1>
+                  <button class="botonDetalles" data-toggle="modal" data-target="#tarea">Ver detalles</button>
+                </div>
               </div>
             </div>
           </div>
@@ -197,9 +205,26 @@
                   </div>
                 </div>
               </div>
-                  <div class="overlayTema" id="overlayTema">
-                    
+              {{--- Popup tarea --}}
+            <div class="modal fade" id="tarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div class="tareaDetalle">
+                      <h1>Titulo</h1>
+                      <h2>Instrucciones:</h2>
+                      <p>instrucción</p>
+                      <p>Tema</p>
+                      <p>Criterio</p>
+                      <hp>Fecha limite: mañana</hp>
+                    </div>
                   </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
   </div>
   <!-- /Contenido de la pagina -->
 @endsection

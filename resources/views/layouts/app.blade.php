@@ -46,7 +46,7 @@
             </div>
             <div class="profile_info">
               <span>Bienvenido</span>
-              <h2>{{ $profile->first_name }}</h2>
+              <h2>{{ \Illuminate\Support\Str::limit( $profile->first_name, 10) }}</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->

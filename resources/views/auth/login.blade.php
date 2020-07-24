@@ -35,6 +35,7 @@
     </form>
     <div class="separador">
       <h1>Beyond</h1>
+      <p>¿Eres nuevo? <a href="{{url('/register')}}">Crea una cuenta</a> </p>
       <p>Todos los derechos reservados © Beyond 2020.</p>
     </div>
   </div>
