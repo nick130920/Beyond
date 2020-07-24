@@ -10,6 +10,7 @@
         <li><a href="{{route('/create/class')}}"><i class="fas fa-plus-circle"></i> Nueva Clase</a></li>
 
 
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-envelope"></i> Mensaje</a></li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Mis clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
@@ -43,7 +44,26 @@
         </div>
       </div>
     @endif
-  </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Mensaje </h5>
+          </div>
+          <form>
+            <div class="contentModal">
+              <input type="email" name="" placeholder="Para">
+              <input type="text" name="" placeholder="Asunto">
+              <textarea placeholder=""></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botonCancelar" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn botonGuardar">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 @endsection
 @section('scripts')
   <!-- mi poput -->

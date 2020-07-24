@@ -6,13 +6,14 @@
       <h3>Estudiante</h3>
       <ul class="nav side-menu">
         <li><a href="{{route('student')}}"><i class="fas fa-house-user"></i> Inicio</a></li>
-        <li><a id="botonOverlay2"><i class="fas fa-plus"></i> Unirme a una Clase </a>
+        <li><a data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Unirme a una Clase </a>
         </li>
         <li><a><i class="fas fa-chalkboard-teacher"></i></i> Clases <span class="fas fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             @foreach ($classes as $class)
               <li><a href="{{url('/student/class/'.$class->id.'/')}}">{{$class->name}}</a></li>
             @endforeach
+            <li><a href="{{route('/student/classes')}}">Ver todas las clases</a></li>
           </ul>
         </li>
       </ul>
@@ -40,7 +41,7 @@
                         <h5 class="card-title">{{$class->name}}</h5>
                         <p class="card-text">{{$class->description}}</p>
                         <div class="botonesEditError">
-                          <a href="{{url('/student/class/'.$class->id.'/')}}" class="btn btn-primary blanco1"><i class="fas fa-sign-in-alt"></i> Ver </a>
+                          <a href="{{url('/student/class/'.$class->id.'/')}}" class="btn botonGuardar"><i class="fas fa-sign-in-alt"></i> Clase </a>
                         </div>
                       </div>
                     </div>
@@ -48,19 +49,25 @@
                 </div>
               </div>
       </div>
-      <div class="overlay2" id="overlay2">
-        <div class="popup2" id="popup2">
-          <div class="texto2">
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Unirse a la clase</h2>
+            </div>
+            <div class="contentModalStudent">
             <form method="post" action="{{route('join')}}">
               @csrf
-              <h2>Unirse a la clase</h2>
               <p>
                 Pídele a tu profesor el código de la clase y, luego, ingrésalo aquí.
               </p>
-              <input type="text" name="code" placeholder="Código de la clase" required>
-              <a id="cancelarOverlay2" class="btn botonReset">Cancelar</a>
-              <button type="submit" class="btn botonGuardar">Unirse</button>
+              <input type="text" name="code" placeholder="Código de la clase">
+              <div class="footerStudent">
+                <button data-dismiss="modal" class="btn botonCancelar">Cancelar</button>
+                <button type="submit" class="btn botonGuardar">Unirse</button>
+              </div>
             </form>
+            </div>
           </div>
         </div>
       </div>
